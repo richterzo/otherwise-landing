@@ -164,24 +164,48 @@ export default function Hero() {
           </motion.a>
         </motion.div>
 
-        {/* Scroll Hint - Subtle */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block"
+      </motion.div>
+
+      {/* Scroll Indicator - Bottom Center */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+      >
+        <motion.a
+          href="#about"
+          animate={{ y: [0, 12, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-3 group cursor-pointer"
         >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center gap-2 opacity-40 hover:opacity-100 transition-opacity"
-          >
-            <div className="w-[1px] h-12 bg-gradient-to-b from-bianco-luce to-transparent" />
-            <svg className="w-5 h-5 text-bianco-luce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </motion.div>
-        </motion.div>
+          <span className="text-xs text-grigio-acciaio font-mono tracking-widest uppercase opacity-60 group-hover:opacity-100 transition-opacity">
+            Scroll
+          </span>
+          <div className="flex flex-col items-center gap-2">
+            {/* Double chevron for better visibility */}
+            <motion.svg 
+              className="w-6 h-6 text-rosso-controllo" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+              animate={{ opacity: [0.3, 1, 0.3] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0 }}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </motion.svg>
+            <motion.svg 
+              className="w-6 h-6 text-rosso-controllo -mt-4" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+              animate={{ opacity: [0.3, 1, 0.3] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </motion.svg>
+          </div>
+        </motion.a>
       </motion.div>
     </section>
   );
