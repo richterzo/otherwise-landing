@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Training from "@/components/Training";
 import Mindset from "@/components/Mindset";
+import Gallery from "@/components/Gallery";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
@@ -41,6 +42,7 @@ export default function Home() {
       <About />
       <Training />
       <Mindset />
+      <Gallery />
       <CTA />
       <Footer />
     </main>

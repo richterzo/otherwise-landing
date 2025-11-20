@@ -46,6 +46,7 @@ export default function Navigation() {
     { label: "MISSIONE", href: "#about", id: "about" },
     { label: "TRAINING", href: "#training", id: "training" },
     { label: "MINDSET", href: "#mindset", id: "mindset" },
+    { label: "GALLERY", href: "#gallery", id: "gallery" },
     { label: "CONTATTI", href: "#contact", id: "contact" },
   ];
 
