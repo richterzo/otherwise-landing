@@ -27,7 +27,7 @@ export default function CTA() {
   };
 
   return (
-    <section id="contact" className="relative py-32 bg-[#1a1a1a] overflow-hidden" ref={ref}>
+    <section id="contact" className="relative py-32 bg-nero-tattico overflow-hidden" ref={ref}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{

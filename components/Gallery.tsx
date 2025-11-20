@@ -49,7 +49,7 @@ export default function Gallery() {
   ];
 
   return (
-    <section id="gallery" className="relative py-32 bg-grigio-cemento overflow-hidden" ref={ref}>
+    <section id="gallery" className="relative py-32 bg-nero-tattico overflow-hidden" ref={ref}>
       {/* Background accent */}
       <motion.div 
         className="absolute top-0 right-0 w-1/3 h-[1px] bg-gradient-to-l from-rosso-controllo to-transparent opacity-50"

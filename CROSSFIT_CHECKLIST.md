@@ -1,4 +1,4 @@
-# ✅ CrossFit Landing Checklist
+de# ✅ CrossFit Landing Checklist
 
 ## Copy Conversion: APX Event → CrossFit Gym
 
