@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-nero-tattico text-bianco-luce;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Airborne 86 SOLO per h1 (macrotitoli) */
+  h1 {
+    @apply font-airborne;
+  }
+  
+  /* Smooth scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #0A0A0A;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #6F6F6F;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #B31010;
+  }
+}
+
+@layer components {
+  .text-shadow-glow {
+    text-shadow: 0 0 20px rgba(179, 16, 16, 0.5);
+  }
+  
+  .crosshair-dot {
+    position: relative;
+  }
+  
+  .crosshair-dot::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #B31010;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(179, 16, 16, 0.8);
+  }
+  
+}
+
