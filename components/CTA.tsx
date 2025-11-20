@@ -79,7 +79,7 @@ export default function CTA() {
                 </div>
                 <div>
                   <div className="text-sm font-mono text-grigio-acciaio mb-1">LOCATION</div>
-                  <div className="text-bianco-luce">Via Example 123, Ferrara</div>
+                  <div className="text-bianco-luce">Via Giorgio Caselli, 13/E<br />44124 Ferrara FE</div>
                 </div>
               </motion.div>
 
@@ -107,8 +107,8 @@ export default function CTA() {
                 </div>
                 <div>
                   <div className="text-sm font-mono text-grigio-acciaio mb-1">TELEFONO</div>
-                  <a href="tel:+390532123456" className="text-bianco-luce hover:text-rosso-controllo transition-colors">
-                    +39 0532 123 456
+                  <a href="tel:+390532687123" className="text-bianco-luce hover:text-rosso-controllo transition-colors">
+                    0532 687123
                   </a>
                 </div>
               </motion.div>
@@ -117,18 +117,18 @@ export default function CTA() {
             {/* Hours */}
             <div className="p-6 bg-nero-tattico border-l-2 border-rosso-controllo">
               <div className="text-sm font-mono text-grigio-acciaio mb-3">ORARI</div>
-              <div className="space-y-2 text-bianco-luce">
+              <div className="space-y-2 text-bianco-luce text-sm">
                 <div className="flex justify-between">
-                  <span>Lun - Ven</span>
-                  <span className="font-mono">06:00 - 22:00</span>
+                  <span>Lunedì - Venerdì</span>
+                  <span className="font-mono">09:30 - 21:00</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Sabato</span>
-                  <span className="font-mono">08:00 - 20:00</span>
+                  <span className="font-mono">08:30 - 12:30</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Domenica</span>
-                  <span className="font-mono">09:00 - 18:00</span>
+                  <span className="font-mono text-grigio-acciaio">Chiuso</span>
                 </div>
               </div>
             </div>
