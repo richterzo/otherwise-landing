@@ -29,7 +29,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="relative py-32 bg-nero-tattico overflow-hidden" ref={ref}>
+    <section id="about" className="relative py-32 bg-[#1a1a1a] overflow-hidden" ref={ref}>
       {/* Background accent line with animation */}
       <motion.div 
         className="absolute top-0 left-0 h-[1px] bg-gradient-to-r from-rosso-controllo to-transparent opacity-50"

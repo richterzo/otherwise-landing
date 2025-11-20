@@ -26,7 +26,7 @@ export default function Mindset() {
   ];
 
   return (
-    <section id="mindset" className="relative py-32 bg-nero-tattico overflow-hidden" ref={ref}>
+    <section id="mindset" className="relative py-32 bg-[#1a1a1a] overflow-hidden" ref={ref}>
       {/* Decorative Grid */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{

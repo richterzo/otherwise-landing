@@ -89,7 +89,16 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${airborne.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
-        {children}
+        {/* Skip to main content link for keyboard navigation - WCAG */}
+        <a 
+          href="#main-content" 
+          className="absolute left-[-9999px] top-4 z-[100] px-6 py-3 bg-rosso-controllo text-bianco-luce font-mono text-sm tracking-wider uppercase focus:left-4"
+        >
+          Salta al contenuto principale
+        </a>
+        <main id="main-content">
+          {children}
+        </main>
       </body>
     </html>
   );

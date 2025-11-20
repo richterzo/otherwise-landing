@@ -27,7 +27,7 @@ export default function CTA() {
   };
 
   return (
-    <section id="contact" className="relative py-32 bg-grigio-cemento overflow-hidden" ref={ref}>
+    <section id="contact" className="relative py-32 bg-[#1a1a1a] overflow-hidden" ref={ref}>
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -140,7 +140,7 @@ export default function CTA() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6" aria-label="Form di contatto">
               <div>
                 <label htmlFor="name" className="block text-sm font-mono text-grigio-acciaio mb-2 tracking-wider">
                   NOME COMPLETO *
@@ -209,7 +209,8 @@ export default function CTA() {
 
               <motion.button
                 type="submit"
-                className="w-full px-8 py-4 bg-rosso-controllo text-bianco-luce font-mono text-sm tracking-wider hover:bg-rosso-battito transition-colors relative overflow-hidden group"
+                aria-label="Invia la richiesta di contatto"
+                className="w-full px-8 py-4 bg-rosso-controllo text-bianco-luce font-mono text-sm tracking-wider hover:bg-rosso-battito transition-colors relative overflow-hidden group focus:outline-none focus:ring-4 focus:ring-bianco-luce focus:ring-offset-2 focus:ring-offset-nero-tattico"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

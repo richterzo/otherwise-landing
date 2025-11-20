@@ -16,10 +16,13 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
+      aria-label="Hero section - Otherwise Athletics Evolved"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Image B&W with Parallax */}
       <motion.div 
+        role="img"
+        aria-label="CrossFit training background"
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: 'url(https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80)',
@@ -134,7 +137,8 @@ export default function Hero() {
           {/* Primary CTA - Stunning Red */}
           <motion.a
             href="#contact"
-            className="group relative w-full sm:w-auto px-12 py-6 bg-rosso-controllo text-bianco-luce font-mono font-bold text-base tracking-wider uppercase overflow-hidden"
+            aria-label="Prenota una prova gratuita"
+            className="group relative w-full sm:w-auto px-12 py-6 bg-rosso-controllo text-bianco-luce font-mono font-bold text-base tracking-wider uppercase overflow-hidden focus:outline-none focus:ring-4 focus:ring-bianco-luce focus:ring-offset-2 focus:ring-offset-nero-tattico"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
           >
@@ -156,7 +160,8 @@ export default function Hero() {
           {/* Secondary CTA - Clean White */}
           <motion.a
             href="#training"
-            className="group w-full sm:w-auto px-12 py-6 border-2 border-bianco-luce text-bianco-luce font-mono font-bold text-base tracking-wider uppercase hover:bg-bianco-luce hover:text-nero-tattico transition-all duration-300"
+            aria-label="Scopri i nostri programmi di allenamento"
+            className="group w-full sm:w-auto px-12 py-6 border-2 border-bianco-luce text-bianco-luce font-mono font-bold text-base tracking-wider uppercase hover:bg-bianco-luce hover:text-nero-tattico transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-rosso-controllo focus:ring-offset-2 focus:ring-offset-nero-tattico"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
           >
@@ -175,9 +180,10 @@ export default function Hero() {
       >
         <motion.a
           href="#about"
+          aria-label="Scorri per saperne di più"
           animate={{ y: [0, 12, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-3 group cursor-pointer"
+          className="flex flex-col items-center gap-3 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-rosso-controllo"
         >
           <span className="text-xs text-grigio-acciaio font-mono tracking-widest uppercase opacity-60 group-hover:opacity-100 transition-opacity">
             Scroll

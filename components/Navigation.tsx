@@ -52,6 +52,8 @@ export default function Navigation() {
 
   return (
     <motion.nav
+      role="navigation"
+      aria-label="Main navigation"
       style={{ 
         backgroundColor,
       }}
@@ -69,6 +71,7 @@ export default function Navigation() {
           {/* Logo with glitch effect - mantiene font-airborne per brand */}
           <motion.a
             href="#"
+            aria-label="Otherwise Athletics Evolved - Home"
             className="relative text-xl font-airborne font-bold tracking-wider group"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -108,7 +111,9 @@ export default function Navigation() {
               <motion.a
                 key={item.href}
                 href={item.href}
-                className={`relative text-sm font-mono transition-colors group ${
+                aria-label={`Vai a ${item.label}`}
+                aria-current={activeSection === item.id ? 'page' : undefined}
+                className={`relative text-sm font-mono transition-colors group focus:outline-none focus:ring-2 focus:ring-rosso-controllo focus:ring-offset-2 focus:ring-offset-nero-tattico ${
                   activeSection === item.id 
                     ? 'text-bianco-luce' 
                     : 'text-grigio-acciaio hover:text-bianco-luce'
@@ -141,7 +146,8 @@ export default function Navigation() {
             {/* CTA Button with advanced hover */}
             <motion.a
               href="#contact"
-              className="group relative px-5 py-2.5 bg-rosso-controllo text-bianco-luce text-sm font-mono font-bold overflow-hidden"
+              aria-label="Inizia ora - Contattaci"
+              className="group relative px-5 py-2.5 bg-rosso-controllo text-bianco-luce text-sm font-mono font-bold overflow-hidden focus:outline-none focus:ring-2 focus:ring-bianco-luce focus:ring-offset-2 focus:ring-offset-nero-tattico"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, scale: 0.8 }}
