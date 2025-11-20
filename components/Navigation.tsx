@@ -26,7 +26,7 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["about", "training", "mindset", "contact"];
+      const sections = ["about", "training", "mindset", "gallery", "contact"];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
