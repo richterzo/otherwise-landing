@@ -10,18 +10,18 @@ export default function Mindset() {
   const principles = [
     {
       title: "CONSISTENZA",
-      description: "Presentarsi tutti i giorni. Non aspettare la motivazione, costruisci l'abitudine.",
-      quote: "\"La costanza batte il talento ogni volta.\""
+      description: "Presentarsi ogni giorno. Non aspettare la motivazione, costruisci l'abitudine. Ogni ripetizione, ogni secondo nel box è un passo avanti verso il tuo obiettivo.",
+      quote: "\"Non si tratta di un giorno. Si tratta di ogni giorno.\""
     },
     {
       title: "PROGRESSIONE",
-      description: "Ogni settimana aggiungi peso, aggiungi reps, migliori il tempo. Small wins, big results.",
-      quote: "\"Track it, measure it, beat it.\""
+      description: "Traccia i tuoi risultati, misura i progressi, supera te stesso. Ogni settimana un peso in più, un secondo in meno, un movimento più pulito.",
+      quote: "\"Migliorare è una scelta. Costante.\""
     },
     {
       title: "COMMUNITY",
-      description: "Quando sei in un gruppo che suda quanto te, è più facile non mollare.",
-      quote: "\"Alone you go fast. Together you go far.\""
+      description: "Quando sei in un gruppo che suda quanto te, è più facile non mollare. Qui ti alleni con persone che hanno i tuoi stessi obiettivi e la tua stessa voglia di crescere.",
+      quote: "\"La community giusta rende tutto più forte.\""
     }
   ];
 
@@ -63,13 +63,14 @@ export default function Mindset() {
           </span>
           
           <h2 className="text-4xl md:text-5xl font-bold text-bianco-luce mt-4 mb-6">
-            NON È SOLO<br />
-            <span className="text-grigio-acciaio">ALLENAMENTO</span>
+            LA DISCIPLINA<br />
+            <span className="text-grigio-acciaio">BATTE TUTTO</span>
           </h2>
 
           <p className="text-grigio-acciaio leading-relaxed text-lg">
-            CrossFit cambia come ti vedi, come affronti le sfide, come reagisci quando diventa dura. 
-            Non solo un corpo più forte. Una versione migliore di te.
+            Nel mondo del functional fitness, ciò che fa davvero la differenza non è solo la voglia 
+            di mettersi alla prova, ma la costanza con cui lo fai. La disciplina nell'allenamento 
+            trasforma la fatica in risultati, l'abitudine in identità, il movimento in potenza.
           </p>
         </motion.div>
 

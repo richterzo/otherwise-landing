@@ -9,27 +9,27 @@ export default function Training() {
 
   const programs = [
     {
-      code: "WOD_01",
-      name: "CROSSFIT BEGINNERS",
-      description: "Parti dalle basi. Tecnica, mobilità e movimenti fondamentali. Coach dedicato per 8 settimane.",
-      duration: "8 settimane",
-      level: "Principiante",
+      code: "PROG_01",
+      name: "ATHLETIC GRID",
+      description: "Il punto di partenza per chi è alle prime armi ma vuole mettersi in gioco. Un percorso accessibile, guidato passo dopo passo, per imparare i movimenti e costruire le basi di una forma fisica solida e duratura.",
+      duration: "Base",
+      level: "Principianti",
       intensity: 60
     },
     {
-      code: "WOD_02",
-      name: "CROSSFIT CLASSES",
-      description: "Il cuore della box. WOD quotidiani, comunità, progressione continua. Per tutti i livelli.",
-      duration: "Ongoing",
-      level: "Tutti",
+      code: "PROG_02",
+      name: "WODFIT",
+      description: "Allenamento funzionale completo, ad alta intensità, basato su esercizi variati e stimolanti. Ideale per chi vuole allenarsi con metodo, senza routine noiose. Per chi cerca risultati concreti.",
+      duration: "Variabile",
+      level: "Tutti i livelli",
       intensity: 80
     },
     {
-      code: "WOD_03",
-      name: "COMPETITION PREP",
-      description: "Programmazione avanzata per gare. Tecnica olimpica, gymnastics, conditioning specifico.",
-      duration: "12+ settimane",
-      level: "Avanzato",
+      code: "PROG_03",
+      name: "ADVANCED RX",
+      description: "Dedicato a chi ha già esperienza con l'allenamento funzionale e vuole lavorare in modo tecnico, preciso, con progressioni avanzate e obiettivi concreti. Un programma pensato per gli atleti che vogliono il massimo.",
+      duration: "Avanzato",
+      level: "Esperti",
       intensity: 95
     }
   ];
@@ -60,7 +60,7 @@ export default function Training() {
             className="text-rosso-controllo font-mono text-sm tracking-[0.3em] uppercase inline-flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
           >
-            [ TRAINING PROTOCOLS ]
+            [ PROGRAMMI ]
             <motion.span
               className="inline-block w-1.5 h-1.5 bg-rosso-controllo"
               animate={{ opacity: [1, 0, 1] }}
@@ -69,13 +69,13 @@ export default function Training() {
           </motion.span>
           
           <h2 className="text-4xl md:text-5xl font-mono font-bold text-bianco-luce mt-4 mb-6">
-            PROGRAMMAZIONE<br />
-            <span className="text-grigio-acciaio">STRUTTURATA</span>
+            NUOVI CORSI<br />
+            <span className="text-grigio-acciaio">NUOVI STIMOLI</span>
           </h2>
 
           <p className="text-grigio-acciaio leading-relaxed">
-            Che tu sia al tuo primo WOD o un atleta con anni di esperienza, 
-            abbiamo il programma giusto per i tuoi obiettivi.
+            Tre programmi pensati per ogni livello di allenamento, con un solo obiettivo: 
+            farti evolvere, a modo tuo. Scegli il corso che fa per te.
           </p>
         </motion.div>
 

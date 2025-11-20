@@ -74,8 +74,8 @@ export default function About() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                ATHLETICS<br />
-                <span className="text-grigio-acciaio">EVOLVED</span>
+                DOVE L'ALLENAMENTO<br />
+                <span className="text-grigio-acciaio">È UN RITUALE</span>
               </motion.h2>
 
               <motion.div 
@@ -85,19 +85,21 @@ export default function About() {
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <p>
-                  Otherwise è la box CrossFit di Ferrara dove allenarsi sul serio. 
-                  300m² di spazio, attrezzatura top, coach certificati sempre presenti.
+                  Nel cuore di Ferrara, Otherwise Athletics Evolved è il luogo dove il functional fitness 
+                  incontra la disciplina, la determinazione e la voglia di superarsi. 
+                  Ogni workout è progettato per spingerti oltre i tuoi limiti.
                 </p>
                 <p>
-                  Che tu sia principiante o atleta esperto, qui trovi il tuo programma: 
-                  classi di gruppo, personal training, open gym. Tutti i giorni, dal lunedì alla domenica.
+                  Bilancieri, corde, box jump, trazioni. Non importa il livello da cui parti: 
+                  importa la costanza, l'impegno e il desiderio di migliorare. Coach certificati, 
+                  programmazione strutturata, community vera.
                 </p>
                 <motion.p 
                   className="text-bianco-luce font-mono"
                   whileHover={{ x: 5, color: '#B31010' }}
                   transition={{ duration: 0.2 }}
                 >
-                  Risultati veri. Community forte. Zero scuse.
+                  Obiettivi reali. Risultati misurabili. Trasformazioni concrete.
                 </motion.p>
               </motion.div>
 

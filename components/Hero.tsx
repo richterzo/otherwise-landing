@@ -117,10 +117,10 @@ export default function Hero() {
           className="mb-14 max-w-3xl mx-auto space-y-3"
         >
           <p className="text-xl md:text-3xl text-bianco-luce font-mono font-bold tracking-tight uppercase">
-            La Palestra CrossFit Che Cercavi
+            La Motivazione Ti Fa Iniziare.<br />La Disciplina Ti Fa Restare.
           </p>
           <p className="text-sm md:text-base text-grigio-acciaio font-mono">
-            Allenamento serio, risultati veri, community forte
+            Functional fitness nel cuore di Ferrara. Coach certificati, programmazione seria, risultati concreti.
           </p>
         </motion.div>
 
