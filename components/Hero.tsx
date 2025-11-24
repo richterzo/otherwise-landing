@@ -65,13 +65,16 @@ export default function Hero() {
           />
         </motion.div>
 
-        {/* Main Title - OTHERWISE with Airborne font */}
+        {/* Main Title - CROSSFIT OTHERWISE with Airborne font */}
         <motion.h1
-          className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-airborne tracking-tighter leading-none mb-4 sm:mb-6"
+          className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-airborne tracking-tighter leading-[0.9] mb-4 sm:mb-6"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
+          <span className="block text-bianco-luce">
+            CROSSFIT
+          </span>
           <span className="block text-bianco-luce">
             OTHERWISE
           </span>
