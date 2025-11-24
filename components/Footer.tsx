@@ -169,7 +169,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <span>© 2025 Otherwise Athletics Evolved.</span>
             <span className="text-grigio-acciaio">•</span>
-            <span className="font-airborne tracking-wider">EST. 2018</span>
+            <span className="font-mono tracking-wider">EST. 2018</span>
           </div>
           <div className="flex gap-6">
             <a href="#" className="hover:text-bianco-luce transition-colors">
