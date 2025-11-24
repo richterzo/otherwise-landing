@@ -104,6 +104,14 @@ export default function Hero() {
           </span>
         </motion.div>
 
+        {/* Red Line Separator */}
+        <motion.div
+          className="w-32 h-[2px] bg-gradient-to-r from-transparent via-rosso-controllo to-transparent mx-auto mb-10"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+        />
+
         {/* Tagline - Bold */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -5,21 +5,10 @@
 @layer base {
   body {
     @apply bg-nero-tattico text-bianco-luce;
-    cursor: crosshair;
   }
   
   html {
     scroll-behavior: smooth;
-    cursor: crosshair;
-  }
-  
-  /* Custom crosshair cursor */
-  * {
-    cursor: crosshair;
-  }
-  
-  a, button, input, textarea, select {
-    cursor: crosshair;
   }
   
   /* Airborne 86 SOLO per h1 (macrotitoli) */
