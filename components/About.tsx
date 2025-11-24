@@ -103,23 +103,6 @@ export default function About() {
                   Obiettivi reali. Risultati misurabili. Trasformazioni concrete.
                 </motion.p>
               </motion.div>
-
-              <motion.div
-                className="mt-8 flex items-center gap-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                <motion.div 
-                  className="h-[1px] bg-rosso-controllo"
-                  initial={{ width: 0 }}
-                  animate={isInView ? { width: 64 } : {}}
-                  transition={{ duration: 0.8, delay: 0.7 }}
-                />
-                <span className="text-sm font-mono text-grigio-acciaio tracking-wider">
-                  2025 / FERRARA
-                </span>
-              </motion.div>
             </motion.div>
           </div>
 
