@@ -162,7 +162,7 @@ export default function Footer() {
           className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-grigio-acciaio font-mono"
         >
           <div>
-            © 2024 Otherwise Athletics Evolved. All rights reserved.
+            © 2025 Otherwise Athletics Evolved. All rights reserved.
           </div>
           <div className="flex gap-6">
             <a href="#" className="hover:text-bianco-luce transition-colors">
