@@ -115,8 +115,8 @@ export default function About() {
                   animate={isInView ? { width: 64 } : {}}
                   transition={{ duration: 0.8, delay: 0.7 }}
                 />
-                <span className="text-sm font-airborne text-grigio-acciaio">
-                  EST. 2024 / FERRARA
+                <span className="text-sm font-mono text-grigio-acciaio tracking-wider">
+                  EST. 2025 / FERRARA
                 </span>
               </motion.div>
             </motion.div>
@@ -155,7 +155,7 @@ export default function About() {
                     animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   />
-                  <span className="text-xs font-airborne text-bianco-luce tracking-wider">
+                  <span className="text-xs font-mono text-bianco-luce tracking-wider">
                     FERRARA_FACILITY_001
                   </span>
                 </div>
