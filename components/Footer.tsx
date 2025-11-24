@@ -28,10 +28,15 @@ export default function Footer() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-mono font-bold mb-4">
-                <span className="text-bianco-luce">OTHERWISE</span>
-                <span className="text-rosso-controllo">_</span>
-              </h3>
+              {/* Logo */}
+              <div className="mb-6">
+                <img 
+                  src="/logo.png" 
+                  alt="Otherwise CrossFit Logo" 
+                  className="h-24 w-auto"
+                  style={{ filter: 'brightness(0) invert(1)' }}
+                />
+              </div>
               <p className="text-sm text-grigio-acciaio leading-relaxed mb-4">
                 Athletics Evolved
               </p>
@@ -161,8 +166,10 @@ export default function Footer() {
           viewport={{ once: true }}
           className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-grigio-acciaio font-mono"
         >
-          <div>
-            © 2025 Otherwise Athletics Evolved. All rights reserved.
+          <div className="flex items-center gap-3">
+            <span>© 2025 Otherwise Athletics Evolved.</span>
+            <span className="text-grigio-acciaio">•</span>
+            <span className="font-airborne tracking-wider">EST. 2018</span>
           </div>
           <div className="flex gap-6">
             <a href="#" className="hover:text-bianco-luce transition-colors">
