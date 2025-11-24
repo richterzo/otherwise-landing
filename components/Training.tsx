@@ -45,7 +45,7 @@ export default function Training() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(/images/training-1.webp)',
+            backgroundImage: 'url(/images/Box3.webp)',
             filter: 'grayscale(100%) contrast(1.2)',
             opacity: 0.08
           }}
