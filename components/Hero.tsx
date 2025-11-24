@@ -111,8 +111,8 @@ export default function Hero() {
           {/* Quote */}
           <blockquote className="relative px-4 sm:px-6 py-3 sm:py-4">
             <p className="text-sm sm:text-base md:text-lg text-grigio-acciaio font-mono italic leading-relaxed">
-              La motivazione ti fa iniziare.<br />
-              La disciplina ti fa restare.
+              La <span className="text-rosso-controllo font-bold not-italic">motivazione</span> ti fa iniziare.<br />
+              La <span className="text-rosso-controllo font-bold not-italic">disciplina</span> ti fa restare.
             </p>
           </blockquote>
         </motion.div>
