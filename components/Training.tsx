@@ -72,9 +72,9 @@ export default function Training() {
             />
           </motion.span>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-airborne text-bianco-luce mt-4 mb-6 tracking-tight">
-            NUOVI CORSI<br />
-            <span className="text-grigio-acciaio">NUOVI STIMOLI</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-mono font-bold text-bianco-luce mt-4 mb-6 tracking-tight">
+            PROGRAMMI<br />
+            <span className="text-grigio-acciaio">DI ALLENAMENTO</span>
           </h2>
 
           <p className="text-grigio-acciaio leading-relaxed">
@@ -91,8 +91,8 @@ export default function Training() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="group relative bg-nero-tattico p-8 border border-grigio-acciaio border-opacity-30 hover:border-rosso-controllo hover:border-opacity-50 transition-all duration-300 cursor-pointer"
+              whileHover={{ y: -8 }}
+              className="group relative bg-nero-tattico p-8 border border-grigio-acciaio border-opacity-30 hover:border-rosso-controllo hover:border-opacity-70 transition-all duration-300 cursor-pointer"
             >
               {/* Intensity Bar */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-grigio-acciaio bg-opacity-20 overflow-hidden">
@@ -123,12 +123,9 @@ export default function Training() {
               </div>
 
               {/* Name */}
-              <motion.h3 
-                className="text-2xl font-mono font-bold text-bianco-luce mb-4 group-hover:text-shadow-glow transition-all"
-                whileHover={{ x: 5 }}
-              >
+              <h3 className="text-2xl font-mono font-bold text-bianco-luce mb-4 transition-all">
                 {program.name}
-              </motion.h3>
+              </h3>
 
               {/* Description */}
               <p className="text-sm text-grigio-acciaio leading-relaxed mb-6 group-hover:text-bianco-luce transition-colors">
@@ -137,63 +134,34 @@ export default function Training() {
 
               {/* Meta Info */}
               <div className="space-y-2 text-xs font-mono">
-                <motion.div 
-                  className="flex justify-between"
-                  whileHover={{ x: 2 }}
-                >
+                <div className="flex justify-between">
                   <span className="text-grigio-acciaio">DURATA:</span>
                   <span className="text-bianco-luce">{program.duration}</span>
-                </motion.div>
-                <motion.div 
-                  className="flex justify-between"
-                  whileHover={{ x: 2 }}
-                >
+                </div>
+                <div className="flex justify-between">
                   <span className="text-grigio-acciaio">LIVELLO:</span>
                   <span className="text-bianco-luce">{program.level}</span>
-                </motion.div>
-                <motion.div 
-                  className="flex justify-between"
-                  whileHover={{ x: 2 }}
-                >
+                </div>
+                <div className="flex justify-between">
                   <span className="text-grigio-acciaio">INTENSITÀ:</span>
                   <span className="text-rosso-controllo font-mono font-bold">{program.intensity}%</span>
-                </motion.div>
+                </div>
               </div>
 
               {/* Hover CTA */}
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                whileHover={{ opacity: 1, height: "auto" }}
-                className="mt-6 pt-6 border-t border-grigio-acciaio border-opacity-30 overflow-hidden"
-              >
-                <motion.a
+              <div className="mt-6 pt-6 border-t border-grigio-acciaio border-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <a
                   href="#contact"
-                  className="text-sm font-airborne text-rosso-controllo hover:text-bianco-luce transition-colors flex items-center gap-2 group"
-                  whileHover={{ x: 5 }}
+                  className="text-sm font-mono font-bold text-rosso-controllo hover:text-bianco-luce transition-colors flex items-center gap-2 uppercase tracking-wider"
                 >
-                  <span>INIZIA</span>
-                  <motion.span
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1, repeat: Infinity }}
-                  >
-                    →
-                  </motion.span>
-                </motion.a>
-              </motion.div>
+                  <span>Inizia Ora</span>
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+              </div>
 
               {/* Corner brackets */}
-              <motion.div
-                className="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-rosso-controllo opacity-0 group-hover:opacity-100"
-                initial={{ x: 5, y: 5 }}
-                whileHover={{ x: 0, y: 0 }}
-                transition={{ duration: 0.2 }}
-              />
-              <motion.div
-                className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-rosso-controllo opacity-0 group-hover:opacity-100"
-                initial={{ x: -5, y: -5 }}
-                whileHover={{ x: 0, y: 0 }}
-                transition={{ duration: 0.2 }}
-              />
+              <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-rosso-controllo opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-rosso-controllo opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </motion.div>
           ))}
         </div>
