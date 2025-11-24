@@ -41,32 +41,41 @@ export default function Hero() {
         style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), opacity }}
         className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center"
       >
-        {/* Logo - Tactical placement */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="mb-8"
-        >
-          <img 
-            src="/logo.png" 
-            alt="Otherwise CrossFit" 
-            className="h-32 md:h-40 lg:h-48 w-auto mx-auto"
-            style={{ filter: 'brightness(0) invert(1)' }}
-          />
-        </motion.div>
-
-        {/* Location */}
+        {/* Location with Lines */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-8"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-8 flex items-center justify-center gap-4"
         >
+          <motion.div 
+            className="h-[1px] bg-rosso-controllo w-12"
+            initial={{ width: 0 }}
+            animate={{ width: 48 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          />
           <span className="text-rosso-controllo font-mono text-sm tracking-[0.3em] uppercase">
             Ferrara
           </span>
+          <motion.div 
+            className="h-[1px] bg-rosso-controllo w-12"
+            initial={{ width: 0 }}
+            animate={{ width: 48 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          />
         </motion.div>
+
+        {/* Main Title - OTHERWISE with Airborne font */}
+        <motion.h1
+          className="text-6xl md:text-8xl lg:text-[10rem] font-airborne tracking-tighter leading-none mb-6"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
+          <span className="block text-bianco-luce mb-4">
+            OTHERWISE
+          </span>
+        </motion.h1>
 
         {/* Subtitle */}
         <motion.div
