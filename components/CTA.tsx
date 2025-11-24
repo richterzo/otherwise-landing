@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import { MapPin, Mail, Phone } from "lucide-react";
 
 export default function CTA() {
   const ref = useRef(null);
@@ -74,8 +75,8 @@ export default function CTA() {
                 className="flex items-start gap-4"
                 whileHover={{ x: 5 }}
               >
-                <div className="w-12 h-12 border border-rosso-controllo flex items-center justify-center text-rosso-controllo font-mono flex-shrink-0">
-                  📍
+                <div className="w-12 h-12 border border-rosso-controllo flex items-center justify-center text-rosso-controllo flex-shrink-0">
+                  <MapPin size={24} strokeWidth={1.5} />
                 </div>
                 <div>
                   <div className="text-sm font-mono text-grigio-acciaio mb-1">LOCATION</div>
@@ -87,8 +88,8 @@ export default function CTA() {
                 className="flex items-start gap-4"
                 whileHover={{ x: 5 }}
               >
-                <div className="w-12 h-12 border border-rosso-controllo flex items-center justify-center text-rosso-controllo font-mono flex-shrink-0">
-                  📧
+                <div className="w-12 h-12 border border-rosso-controllo flex items-center justify-center text-rosso-controllo flex-shrink-0">
+                  <Mail size={24} strokeWidth={1.5} />
                 </div>
                 <div>
                   <div className="text-sm font-mono text-grigio-acciaio mb-1">EMAIL</div>
@@ -102,8 +103,8 @@ export default function CTA() {
                 className="flex items-start gap-4"
                 whileHover={{ x: 5 }}
               >
-                <div className="w-12 h-12 border border-rosso-controllo flex items-center justify-center text-rosso-controllo font-mono flex-shrink-0">
-                  📱
+                <div className="w-12 h-12 border border-rosso-controllo flex items-center justify-center text-rosso-controllo flex-shrink-0">
+                  <Phone size={24} strokeWidth={1.5} />
                 </div>
                 <div>
                   <div className="text-sm font-mono text-grigio-acciaio mb-1">TELEFONO</div>
