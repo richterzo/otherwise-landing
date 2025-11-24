@@ -31,7 +31,7 @@ export default function Footer() {
               {/* Logo */}
               <div className="mb-6">
                 <img 
-                  src="/logo.png" 
+                  src="/logo-final.png" 
                   alt="Otherwise CrossFit Logo" 
                   className="h-24 w-auto"
                   style={{ filter: 'brightness(0) invert(1)' }}

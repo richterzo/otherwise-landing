@@ -79,7 +79,7 @@ export default function Navigation() {
             whileHover={{ scale: 1.05 }}
           >
             <img 
-              src="/logo.png" 
+              src="/logo-final.png" 
               alt="Otherwise CrossFit" 
               className="h-12 w-auto"
               style={{ filter: 'brightness(0) invert(1)' }}
