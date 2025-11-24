@@ -146,37 +146,6 @@ export default function Mindset() {
                     
                     {/* Crosshair Box */}
                     <div className="absolute inset-0 border-2 border-grigio-acciaio border-opacity-30 p-8 hover:border-rosso-controllo hover:border-opacity-50 transition-all duration-300 bg-nero-tattico bg-opacity-80">
-                      {/* Center Crosshair */}
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                        <motion.div
-                          className="relative w-32 h-32"
-                          animate={{
-                            rotate: [0, 360]
-                          }}
-                          transition={{
-                            duration: 20,
-                            repeat: Infinity,
-                            ease: "linear"
-                          }}
-                        >
-                          <div className="absolute top-1/2 left-0 w-full h-[1px] bg-rosso-controllo opacity-30" />
-                          <div className="absolute left-1/2 top-0 h-full w-[1px] bg-rosso-controllo opacity-30" />
-                          
-                          <motion.div
-                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-rosso-controllo rounded-full"
-                            animate={{
-                              scale: [1, 1.5, 1],
-                              opacity: [1, 0.5, 1],
-                            }}
-                            transition={{
-                              duration: 2,
-                              repeat: Infinity,
-                              ease: "easeInOut"
-                            }}
-                          />
-                        </motion.div>
-                      </div>
-
                       {/* Corner Brackets */}
                       <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-rosso-controllo opacity-50" />
                       <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-rosso-controllo opacity-50" />
