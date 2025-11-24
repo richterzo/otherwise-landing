@@ -68,7 +68,7 @@ export default function Training() {
             />
           </motion.span>
           
-          <h2 className="text-4xl md:text-5xl font-mono font-bold text-bianco-luce mt-4 mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-airborne text-bianco-luce mt-4 mb-6 tracking-tight">
             NUOVI CORSI<br />
             <span className="text-grigio-acciaio">NUOVI STIMOLI</span>
           </h2>

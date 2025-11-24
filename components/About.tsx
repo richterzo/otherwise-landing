@@ -69,7 +69,7 @@ export default function About() {
               </motion.span>
               
               <motion.h2 
-                className="text-4xl md:text-5xl font-mono font-bold text-bianco-luce mt-4 mb-6"
+                className="text-4xl md:text-5xl lg:text-6xl font-airborne text-bianco-luce mt-4 mb-6 tracking-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
