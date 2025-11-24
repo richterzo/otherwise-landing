@@ -23,7 +23,7 @@ export default function Gallery() {
       url: "/images/Box1.webp",
       title: "Equipment",
       category: "EQUIPMENT",
-      fullImage: true // Show full image without cropping
+      alignBottom: true // Show bottom part of image to see equipment
     },
     {
       id: 3,
@@ -97,15 +97,14 @@ export default function Gallery() {
               >
                 {/* Image */}
                 <motion.div
-                  className={`absolute inset-0 bg-center ${
-                    images[currentIndex].fullImage ? 'bg-contain bg-no-repeat' : 'bg-cover'
+                  className={`absolute inset-0 bg-cover ${
+                    images[currentIndex].alignBottom ? 'bg-bottom' : 'bg-center'
                   }`}
                   style={{
                     backgroundImage: `url(${images[currentIndex].url})`,
                     filter: 'grayscale(100%) contrast(1.2)',
-                    backgroundColor: images[currentIndex].fullImage ? '#0A0A0A' : 'transparent'
                   }}
-                  whileHover={{ scale: images[currentIndex].fullImage ? 1 : 1.05 }}
+                  whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.8 }}
                 />
 
