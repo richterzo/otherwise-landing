@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { BicepsFlexed } from "lucide-react";
 
 export default function Training() {
   const ref = useRef(null);
@@ -14,6 +15,7 @@ export default function Training() {
       description: "Il punto di partenza per chi è alle prime armi ma vuole mettersi in gioco. Un percorso accessibile, guidato passo dopo passo, per imparare i movimenti e costruire le basi di una forma fisica solida e duratura.",
       duration: "Base",
       level: "Principianti",
+      level_number: 1,
       intensity: 60
     },
     {
@@ -22,6 +24,7 @@ export default function Training() {
       description: "Allenamento funzionale completo, ad alta intensità, basato su esercizi variati e stimolanti. Ideale per chi vuole allenarsi con metodo, senza routine noiose. Per chi cerca risultati concreti.",
       duration: "Variabile",
       level: "Tutti i livelli",
+      level_number: 2,
       intensity: 80
     },
     {
@@ -30,6 +33,7 @@ export default function Training() {
       description: "Dedicato a chi ha già esperienza con l'allenamento funzionale e vuole lavorare in modo tecnico, preciso, con progressioni avanzate e obiettivi concreti. Un programma pensato per gli atleti che vogliono il massimo.",
       duration: "Avanzato",
       level: "Esperti",
+      level_number: 3,
       intensity: 95
     }
   ];
@@ -100,20 +104,22 @@ export default function Training() {
                 />
               </div>
 
-              {/* Status Indicator */}
-              <div className="flex items-center justify-end mb-6">
-                <motion.div
-                  className="w-2 h-2 bg-rosso-controllo rounded-full"
-                  animate={{
-                    scale: [1, 1.5, 1],
-                    opacity: [0.5, 1, 0.5],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: index * 0.3
-                  }}
-                />
+              {/* Level Indicator - Biceps */}
+              <div className="flex items-center justify-end gap-1 mb-6">
+                {Array.from({ length: program.level_number }).map((_, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.3, delay: 0.6 + index * 0.1 + i * 0.1 }}
+                  >
+                    <BicepsFlexed 
+                      size={20} 
+                      strokeWidth={1.5} 
+                      className="text-rosso-controllo"
+                    />
+                  </motion.div>
+                ))}
               </div>
 
               {/* Name */}
