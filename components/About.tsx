@@ -191,7 +191,7 @@ export default function About() {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-grigio-cemento border-opacity-30"
         >
           {[
-            { value: "24/7", label: "ACCESSO", delay: 0 },
+            { value: "7+", label: "ANNI", delay: 0 },
             { value: "15+", label: "COACHES", delay: 0.1 },
             { value: "300m²", label: "FACILITY", delay: 0.2 },
             { value: "100%", label: "FOCUS", delay: 0.3 }
