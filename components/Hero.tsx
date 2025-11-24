@@ -36,6 +36,39 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-nero-tattico/80 via-nero-tattico/60 to-nero-tattico" />
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-nero-tattico/40 to-nero-tattico" />
 
+      {/* Center Crosshair - Disappears on scroll */}
+      <motion.div
+        style={{ 
+          opacity: useTransform(scrollYProgress, [0, 0.3], [0.6, 0])
+        }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none"
+      >
+        {/* Outer circle */}
+        <div className="relative w-32 h-32">
+          <div className="absolute inset-0 rounded-full border-2 border-rosso-controllo opacity-40" />
+          <div className="absolute inset-4 rounded-full border border-rosso-controllo opacity-30" />
+          
+          {/* Crosshair lines */}
+          <div className="absolute top-1/2 left-0 w-full h-[1px] bg-rosso-controllo opacity-50" />
+          <div className="absolute top-0 left-1/2 w-[1px] h-full bg-rosso-controllo opacity-50" />
+          
+          {/* Center dot */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-rosso-controllo shadow-lg shadow-rosso-controllo/50">
+            <motion.div
+              className="absolute inset-0 rounded-full bg-rosso-controllo"
+              animate={{ scale: [1, 1.5, 1], opacity: [1, 0, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </div>
+          
+          {/* Corner markers */}
+          <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-rosso-controllo opacity-40" />
+          <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-rosso-controllo opacity-40" />
+          <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-rosso-controllo opacity-40" />
+          <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-rosso-controllo opacity-40" />
+        </div>
+      </motion.div>
+
       {/* Content */}
       <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), opacity }}
