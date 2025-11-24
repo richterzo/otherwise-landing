@@ -39,26 +39,26 @@ export default function Hero() {
       {/* Content */}
       <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), opacity }}
-        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center"
+        className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20"
       >
         {/* Location with Lines */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-8 flex items-center justify-center gap-4"
+          className="mb-6 sm:mb-8 flex items-center justify-center gap-3 sm:gap-4"
         >
           <motion.div 
-            className="h-[1px] bg-rosso-controllo w-12"
+            className="h-[1px] bg-rosso-controllo w-8 sm:w-12"
             initial={{ width: 0 }}
             animate={{ width: 48 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           />
-          <span className="text-rosso-controllo font-mono text-sm tracking-[0.3em] uppercase">
+          <span className="text-rosso-controllo font-mono text-xs sm:text-sm tracking-[0.3em] uppercase">
             Ferrara
           </span>
           <motion.div 
-            className="h-[1px] bg-rosso-controllo w-12"
+            className="h-[1px] bg-rosso-controllo w-8 sm:w-12"
             initial={{ width: 0 }}
             animate={{ width: 48 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -67,12 +67,12 @@ export default function Hero() {
 
         {/* Main Title - OTHERWISE with Airborne font */}
         <motion.h1
-          className="text-6xl md:text-8xl lg:text-[10rem] font-airborne tracking-tighter leading-none mb-6"
+          className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-airborne tracking-tighter leading-none mb-4 sm:mb-6"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <span className="block text-bianco-luce mb-4">
+          <span className="block text-bianco-luce">
             OTHERWISE
           </span>
         </motion.h1>
@@ -82,16 +82,16 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mb-4"
+          className="mb-3 sm:mb-4"
         >
-          <span className="text-xl md:text-3xl text-grigio-acciaio font-mono tracking-wider uppercase">
+          <span className="text-base sm:text-xl md:text-2xl lg:text-3xl text-grigio-acciaio font-mono tracking-wider uppercase">
             Athletics Evolved
           </span>
         </motion.div>
 
         {/* Red Line Separator */}
         <motion.div
-          className="w-32 h-[2px] bg-gradient-to-r from-transparent via-rosso-controllo to-transparent mx-auto mb-10"
+          className="w-24 sm:w-32 h-[2px] bg-gradient-to-r from-transparent via-rosso-controllo to-transparent mx-auto mb-8 sm:mb-10"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.7 }}
@@ -102,58 +102,52 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mb-14 max-w-3xl mx-auto space-y-6"
+          className="mb-10 sm:mb-14 max-w-3xl mx-auto space-y-5 sm:space-y-6"
         >
-          <p className="text-sm md:text-base text-bianco-luce font-mono">
+          <p className="text-sm sm:text-base lg:text-lg text-bianco-luce font-mono leading-relaxed px-4">
             Functional fitness nel cuore di Ferrara. Coach certificati, programmazione seria, risultati concreti.
           </p>
           
           {/* Quote with red borders on both sides */}
-          <blockquote className="relative border-l-2 border-r-2 border-rosso-controllo px-6 py-3">
-            <p className="text-base md:text-lg text-grigio-acciaio font-mono leading-relaxed">
-              "La motivazione ti fa iniziare.<br />
-              La disciplina ti fa restare."
+          <blockquote className="relative border-l-2 border-r-2 border-rosso-controllo px-4 sm:px-6 py-3 sm:py-4">
+            <p className="text-sm sm:text-base md:text-lg text-grigio-acciaio font-mono leading-relaxed">
+              La motivazione ti fa iniziare.<br />
+              La disciplina ti fa restare.
             </p>
           </blockquote>
         </motion.div>
 
-        {/* CTA Buttons - Large and Stunning */}
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="flex flex-col sm:flex-row gap-5 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-stretch sm:items-center max-w-xl mx-auto"
         >
-          {/* Primary CTA - Stunning Red */}
+          {/* Primary CTA */}
           <motion.a
             href="#contact"
             aria-label="Prenota una prova gratuita"
-            className="group relative w-full sm:w-auto px-12 py-6 bg-rosso-controllo text-bianco-luce font-mono font-bold text-base tracking-wider uppercase overflow-hidden focus:outline-none focus:ring-4 focus:ring-bianco-luce focus:ring-offset-2 focus:ring-offset-nero-tattico"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
+            className="group relative w-full sm:flex-1 px-8 sm:px-10 py-4 sm:py-5 bg-rosso-controllo text-bianco-luce font-mono font-bold text-sm sm:text-base tracking-wider uppercase overflow-hidden focus:outline-none focus:ring-4 focus:ring-bianco-luce focus:ring-offset-2 focus:ring-offset-nero-tattico transition-all"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
             <span className="relative z-10">Prova Gratuita</span>
-            {/* Shine effect */}
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-transparent via-bianco-luce to-transparent opacity-0 group-hover:opacity-20"
               initial={{ x: "-100%" }}
               whileHover={{ x: "200%" }}
               transition={{ duration: 0.6 }}
             />
-            {/* Glow effect */}
-            <motion.div
-              className="absolute inset-0 shadow-lg shadow-rosso-controllo/0 group-hover:shadow-rosso-controllo/50"
-              transition={{ duration: 0.3 }}
-            />
           </motion.a>
 
-          {/* Secondary CTA - Clean White */}
+          {/* Secondary CTA */}
           <motion.a
             href="#training"
             aria-label="Scopri i nostri programmi di allenamento"
-            className="group w-full sm:w-auto px-12 py-6 border-2 border-bianco-luce text-bianco-luce font-mono font-bold text-base tracking-wider uppercase hover:bg-bianco-luce hover:text-nero-tattico transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-rosso-controllo focus:ring-offset-2 focus:ring-offset-nero-tattico"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
+            className="group w-full sm:flex-1 px-8 sm:px-10 py-4 sm:py-5 border-2 border-bianco-luce text-bianco-luce font-mono font-bold text-sm sm:text-base tracking-wider uppercase hover:bg-bianco-luce hover:text-nero-tattico transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-rosso-controllo focus:ring-offset-2 focus:ring-offset-nero-tattico"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
             Programmi
           </motion.a>
