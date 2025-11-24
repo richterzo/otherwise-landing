@@ -188,13 +188,7 @@ export default function About() {
                     </div>
                     
                     <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <motion.span 
-                          className="text-xs font-airborne text-grigio-acciaio"
-                          whileHover={{ color: '#B31010' }}
-                        >
-                          {feature.number}
-                        </motion.span>
+                      <div className="mb-2">
                         <h3 className="text-base sm:text-lg font-mono font-bold text-bianco-luce tracking-wider break-words">
                           {feature.title}
                         </h3>

@@ -156,7 +156,7 @@ export default function Training() {
                   whileHover={{ x: 2 }}
                 >
                   <span className="text-grigio-acciaio">INTENSITÀ:</span>
-                  <span className="text-rosso-controllo font-airborne">{program.intensity}%</span>
+                  <span className="text-rosso-controllo font-mono font-bold">{program.intensity}%</span>
                 </motion.div>
               </div>
 
