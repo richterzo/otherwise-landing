@@ -1,14 +1,16 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Gallery() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Gallery images - Real Otherwise gym photos (4 photos)
+  // Gallery images - Real Otherwise gym photos (3 photos)
   const images = [
     {
       id: 1,
@@ -27,14 +29,16 @@ export default function Gallery() {
       url: "/images/Box2.webp",
       title: "Equipment Zone",
       category: "BOX"
-    },
-    {
-      id: 4,
-      url: "/images/Box3.webp",
-      title: "Functional Zone",
-      category: "BOX"
     }
   ];
+
+  const nextImage = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
 
   return (
     <section id="gallery" className="relative py-32 bg-nero-tattico overflow-hidden" ref={ref}>
@@ -76,69 +80,93 @@ export default function Gallery() {
           </p>
         </motion.div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {images.map((image, index) => (
-            <motion.div
-              key={image.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-              className="group relative aspect-square overflow-hidden cursor-pointer"
-              onClick={() => setSelectedImage(image.id)}
-            >
-              {/* Image */}
+        {/* Gallery Carousel */}
+        <div className="relative">
+          {/* Carousel Container */}
+          <div className="relative overflow-hidden rounded-sm">
+            <AnimatePresence mode="wait">
               <motion.div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{
-                  backgroundImage: `url(${image.url})`,
-                  filter: 'grayscale(100%) contrast(1.2)',
-                }}
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.6 }}
-              />
-
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-nero-tattico via-nero-tattico/60 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300" />
-
-              {/* Border Frame */}
-              <div className="absolute inset-0 border border-grigio-acciaio border-opacity-20 group-hover:border-rosso-controllo group-hover:border-opacity-60 transition-all duration-300">
-                {/* Corner Brackets */}
-                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-rosso-controllo opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-rosso-controllo opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-rosso-controllo opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-rosso-controllo opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-
-              {/* Content */}
-              <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileHover={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <span className="text-rosso-controllo font-mono text-xs tracking-widest uppercase mb-2 block">
-                    {image.category}
-                  </span>
-                  <h3 className="text-bianco-luce font-mono font-bold text-lg">
-                    {image.title}
-                  </h3>
-                </motion.div>
-              </div>
-
-              {/* Hover Icon */}
-              <motion.div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                whileHover={{ scale: 1.2 }}
+                key={currentIndex}
+                initial={{ opacity: 0, x: 300 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -300 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                className="relative aspect-[16/10] md:aspect-[21/9] lg:aspect-[3/1] overflow-hidden cursor-pointer group"
+                onClick={() => setSelectedImage(images[currentIndex].id)}
               >
-                <div className="w-12 h-12 border-2 border-rosso-controllo flex items-center justify-center">
-                  <svg className="w-6 h-6 text-rosso-controllo" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                  </svg>
+                {/* Image */}
+                <motion.div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${images[currentIndex].url})`,
+                    filter: 'grayscale(100%) contrast(1.2)',
+                  }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.8 }}
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-nero-tattico via-nero-tattico/40 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+
+                {/* Border Frame */}
+                <div className="absolute inset-0 border-2 border-grigio-acciaio border-opacity-30 group-hover:border-rosso-controllo group-hover:border-opacity-60 transition-all duration-300">
+                  {/* Corner Brackets */}
+                  <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-rosso-controllo opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-rosso-controllo opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-rosso-controllo opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-rosso-controllo opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+
+                {/* Content */}
+                <div className="absolute inset-0 p-6 md:p-12 flex flex-col justify-end">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
+                    <span className="text-rosso-controllo font-mono text-xs md:text-sm tracking-widest uppercase mb-2 block">
+                      {images[currentIndex].category}
+                    </span>
+                    <h3 className="text-bianco-luce font-mono font-bold text-2xl md:text-4xl lg:text-5xl">
+                      {images[currentIndex].title}
+                    </h3>
+                  </motion.div>
                 </div>
               </motion.div>
-            </motion.div>
-          ))}
+            </AnimatePresence>
+
+            {/* Navigation Buttons - Desktop */}
+            <button
+              onClick={prevImage}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-nero-tattico/80 hover:bg-rosso-controllo border-2 border-grigio-acciaio hover:border-rosso-controllo transition-all duration-300 flex items-center justify-center z-10 opacity-0 group-hover:opacity-100"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="w-6 h-6 md:w-7 md:h-7 text-bianco-luce" />
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 bg-nero-tattico/80 hover:bg-rosso-controllo border-2 border-grigio-acciaio hover:border-rosso-controllo transition-all duration-300 flex items-center justify-center z-10 opacity-0 group-hover:opacity-100"
+              aria-label="Next image"
+            >
+              <ChevronRight className="w-6 h-6 md:w-7 md:h-7 text-bianco-luce" />
+            </button>
+          </div>
+
+          {/* Dots Indicator - Mobile & Desktop */}
+          <div className="flex justify-center gap-3 mt-6">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? 'w-8 bg-rosso-controllo'
+                    : 'w-2 bg-grigio-acciaio hover:bg-grigio-acciaio/50'
+                }`}
+                aria-label={`Go to image ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Bottom Info */}
@@ -192,8 +220,8 @@ export default function Gallery() {
 
             <img
               src={images.find(img => img.id === selectedImage)?.url}
-              alt="Gallery"
-              className="w-full h-auto"
+              alt={images.find(img => img.id === selectedImage)?.title || "Gallery"}
+              className="w-full h-auto max-h-[90vh] object-contain"
               style={{ filter: 'grayscale(100%) contrast(1.2)' }}
             />
           </motion.div>
