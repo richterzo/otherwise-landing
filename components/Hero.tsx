@@ -97,23 +97,23 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.7 }}
         />
 
-        {/* Quote */}
+        {/* Description */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mb-14 max-w-3xl mx-auto space-y-4"
+          className="mb-14 max-w-3xl mx-auto space-y-6"
         >
-          <blockquote className="relative">
-            <div className="text-4xl text-rosso-controllo opacity-30 font-mono absolute -top-2 -left-4">"</div>
-            <p className="text-lg md:text-xl text-grigio-acciaio italic leading-relaxed px-6">
-              La Motivazione Ti Fa Iniziare. La Disciplina Ti Fa Restare.
-            </p>
-            <p className="text-sm text-grigio-acciaio font-mono mt-3 text-right pr-6">— CIT</p>
-          </blockquote>
           <p className="text-sm md:text-base text-grigio-acciaio font-mono">
             Functional fitness nel cuore di Ferrara. Coach certificati, programmazione seria, risultati concreti.
           </p>
+          
+          {/* Quote */}
+          <blockquote className="relative border-l-2 border-rosso-controllo pl-6 py-2">
+            <p className="text-base md:text-lg text-bianco-luce italic leading-relaxed">
+              "La Motivazione Ti Fa Iniziare. La Disciplina Ti Fa Restare."
+            </p>
+          </blockquote>
         </motion.div>
 
         {/* CTA Buttons - Large and Stunning */}
