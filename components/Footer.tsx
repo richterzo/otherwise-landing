@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Footer() {
   const socialLinks = [
-    { name: "Instagram", href: "https://instagram.com/otherwiseferrara", icon: "IG" },
+    { name: "Instagram", href: "https://www.instagram.com/otherwiseathletics_evolved/", icon: "IG" },
     { name: "Facebook", href: "https://facebook.com/otherwiseferrara", icon: "FB" },
     { name: "YouTube", href: "https://youtube.com/@otherwiseferrara", icon: "YT" },
   ];
