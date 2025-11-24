@@ -12,19 +12,19 @@ export default function Gallery() {
   const images = [
     {
       id: 1,
-      url: "/images/Box (1).webp",
+      url: "/images/Box1.webp",
       title: "Training Area",
       category: "BOX"
     },
     {
       id: 2,
-      url: "/images/Box 1.webp",
+      url: "/images/Box2.webp",
       title: "Main Box",
       category: "BOX"
     },
     {
       id: 3,
-      url: "/images/Box 6.webp",
+      url: "/images/Box3.webp",
       title: "Equipment Zone",
       category: "BOX"
     }
