@@ -183,13 +183,9 @@ export default function About() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="flex items-start gap-4">
-                    <motion.div
-                      className="text-rosso-controllo opacity-30 group-hover:opacity-100 transition-opacity flex-shrink-0"
-                      whileHover={{ rotate: 15, scale: 1.1 }}
-                      transition={{ type: "spring", stiffness: 200 }}
-                    >
+                    <div className="text-rosso-controllo opacity-30 group-hover:opacity-100 transition-all duration-300 flex-shrink-0">
                       <feature.icon size={32} strokeWidth={1.5} />
-                    </motion.div>
+                    </div>
                     
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">

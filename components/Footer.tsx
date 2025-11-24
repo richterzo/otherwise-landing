@@ -86,8 +86,8 @@ export default function Footer() {
                     key={social.name}
                     href={social.href}
                     className="w-12 h-12 border border-grigio-acciaio border-opacity-30 hover:border-rosso-controllo hover:border-opacity-100 flex items-center justify-center text-grigio-acciaio hover:text-bianco-luce transition-all text-xs font-mono"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    whileTap={{ scale: 0.9 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     {social.icon}
                   </motion.a>
