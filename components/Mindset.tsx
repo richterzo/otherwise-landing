@@ -137,7 +137,7 @@ export default function Mindset() {
                             ? 'url(/images/training-1.webp)'
                             : index === 1
                             ? 'url(/images/training-2.webp)'
-                            : 'url(/images/facility-1.webp)',
+                            : 'url(/images/hero-feature.webp)',
                           filter: 'grayscale(100%) contrast(1.2)',
                         }}
                       />

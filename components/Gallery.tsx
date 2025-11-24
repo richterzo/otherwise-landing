@@ -8,42 +8,24 @@ export default function Gallery() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  // Gallery images - Real Otherwise gym photos
+  // Gallery images - Real Otherwise gym photos (3 photos only)
   const images = [
     {
       id: 1,
-      url: "/images/hero-feature.webp",
-      title: "Main Training Area",
+      url: "/images/Box (1).webp",
+      title: "Training Area",
       category: "BOX"
     },
     {
       id: 2,
-      url: "/images/facility-1.webp",
-      title: "Olympic Lifting Zone",
-      category: "EQUIPMENT"
+      url: "/images/Box 1.webp",
+      title: "Main Box",
+      category: "BOX"
     },
     {
       id: 3,
-      url: "/images/training-1.webp",
-      title: "Group Classes",
-      category: "TRAINING"
-    },
-    {
-      id: 4,
-      url: "/images/training-2.webp",
-      title: "Functional Training",
-      category: "TRAINING"
-    },
-    {
-      id: 5,
-      url: "/images/facility-2.webp",
-      title: "Equipment & Rigs",
-      category: "EQUIPMENT"
-    },
-    {
-      id: 6,
-      url: "/images/about-main.webp",
-      title: "Community Training",
+      url: "/images/Box 6.webp",
+      title: "Equipment Zone",
       category: "BOX"
     }
   ];
