@@ -9,19 +9,19 @@ export default function About() {
 
   const features = [
     {
-      number: "01",
+      number: "1",
       title: "COACH CERTIFICATI",
       description: "Oltre 15 trainer qualificati CrossFit L1/L2. Tecnica prima di tutto, sicurezza sempre.",
       icon: "⊗"
     },
     {
-      number: "02",
+      number: "2",
       title: "ATTREZZATURA ALL'AVANGUARDIA",
       description: "Rogue, Eleiko, Concept2. 300m² di spazio, tutto quello che serve per allenarti al meglio.",
       icon: "⊕"
     },
     {
-      number: "03",
+      number: "3",
       title: "COMMUNITY FORTE",
       description: "Non sei un numero. Qui ti alleni con persone che hanno i tuoi stessi obiettivi.",
       icon: "⊙"
