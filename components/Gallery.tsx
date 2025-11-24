@@ -8,24 +8,30 @@ export default function Gallery() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  // Gallery images - Real Otherwise gym photos (3 photos only)
+  // Gallery images - Real Otherwise gym photos (4 photos)
   const images = [
     {
       id: 1,
-      url: "/images/Box1.webp",
+      url: "/images/Box0.webp",
       title: "Training Area",
       category: "BOX"
     },
     {
       id: 2,
-      url: "/images/Box2.webp",
+      url: "/images/Box1.webp",
       title: "Main Box",
       category: "BOX"
     },
     {
       id: 3,
-      url: "/images/Box3.webp",
+      url: "/images/Box2.webp",
       title: "Equipment Zone",
+      category: "BOX"
+    },
+    {
+      id: 4,
+      url: "/images/Box3.webp",
+      title: "Functional Zone",
       category: "BOX"
     }
   ];
