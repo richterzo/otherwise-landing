@@ -15,20 +15,21 @@ export default function Gallery() {
     {
       id: 1,
       url: "/images/Box0.webp",
-      title: "Training Area",
+      title: "Main Box",
       category: "BOX"
     },
     {
       id: 2,
       url: "/images/Box1.webp",
-      title: "Main Box",
-      category: "BOX"
+      title: "Equipment",
+      category: "EQUIPMENT",
+      fullImage: true // Show full image without cropping
     },
     {
       id: 3,
       url: "/images/Box2.webp",
-      title: "Equipment Zone",
-      category: "BOX"
+      title: "Training Zone",
+      category: "TRAINING"
     }
   ];
 
@@ -96,12 +97,15 @@ export default function Gallery() {
               >
                 {/* Image */}
                 <motion.div
-                  className="absolute inset-0 bg-cover bg-center"
+                  className={`absolute inset-0 bg-center ${
+                    images[currentIndex].fullImage ? 'bg-contain bg-no-repeat' : 'bg-cover'
+                  }`}
                   style={{
                     backgroundImage: `url(${images[currentIndex].url})`,
                     filter: 'grayscale(100%) contrast(1.2)',
+                    backgroundColor: images[currentIndex].fullImage ? '#0A0A0A' : 'transparent'
                   }}
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: images[currentIndex].fullImage ? 1 : 1.05 }}
                   transition={{ duration: 0.8 }}
                 />
 
