@@ -109,9 +109,10 @@ export default function Hero() {
           </p>
           
           {/* Quote with red borders on both sides */}
-          <blockquote className="relative border-l-2 border-r-2 border-rosso-controllo px-6 py-2">
+          <blockquote className="relative border-l-2 border-r-2 border-rosso-controllo px-6 py-3">
             <p className="text-base md:text-lg text-grigio-acciaio font-mono leading-relaxed">
-              "La motivazione ti fa iniziare. La disciplina ti fa restare."
+              "La motivazione ti fa iniziare.<br />
+              La disciplina ti fa restare."
             </p>
           </blockquote>
         </motion.div>
