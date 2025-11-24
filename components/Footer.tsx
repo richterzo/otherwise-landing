@@ -193,7 +193,7 @@ export default function Footer() {
           className="mt-8 text-center"
         >
           <p className="text-[10px] text-grigio-acciaio font-mono opacity-50">
-            44.8381° N, 11.6198° E / VIA CASELLI 13E
+            44.8381° N, 11.6198° E
           </p>
         </motion.div>
       </div>
