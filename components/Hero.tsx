@@ -35,15 +35,6 @@ export default function Hero() {
       {/* Gradient Overlays for Depth */}
       <div className="absolute inset-0 bg-gradient-to-b from-nero-tattico/80 via-nero-tattico/60 to-nero-tattico" />
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-nero-tattico/40 to-nero-tattico" />
-      
-      {/* Subtle Grid Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
-          backgroundSize: '100px 100px'
-        }} />
-      </div>
 
       {/* Content */}
       <motion.div
@@ -81,15 +72,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          <motion.span 
-            className="block text-bianco-luce mb-4"
-            whileHover={{ 
-              textShadow: "0 0 40px rgba(179, 16, 16, 0.4)",
-              transition: { duration: 0.3 }
-            }}
-          >
+          <span className="block text-bianco-luce mb-4">
             OTHERWISE
-          </motion.span>
+          </span>
         </motion.h1>
 
         {/* Subtitle */}
