@@ -1,34 +1,22 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0]);
-
   return (
     <section
-      ref={containerRef}
       aria-label="Hero section - Otherwise Athletics Evolved"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Image B&W with Parallax */}
-      <motion.div 
+      {/* Background Image B&W */}
+      <div 
         role="img"
         aria-label="CrossFit training background"
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: 'url(/images/hero.webp)',
           filter: 'grayscale(100%) contrast(1.3)',
-          opacity: 0.25,
-          y
+          opacity: 0.25
         }}
       />
 
@@ -37,10 +25,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-nero-tattico/40 to-nero-tattico" />
 
       {/* Content */}
-      <motion.div
-        style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), opacity }}
-        className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20"
-      >
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
         {/* Location with Lines */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -156,50 +141,7 @@ export default function Hero() {
           </motion.a>
         </motion.div>
 
-      </motion.div>
-
-      {/* Scroll Indicator - Bottom Center */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
-      >
-        <motion.a
-          href="#about"
-          aria-label="Scorri per saperne di più"
-          animate={{ y: [0, 12, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-3 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-rosso-controllo"
-        >
-          <span className="text-xs text-grigio-acciaio font-mono tracking-widest uppercase opacity-60 group-hover:opacity-100 transition-opacity">
-            Scroll
-          </span>
-          <div className="flex flex-col items-center gap-2">
-            {/* Double chevron for better visibility */}
-            <motion.svg 
-              className="w-6 h-6 text-rosso-controllo" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-              animate={{ opacity: [0.3, 1, 0.3] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0 }}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </motion.svg>
-            <motion.svg 
-              className="w-6 h-6 text-rosso-controllo -mt-4" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-              animate={{ opacity: [0.3, 1, 0.3] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </motion.svg>
-          </div>
-        </motion.a>
-      </motion.div>
+      </div>
     </section>
   );
 }
