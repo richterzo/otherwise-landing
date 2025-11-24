@@ -68,36 +68,22 @@ export default function Navigation() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo with glitch effect - mantiene font-airborne per brand */}
+          {/* Logo */}
           <motion.a
             href="#"
             aria-label="Otherwise Athletics Evolved - Home"
-            className="relative text-xl font-airborne font-bold tracking-wider group"
+            className="relative group"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             whileHover={{ scale: 1.05 }}
           >
-            <span className="relative z-10">
-              <span className="text-bianco-luce">OTHERWISE</span>
-              <motion.span 
-                className="text-rosso-controllo ml-1"
-                animate={{ opacity: [1, 0, 1] }}
-                transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 3 }}
-              >
-                _
-              </motion.span>
-            </span>
-            
-            {/* Glitch layers */}
-            <span className="absolute top-0 left-0 text-bianco-luce opacity-0 group-hover:opacity-100 transition-opacity" 
-                  style={{ textShadow: '-2px 0 #B31010', transform: 'translate(-2px, 0)' }}>
-              OTHERWISE<span className="text-rosso-controllo ml-1">_</span>
-            </span>
-            <span className="absolute top-0 left-0 text-bianco-luce opacity-0 group-hover:opacity-100 transition-opacity" 
-                  style={{ textShadow: '2px 0 #0A0A0A', transform: 'translate(2px, 0)' }}>
-              OTHERWISE<span className="text-rosso-controllo ml-1">_</span>
-            </span>
+            <img 
+              src="/logo.png" 
+              alt="Otherwise CrossFit" 
+              className="h-12 w-auto"
+              style={{ filter: 'brightness(0) invert(1)' }}
+            />
           </motion.a>
 
           {/* Navigation Items */}
