@@ -104,13 +104,13 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mb-14 max-w-3xl mx-auto space-y-6"
         >
-          <p className="text-sm md:text-base text-grigio-acciaio font-mono">
+          <p className="text-sm md:text-base text-bianco-luce font-mono">
             Functional fitness nel cuore di Ferrara. Coach certificati, programmazione seria, risultati concreti.
           </p>
           
-          {/* Quote */}
-          <blockquote className="relative border-l-2 border-rosso-controllo pl-6 py-2">
-            <p className="text-base md:text-lg text-bianco-luce font-mono leading-relaxed">
+          {/* Quote with red borders on both sides */}
+          <blockquote className="relative border-l-2 border-r-2 border-rosso-controllo px-6 py-2">
+            <p className="text-base md:text-lg text-grigio-acciaio font-mono leading-relaxed">
               "La motivazione ti fa iniziare. La disciplina ti fa restare."
             </p>
           </blockquote>
@@ -205,3 +205,4 @@ export default function Hero() {
     </section>
   );
 }
+
