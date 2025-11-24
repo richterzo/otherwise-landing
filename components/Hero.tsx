@@ -39,7 +39,7 @@ export default function Hero() {
       {/* Content */}
       <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "15%"]), opacity }}
-        className="relative z-10 max-w-5xl mx-auto px-6 text-center"
+        className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center"
       >
         {/* Location with Lines */}
         <motion.div

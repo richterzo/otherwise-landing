@@ -16,7 +16,7 @@ export default function About() {
     },
     {
       number: "02",
-      title: "ATTREZZATURA TOP",
+      title: "ATTREZZATURA ALL'AVANGUARDIA",
       description: "Rogue, Eleiko, Concept2. 300m² di spazio, tutto quello che serve per allenarti al meglio.",
       icon: "⊕"
     },
@@ -47,8 +47,8 @@ export default function About() {
         }} />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Left Column - Text */}
           <div>
             <motion.div
@@ -198,7 +198,7 @@ export default function About() {
                         >
                           {feature.number}
                         </motion.span>
-                        <h3 className="text-lg font-mono font-bold text-bianco-luce tracking-wider">
+                        <h3 className="text-base sm:text-lg font-mono font-bold text-bianco-luce tracking-wider break-words">
                           {feature.title}
                         </h3>
                       </div>
