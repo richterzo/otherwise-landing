@@ -134,10 +134,10 @@ export default function Mindset() {
                         className="absolute inset-0 bg-cover bg-center"
                         style={{
                           backgroundImage: index === 0 
-                            ? 'url(https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80)'
+                            ? 'url(/images/training-1.webp)'
                             : index === 1
-                            ? 'url(https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&q=80)'
-                            : 'url(https://images.unsplash.com/photo-1623874228601-f4193c7b1818?w=600&q=80)',
+                            ? 'url(/images/training-2.webp)'
+                            : 'url(/images/facility-1.webp)',
                           filter: 'grayscale(100%) contrast(1.3)',
                           opacity: 0.15
                         }}
