@@ -100,14 +100,8 @@ export default function Training() {
                 />
               </div>
 
-              {/* Code */}
-              <div className="flex items-center justify-between mb-6">
-                <motion.span 
-                  className="text-xs font-airborne text-grigio-acciaio tracking-wider"
-                  whileHover={{ color: '#B31010' }}
-                >
-                  {program.code}
-                </motion.span>
+              {/* Status Indicator */}
+              <div className="flex items-center justify-end mb-6">
                 <motion.div
                   className="w-2 h-2 bg-rosso-controllo rounded-full"
                   animate={{
