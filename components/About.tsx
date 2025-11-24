@@ -2,6 +2,7 @@
 
 import { motion, useInView, useMotionValue, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { ShieldCheck, Dumbbell, Users } from "lucide-react";
 
 export default function About() {
   const ref = useRef(null);
@@ -12,19 +13,19 @@ export default function About() {
       number: "1",
       title: "COACH CERTIFICATI",
       description: "Oltre 15 trainer qualificati CrossFit L1/L2. Tecnica prima di tutto, sicurezza sempre.",
-      icon: "⊗"
+      icon: ShieldCheck
     },
     {
       number: "2",
       title: "ATTREZZATURA ALL'AVANGUARDIA",
       description: "Rogue, Eleiko, Concept2. 300m² di spazio, tutto quello che serve per allenarti al meglio.",
-      icon: "⊕"
+      icon: Dumbbell
     },
     {
       number: "3",
       title: "COMMUNITY FORTE",
       description: "Non sei un numero. Qui ti alleni con persone che hanno i tuoi stessi obiettivi.",
-      icon: "⊙"
+      icon: Users
     }
   ];
 
@@ -183,11 +184,11 @@ export default function About() {
                 >
                   <div className="flex items-start gap-4">
                     <motion.div
-                      className="text-3xl text-rosso-controllo opacity-30 group-hover:opacity-100 transition-opacity flex-shrink-0"
-                      whileHover={{ rotate: 180, scale: 1.2 }}
+                      className="text-rosso-controllo opacity-30 group-hover:opacity-100 transition-opacity flex-shrink-0"
+                      whileHover={{ rotate: 15, scale: 1.1 }}
                       transition={{ type: "spring", stiffness: 200 }}
                     >
-                      {feature.icon}
+                      <feature.icon size={32} strokeWidth={1.5} />
                     </motion.div>
                     
                     <div className="flex-1">
