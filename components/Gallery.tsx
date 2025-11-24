@@ -10,7 +10,7 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Gallery images - Real Otherwise gym photos (3 photos)
+  // Gallery images - Real Otherwise gym photos (4 photos)
   const images = [
     {
       id: 1,
@@ -30,6 +30,12 @@ export default function Gallery() {
       url: "/images/Box2.webp",
       title: "Training Zone",
       category: "TRAINING"
+    },
+    {
+      id: 4,
+      url: "/images/Box5.webp",
+      title: "Training Area",
+      category: "BOX"
     }
   ];
 
