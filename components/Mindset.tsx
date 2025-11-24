@@ -124,28 +124,28 @@ export default function Mindset() {
                 {/* Right: Visual Element */}
                 <div className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
                   <motion.div
-                    className="relative aspect-square"
+                    className="relative aspect-square group"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
                     {/* Background Image */}
                     <div className="absolute inset-0 overflow-hidden">
                       <div 
-                        className="absolute inset-0 bg-cover bg-center"
+                        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                         style={{
                           backgroundImage: index === 0 
                             ? 'url(/images/training-1.webp)'
                             : index === 1
                             ? 'url(/images/training-2.webp)'
                             : 'url(/images/facility-1.webp)',
-                          filter: 'grayscale(100%) contrast(1.3)',
-                          opacity: 0.15
+                          filter: 'grayscale(100%) contrast(1.2)',
                         }}
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-nero-tattico/60 via-nero-tattico/20 to-transparent" />
                     </div>
                     
                     {/* Crosshair Box */}
-                    <div className="absolute inset-0 border-2 border-grigio-acciaio border-opacity-30 p-8 hover:border-rosso-controllo hover:border-opacity-50 transition-all duration-300 bg-nero-tattico bg-opacity-80">
+                    <div className="absolute inset-0 border-2 border-grigio-acciaio border-opacity-30 p-8 hover:border-rosso-controllo hover:border-opacity-50 transition-all duration-300 group">
                       {/* Corner Brackets */}
                       <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-rosso-controllo opacity-50" />
                       <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-rosso-controllo opacity-50" />
