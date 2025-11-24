@@ -117,7 +117,7 @@ export default function About() {
                   transition={{ duration: 0.8, delay: 0.7 }}
                 />
                 <span className="text-sm font-mono text-grigio-acciaio tracking-wider">
-                  EST. 2025 / FERRARA
+                  2025 / FERRARA
                 </span>
               </motion.div>
             </motion.div>
@@ -149,18 +149,6 @@ export default function About() {
                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
               />
               
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="flex items-center gap-2">
-                  <motion.div 
-                    className="w-2 h-2 bg-rosso-controllo rounded-full"
-                    animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  />
-                  <span className="text-xs font-mono text-bianco-luce tracking-wider">
-                    FERRARA_FACILITY_001
-                  </span>
-                </div>
-              </div>
             </motion.div>
 
             {/* Features */}
