@@ -25,7 +25,7 @@ export default function Hero() {
         aria-label="CrossFit training background"
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80)',
+          backgroundImage: 'url(/images/hero-bg.webp)',
           filter: 'grayscale(100%) contrast(1.3)',
           opacity: 0.25,
           y

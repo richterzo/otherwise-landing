@@ -8,43 +8,43 @@ export default function Gallery() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  // Gallery images - Replace with real box photos
+  // Gallery images - Real Otherwise gym photos
   const images = [
     {
       id: 1,
-      url: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80",
+      url: "/images/hero-feature.webp",
       title: "Main Training Area",
       category: "BOX"
     },
     {
       id: 2,
-      url: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80",
+      url: "/images/facility-1.webp",
       title: "Olympic Lifting Zone",
       category: "EQUIPMENT"
     },
     {
       id: 3,
-      url: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80",
+      url: "/images/training-1.webp",
       title: "Group Classes",
       category: "TRAINING"
     },
     {
       id: 4,
-      url: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&q=80",
-      title: "Cardio Equipment",
-      category: "EQUIPMENT"
+      url: "/images/training-2.webp",
+      title: "Functional Training",
+      category: "TRAINING"
     },
     {
       id: 5,
-      url: "https://images.unsplash.com/photo-1623874228601-f4193c7b1818?w=800&q=80",
-      title: "Pull-up Rigs",
-      category: "BOX"
+      url: "/images/facility-2.webp",
+      title: "Equipment & Rigs",
+      category: "EQUIPMENT"
     },
     {
       id: 6,
-      url: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80",
+      url: "/images/about-main.webp",
       title: "Community Training",
-      category: "TRAINING"
+      category: "BOX"
     }
   ];
 

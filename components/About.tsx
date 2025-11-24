@@ -119,7 +119,7 @@ export default function About() {
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                 style={{
-                  backgroundImage: 'url(https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80)',
+                  backgroundImage: 'url(/images/about-main.webp)',
                   filter: 'grayscale(100%) contrast(1.3)',
                 }}
               />

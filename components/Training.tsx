@@ -45,7 +45,7 @@ export default function Training() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1920&q=80)',
+            backgroundImage: 'url(/images/training-1.webp)',
             filter: 'grayscale(100%) contrast(1.2)',
             opacity: 0.08
           }}
