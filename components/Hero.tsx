@@ -108,9 +108,9 @@ export default function Hero() {
             Functional fitness nel cuore di Ferrara. Coach certificati, programmazione seria, risultati concreti.
           </p>
           
-          {/* Quote with red borders on both sides */}
-          <blockquote className="relative border-l-2 border-r-2 border-rosso-controllo px-4 sm:px-6 py-3 sm:py-4">
-            <p className="text-sm sm:text-base md:text-lg text-grigio-acciaio font-mono leading-relaxed">
+          {/* Quote */}
+          <blockquote className="relative px-4 sm:px-6 py-3 sm:py-4">
+            <p className="text-sm sm:text-base md:text-lg text-grigio-acciaio font-mono italic leading-relaxed">
               La motivazione ti fa iniziare.<br />
               La disciplina ti fa restare.
             </p>
