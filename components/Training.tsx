@@ -40,16 +40,14 @@ export default function Training() {
 
   return (
     <section id="training" className="relative py-32 bg-grigio-cemento overflow-hidden" ref={ref}>
-      {/* Background Image - Zoomed bottom left */}
+      {/* Background Image - Training */}
       <div className="absolute inset-0">
         <div 
-          className="absolute bottom-0 left-0 w-full h-full bg-cover bg-left-bottom"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(/images/facility-2.webp)',
+            backgroundImage: 'url(/images/Box4.webp)',
             filter: 'grayscale(100%) contrast(1.2)',
-            opacity: 0.08,
-            transform: 'scale(2)',
-            transformOrigin: 'bottom left'
+            opacity: 0.08
           }}
         />
       </div>
