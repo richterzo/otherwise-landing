@@ -104,8 +104,8 @@ export default function Hero() {
           </p>
           
           {/* Quote */}
-          <blockquote className="relative px-4 sm:px-6 py-3 sm:py-4">
-            <p className="text-sm sm:text-base md:text-lg text-grigio-acciaio font-mono italic leading-relaxed">
+          <blockquote className="relative px-4 sm:px-6 py-4 sm:py-6 bg-nero-tattico/60 border-l-4 border-arancione-brand">
+            <p className="text-base sm:text-lg md:text-xl text-bianco-luce font-mono italic leading-relaxed">
               La <span className="text-arancione-brand font-bold not-italic">motivazione</span> ti fa iniziare.<br />
               La <span className="text-viola-brand font-bold not-italic">disciplina</span> ti fa restare.
             </p>
@@ -140,7 +140,7 @@ export default function Hero() {
           <motion.a
             href="#training"
             aria-label="Scopri i nostri programmi di allenamento"
-            className="group w-full sm:flex-1 px-8 sm:px-10 py-4 sm:py-5 border-2 border-bianco-luce text-bianco-luce font-mono font-bold text-sm sm:text-base tracking-wider uppercase hover:border-viola-brand hover:text-viola-brand transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-rosso-controllo focus:ring-offset-2 focus:ring-offset-nero-tattico"
+            className="group w-full sm:flex-1 px-8 sm:px-10 py-4 sm:py-5 border-2 border-viola-brand text-viola-brand font-mono font-bold text-sm sm:text-base tracking-wider uppercase hover:bg-viola-brand hover:text-bianco-luce transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-viola-brand focus:ring-offset-2 focus:ring-offset-nero-tattico"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
