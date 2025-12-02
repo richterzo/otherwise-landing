@@ -42,8 +42,8 @@ export default function About() {
       {/* Grid pattern background */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(rgba(179, 16, 16, 0.1) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(179, 16, 16, 0.1) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(255, 107, 53, 0.1) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(255, 107, 53, 0.1) 1px, transparent 1px)`,
           backgroundSize: '100px 100px'
         }} />
       </div>
@@ -86,7 +86,7 @@ export default function About() {
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <p>
-                  Nel cuore di Ferrara, Otherwise Athletics Evolved è il luogo dove il functional fitness 
+                  Nel cuore di Ferrara, Otherwise Athletics Evolved è il luogo dove il Functional Fitness 
                   incontra la disciplina, la determinazione e la voglia di superarsi. 
                   Ogni workout è progettato per spingerti oltre i tuoi limiti.
                 </p>
@@ -97,7 +97,7 @@ export default function About() {
                 </p>
                 <motion.p 
                   className="text-bianco-luce font-mono"
-                  whileHover={{ x: 5, color: '#B31010' }}
+                  whileHover={{ x: 5, color: '#FF6B35' }}
                   transition={{ duration: 0.2 }}
                 >
                   Obiettivi reali. Risultati misurabili. Trasformazioni concrete.

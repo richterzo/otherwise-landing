@@ -11,30 +11,12 @@ export default function Training() {
   const programs = [
     {
       code: "PROG_01",
-      name: "ATHLETIC GRID",
-      description: "Il punto di partenza per chi è alle prime armi ma vuole mettersi in gioco. Un percorso accessibile, guidato passo dopo passo, per imparare i movimenti e costruire le basi di una forma fisica solida e duratura.",
-      duration: "Base",
-      level: "Principianti",
-      level_number: 1,
-      intensity: 60
-    },
-    {
-      code: "PROG_02",
       name: "WODFIT",
       description: "Allenamento funzionale completo, ad alta intensità, basato su esercizi variati e stimolanti. Ideale per chi vuole allenarsi con metodo, senza routine noiose. Per chi cerca risultati concreti.",
       duration: "Variabile",
       level: "Tutti i livelli",
       level_number: 2,
       intensity: 80
-    },
-    {
-      code: "PROG_03",
-      name: "ADVANCED RX",
-      description: "Dedicato a chi ha già esperienza con l'allenamento funzionale e vuole lavorare in modo tecnico, preciso, con progressioni avanzate e obiettivi concreti. Un programma pensato per gli atleti che vogliono il massimo.",
-      duration: "Avanzato",
-      level: "Esperti",
-      level_number: 3,
-      intensity: 95
     }
   ];
 
@@ -78,13 +60,13 @@ export default function Training() {
           </h2>
 
           <p className="text-grigio-acciaio leading-relaxed">
-            Tre programmi pensati per ogni livello di allenamento, con un solo obiettivo: 
-            farti evolvere, a modo tuo. Scegli il corso che fa per te.
+            Un programma pensato per farti evolvere, a modo tuo. 
+            Allenamento funzionale completo, ad alta intensità, risultati concreti.
           </p>
         </motion.div>
 
         {/* Programs Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-6 max-w-2xl mx-auto">
           {programs.map((program, index) => (
             <motion.div
               key={program.code}
@@ -173,25 +155,20 @@ export default function Training() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-16 text-center"
         >
-          <div className="inline-block p-8 border border-grigio-acciaio border-opacity-30 hover:border-rosso-controllo hover:border-opacity-50 transition-all duration-300 group">
-            <p className="text-grigio-acciaio mb-4 group-hover:text-bianco-luce transition-colors">
-              Prima volta? Parti con una lezione di prova gratuita
-            </p>
-            <motion.a
-              href="#contact"
-              className="inline-block px-6 py-3 bg-rosso-controllo text-bianco-luce font-mono text-sm hover:bg-rosso-battito transition-colors relative overflow-hidden"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10">PRENOTA PROVA GRATUITA</span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-bianco-luce to-transparent opacity-0 group-hover:opacity-20"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: "200%" }}
-                transition={{ duration: 0.6 }}
-              />
-            </motion.a>
-          </div>
+          <motion.a
+            href="#contact"
+            className="inline-block px-8 py-4 bg-rosso-controllo text-bianco-luce font-mono text-sm font-bold hover:bg-rosso-battito transition-colors relative overflow-hidden"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="relative z-10">INIZIA OGGI</span>
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-bianco-luce to-transparent opacity-0 hover:opacity-20"
+              initial={{ x: "-100%" }}
+              whileHover={{ x: "200%" }}
+              transition={{ duration: 0.6 }}
+            />
+          </motion.a>
         </motion.div>
       </div>
     </section>

@@ -78,7 +78,7 @@ export default function Gallery() {
           </motion.span>
           
           <h2 className="font-airborne text-5xl md:text-7xl text-bianco-luce mt-6 mb-6">
-            LA BOX
+            IL BOX
           </h2>
 
           <p className="text-grigio-acciaio text-lg max-w-2xl mx-auto">
@@ -187,7 +187,7 @@ export default function Gallery() {
         >
           <div className="inline-block p-8 border border-grigio-acciaio border-opacity-30 hover:border-rosso-controllo hover:border-opacity-50 transition-all duration-300">
             <p className="text-grigio-acciaio mb-4 font-mono">
-              Vieni a vedere la box di persona
+              Vieni a vedere il box di persona
             </p>
             <motion.a
               href="#contact"

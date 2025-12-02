@@ -67,7 +67,7 @@ export default function Loader() {
                   cy="64"
                   r="60"
                   fill="none"
-                  stroke="#B31010"
+                  stroke="#FF6B35"
                   strokeWidth="2"
                   strokeDasharray={`${2 * Math.PI * 60}`}
                   strokeDashoffset={`${2 * Math.PI * 60 * (1 - progress / 100)}`}

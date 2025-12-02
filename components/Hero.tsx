@@ -93,7 +93,7 @@ export default function Hero() {
           className="mb-10 sm:mb-14 max-w-3xl mx-auto space-y-5 sm:space-y-6"
         >
           <p className="text-sm sm:text-base lg:text-lg text-bianco-luce font-mono leading-relaxed px-4">
-            Functional fitness nel cuore di Ferrara. Coach certificati, programmazione seria, risultati concreti.
+            Functional Fitness nel cuore di Ferrara. Coach certificati, programmazione seria, risultati concreti.
           </p>
           
           {/* Quote */}
@@ -115,12 +115,12 @@ export default function Hero() {
           {/* Primary CTA */}
           <motion.a
             href="#contact"
-            aria-label="Prenota una prova gratuita"
+            aria-label="Inizia oggi"
             className="group relative w-full sm:flex-1 px-8 sm:px-10 py-4 sm:py-5 bg-rosso-controllo text-bianco-luce font-mono font-bold text-sm sm:text-base tracking-wider uppercase overflow-hidden focus:outline-none focus:ring-4 focus:ring-bianco-luce focus:ring-offset-2 focus:ring-offset-nero-tattico transition-all"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <span className="relative z-10">Prova Gratuita</span>
+            <span className="relative z-10">Inizia Oggi</span>
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-transparent via-bianco-luce to-transparent opacity-0 group-hover:opacity-20"
               initial={{ x: "-100%" }}

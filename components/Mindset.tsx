@@ -31,8 +31,8 @@ export default function Mindset() {
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
           backgroundImage: `
-            linear-gradient(rgba(179, 16, 16, 0.3) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(179, 16, 16, 0.3) 1px, transparent 1px)
+            linear-gradient(rgba(255, 107, 53, 0.3) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 107, 53, 0.3) 1px, transparent 1px)
           `,
           backgroundSize: '100px 100px'
         }} />
@@ -68,7 +68,7 @@ export default function Mindset() {
           </h2>
 
           <p className="text-grigio-acciaio leading-relaxed text-lg">
-            Nel mondo del functional fitness, ciò che fa davvero la differenza non è solo la voglia 
+            Nel mondo del Functional Fitness, ciò che fa davvero la differenza non è solo la voglia 
             di mettersi alla prova, ma la costanza con cui lo fai. La disciplina nell'allenamento 
             trasforma la fatica in risultati, l'abitudine in identità, il movimento in potenza.
           </p>

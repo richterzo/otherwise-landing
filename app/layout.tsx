@@ -26,7 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Otherwise Athletics Evolved | CrossFit Ferrara",
-  description: "La box CrossFit di Ferrara. 300m² di spazio, coach certificati, risultati veri. Classes, personal training, open gym. Dal lunedì alla domenica.",
+  description: "Il box CrossFit di Ferrara. 300m² di spazio, coach certificati, risultati veri. Classes, personal training, open gym. Dal lunedì alla domenica.",
   keywords: "crossfit ferrara, palestra ferrara, otherwise, box crossfit, allenamento funzionale, fitness ferrara, wod ferrara, gym ferrara, personal trainer ferrara",
   authors: [{ name: "Otherwise Athletics Evolved" }],
   creator: "Otherwise Athletics Evolved",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Otherwise Athletics Evolved | CrossFit Ferrara',
-    description: 'La box CrossFit di Ferrara. Coach certificati, attrezzatura top, community forte. Prima lezione sempre gratuita.',
+    description: 'Il box CrossFit di Ferrara. Coach certificati, attrezzatura top, community forte.',
     url: 'https://otherwise-ferrara.it',
     siteName: 'Otherwise Athletics Evolved',
     images: [
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Otherwise Athletics Evolved | CrossFit Ferrara',
-    description: 'La box CrossFit di Ferrara. Coach certificati, attrezzatura top, community forte.',
+    description: 'Il box CrossFit di Ferrara. Coach certificati, attrezzatura top, community forte.',
     images: ['/twitter-image.jpg'],
   },
   robots: {

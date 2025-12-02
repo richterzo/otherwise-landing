@@ -32,7 +32,7 @@ export default function CTA() {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle, rgba(179, 16, 16, 0.3) 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(circle, rgba(255, 107, 53, 0.3) 1px, transparent 1px)`,
           backgroundSize: '30px 30px'
         }} />
       </div>
@@ -55,19 +55,9 @@ export default function CTA() {
             </h2>
 
             <p className="text-grigio-acciaio leading-relaxed mb-8">
-              Settimana prova a 20 euro riservata ai nuovi iscritti. Vieni a vedere la box, 
-              parla con i coach, prova i nostri corsi. Poi scegli il programma che fa per te.
+              Vieni a vedere il box, parla con i coach, prova i nostri corsi. 
+              Poi scegli il programma che fa per te.
             </p>
-
-            {/* Pricing Highlights */}
-            <div className="space-y-3 mb-8 p-5 bg-nero-tattico border-l-2 border-rosso-controllo">
-              <div className="text-sm font-mono text-grigio-acciaio mb-2">ABBONAMENTI</div>
-              <div className="space-y-2 text-bianco-luce text-sm">
-                <div>Trimestrale Open → <span className="text-rosso-controllo font-bold">99€/mese</span></div>
-                <div>Semestrale 2x week → <span className="text-rosso-controllo font-bold">75€/mese</span></div>
-                <div className="text-grigio-acciaio text-xs pt-2">Porta 3 amici = 1 mese gratis</div>
-              </div>
-            </div>
 
             {/* Contact Info */}
             <div className="space-y-6 mb-12">

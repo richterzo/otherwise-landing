@@ -31,7 +31,7 @@
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #B31010;
+    background: #FF6B35;
   }
   
   /* Custom Red Crosshair Cursor - Desktop only */
@@ -47,20 +47,20 @@
   
   /* Improved focus visibility for WCAG 2.1 AA compliance */
   *:focus-visible {
-    outline: 2px solid #B31010;
+    outline: 2px solid #FF6B35;
     outline-offset: 2px;
   }
   
   /* Ensure sufficient color contrast for text */
   ::selection {
-    background-color: #B31010;
+    background-color: #FF6B35;
     color: #F5F5F5;
   }
 }
 
 @layer components {
   .text-shadow-glow {
-    text-shadow: 0 0 20px rgba(179, 16, 16, 0.5);
+    text-shadow: 0 0 20px rgba(255, 107, 53, 0.5);
   }
   
   .crosshair-dot {
@@ -72,9 +72,9 @@
     position: absolute;
     width: 2px;
     height: 2px;
-    background: #B31010;
+    background: #FF6B35;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(179, 16, 16, 0.8);
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.8);
   }
   
 }

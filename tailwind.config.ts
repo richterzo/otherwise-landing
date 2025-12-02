@@ -14,10 +14,12 @@ const config: Config = {
         'grigio-cemento': '#2A2A2A',
         'grigio-acciaio': '#6F6F6F',
         'bianco-luce': '#F5F5F5',
-        // Accent APX
-        'rosso-controllo': '#B31010',
-        // Supporto
-        'rosso-battito': '#7A0C0C',
+        // Brand Colors - Arancione e Viola
+        'arancione-brand': '#FF6B35',
+        'viola-brand': '#7C3AED',
+        // Legacy (mantenuti per retrocompatibilità, ma da sostituire)
+        'rosso-controllo': '#FF6B35', // Ora arancione
+        'rosso-battito': '#7C3AED', // Ora viola
         'sabbia': '#C7B9A6',
         'verde-oliva': '#5A5F48',
         'blu-notte': '#0F1A24',
@@ -44,8 +46,8 @@ const config: Config = {
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
         glow: {
-          '0%, 100%': { boxShadow: '0 0 5px rgba(179, 16, 16, 0.5)' },
-          '50%': { boxShadow: '0 0 20px rgba(179, 16, 16, 0.8)' },
+          '0%, 100%': { boxShadow: '0 0 5px rgba(255, 107, 53, 0.5)' },
+          '50%': { boxShadow: '0 0 20px rgba(255, 107, 53, 0.8)' },
         },
         flicker: {
           '0%, 100%': { opacity: '1' },
