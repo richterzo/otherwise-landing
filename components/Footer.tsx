@@ -122,40 +122,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* APX Connection */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="py-6 border-t border-b border-grigio-cemento border-opacity-20 mb-8"
-        >
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <motion.div
-                className="w-3 h-3 bg-viola-brand rounded-full"
-                animate={{
-                  scale: [1, 1.5, 1],
-                  opacity: [1, 0.5, 1],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              <span className="text-sm font-mono text-grigio-acciaio">
-                PROSSIMAMENTE: <span className="text-bianco-luce">APX BOLOGNA</span>
-              </span>
-            </div>
-            <a
-              href="#"
-                    className="text-sm font-mono text-viola-brand hover:text-bianco-luce transition-colors"
-            >
-              SCOPRI DI PIÙ →
-            </a>
-          </div>
-        </motion.div>
 
         {/* Bottom Bar */}
         <motion.div
