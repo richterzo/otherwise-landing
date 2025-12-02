@@ -58,7 +58,7 @@ export default function Mindset() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <span className="text-viola-brand font-mono text-sm tracking-[0.3em] uppercase">
+          <span className="text-arancione-brand font-mono text-sm tracking-[0.3em] uppercase">
             [MINDSET]
           </span>
           
@@ -93,7 +93,7 @@ export default function Mindset() {
                       initial={{ opacity: 0, scale: 0.5 }}
                       animate={isInView ? { opacity: 0.1, scale: 1 } : {}}
                       transition={{ duration: 1, delay: 0.3 + index * 0.2 }}
-                      className="absolute -top-8 -left-4 text-[10rem] font-bold text-viola-brand leading-none pointer-events-none opacity-10"
+                      className="absolute -top-8 -left-4 text-[10rem] font-bold text-arancione-brand leading-none pointer-events-none opacity-10"
                     >
                       0{index + 1}
                     </motion.div>
@@ -114,7 +114,7 @@ export default function Mindset() {
                         {principle.description}
                       </p>
 
-                      <blockquote className="border-l-2 border-viola-brand pl-4 italic text-bianco-luce">
+                      <blockquote className="border-l-2 border-arancione-brand pl-4 italic text-bianco-luce">
                         {principle.quote}
                       </blockquote>
                     </div>
@@ -144,11 +144,11 @@ export default function Mindset() {
                     </div>
                     
                     {/* Crosshair Box */}
-                    <div className="absolute inset-0 border-2 border-grigio-acciaio border-opacity-30 p-8 hover:border-viola-brand hover:border-opacity-50 transition-all duration-300 group">
+                    <div className="absolute inset-0 border-2 border-grigio-acciaio border-opacity-30 p-8 hover:border-arancione-brand hover:border-opacity-50 transition-all duration-300 group">
                       {/* Corner Brackets */}
                       <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-arancione-brand opacity-50" />
-                      <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-viola-brand opacity-50" />
-                      <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-viola-brand opacity-50" />
+                      <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-arancione-brand opacity-50" />
+                      <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-arancione-brand opacity-50" />
                       <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-arancione-brand opacity-50" />
                     </div>
                   </motion.div>

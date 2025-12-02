@@ -58,12 +58,12 @@ export default function About() {
               transition={{ duration: 0.8 }}
             >
               <motion.span 
-                className="text-viola-brand font-mono text-sm tracking-[0.3em] uppercase inline-flex items-center gap-2"
+                className="text-arancione-brand font-mono text-sm tracking-[0.3em] uppercase inline-flex items-center gap-2"
                 whileHover={{ scale: 1.05 }}
               >
                 [ MISSIONE ]
                 <motion.span
-                  className="inline-block w-1.5 h-1.5 bg-viola-brand"
+                  className="inline-block w-1.5 h-1.5 bg-arancione-brand"
                   animate={{ opacity: [1, 0, 1] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 />
@@ -143,7 +143,7 @@ export default function About() {
                 className="group relative"
               >
                 <motion.div
-                  className="absolute left-0 top-0 bottom-0 w-[2px] bg-grigio-cemento group-hover:bg-viola-brand transition-colors duration-300"
+                  className="absolute left-0 top-0 bottom-0 w-[2px] bg-grigio-cemento group-hover:bg-arancione-brand transition-colors duration-300"
                   whileHover={{ scaleY: 1.1 }}
                 />
                 
@@ -153,7 +153,7 @@ export default function About() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="text-viola-brand opacity-30 group-hover:opacity-100 transition-all duration-300 flex-shrink-0">
+                    <div className="text-arancione-brand opacity-60 group-hover:opacity-100 transition-all duration-300 flex-shrink-0">
                       <feature.icon size={32} strokeWidth={1.5} />
                     </div>
                     
@@ -172,7 +172,7 @@ export default function About() {
 
                 {/* Corner accent */}
                 <motion.div
-                  className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-viola-brand opacity-0 group-hover:opacity-100"
+                  className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-arancione-brand opacity-0 group-hover:opacity-100"
                   initial={{ x: -5, y: 5 }}
                   whileHover={{ x: 0, y: 0 }}
                   transition={{ duration: 0.2 }}
@@ -215,7 +215,7 @@ export default function About() {
               
               {/* Underline on hover */}
               <motion.div
-                className="mt-2 h-[2px] bg-viola-brand mx-auto"
+                className="mt-2 h-[2px] bg-arancione-brand mx-auto"
                 initial={{ width: 0 }}
                 whileHover={{ width: '100%' }}
                 transition={{ duration: 0.3 }}

@@ -137,7 +137,7 @@ export default function Hero() {
           <motion.a
             href="#training"
             aria-label="Scopri i nostri programmi di allenamento"
-            className="group w-full sm:flex-1 px-8 sm:px-10 py-4 sm:py-5 border-2 border-bianco-luce text-bianco-luce font-mono font-bold text-sm sm:text-base tracking-wider uppercase hover:bg-bianco-luce hover:text-nero-tattico transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-rosso-controllo focus:ring-offset-2 focus:ring-offset-nero-tattico"
+            className="group w-full sm:flex-1 px-8 sm:px-10 py-4 sm:py-5 border-2 border-bianco-luce text-bianco-luce font-mono font-bold text-sm sm:text-base tracking-wider uppercase hover:border-viola-brand hover:text-viola-brand transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-rosso-controllo focus:ring-offset-2 focus:ring-offset-nero-tattico"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
