@@ -123,7 +123,6 @@ export default function About() {
                   filter: 'grayscale(100%) contrast(1.3)',
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-nero-tattico via-transparent to-transparent opacity-80" />
               
               {/* Scan line on image */}
               <motion.div

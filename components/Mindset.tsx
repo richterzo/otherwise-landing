@@ -141,7 +141,6 @@ export default function Mindset() {
                           filter: 'grayscale(100%) contrast(1.2)',
                         }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-nero-tattico/60 via-nero-tattico/20 to-transparent" />
                     </div>
                     
                     {/* Crosshair Box */}

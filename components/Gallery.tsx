@@ -114,8 +114,6 @@ export default function Gallery() {
                   transition={{ duration: 0.8 }}
                 />
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-nero-tattico via-nero-tattico/40 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
 
                 {/* Border Frame */}
                 <div className="absolute inset-0 border-2 border-grigio-acciaio border-opacity-30 group-hover:border-rosso-controllo group-hover:border-opacity-60 transition-all duration-300">

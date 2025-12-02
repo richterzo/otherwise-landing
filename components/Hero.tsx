@@ -16,13 +16,10 @@ export default function Hero() {
         style={{
           backgroundImage: 'url(/images/hero.webp)',
           filter: 'grayscale(100%) contrast(1.3)',
-          opacity: 0.25
+          opacity: 0.4
         }}
       />
 
-      {/* Gradient Overlays for Depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-nero-tattico/80 via-nero-tattico/60 to-nero-tattico" />
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-nero-tattico/40 to-nero-tattico" />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
