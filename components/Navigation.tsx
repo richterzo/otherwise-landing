@@ -78,11 +78,14 @@ export default function Navigation() {
             transition={{ duration: 0.6 }}
             whileHover={{ scale: 1.05 }}
           >
-            <img 
-              src="/Logo-Colore.webp" 
-              alt="Otherwise CrossFit" 
-              className="h-12 w-auto"
-            />
+            <div className="relative group">
+              <img 
+                src="/Logo-Colore.webp" 
+                alt="Otherwise Athletics Evolved" 
+                className="h-12 w-auto transition-transform group-hover:scale-105"
+              />
+              <div className="absolute -bottom-1 left-0 right-0 h-[2px] bg-gradient-to-r from-arancione-brand via-viola-brand to-arancione-brand opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
           </motion.a>
 
           {/* Navigation Items */}

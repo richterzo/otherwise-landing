@@ -138,7 +138,6 @@ export default function Mindset() {
                             : index === 1
                             ? 'url(/images/training-2.webp)'
                             : 'url(/images/Box3.webp)',
-                          filter: 'grayscale(100%) contrast(1.2)',
                         }}
                       />
                     </div>

@@ -36,9 +36,10 @@ export default function Footer() {
                   className="h-24 w-auto"
                 />
               </div>
-              <p className="text-sm text-grigio-acciaio leading-relaxed mb-4">
-                Athletics Evolved
+              <p className="text-sm text-arancione-brand font-mono font-bold leading-relaxed mb-2 tracking-wider">
+                ATHLETICS EVOLVED
               </p>
+              <div className="w-16 h-[2px] bg-gradient-to-r from-arancione-brand to-viola-brand mb-4" />
               <p className="text-xs text-grigio-acciaio leading-relaxed">
                 Disciplina. Controllo. Lucidità.<br />
                 La palestra CrossFit che allena corpo e mente.

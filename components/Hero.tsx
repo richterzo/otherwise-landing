@@ -8,21 +8,20 @@ export default function Hero() {
       aria-label="Hero section - Otherwise Athletics Evolved"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Image B&W */}
+      {/* Background Image - Color */}
       <div 
         role="img"
         aria-label="CrossFit training background"
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: 'url(/images/hero.webp)',
-          filter: 'grayscale(100%) contrast(1.3)',
-          opacity: 0.4
+          opacity: 0.5
         }}
       />
 
       {/* Large Logo Background */}
       <div 
-        className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none"
+        className="absolute inset-0 flex items-center justify-center opacity-15 pointer-events-none"
         style={{
           backgroundImage: 'url(/Logo-Colore.webp)',
           backgroundSize: 'contain',
@@ -30,6 +29,10 @@ export default function Hero() {
           backgroundPosition: 'center',
         }}
       />
+
+      {/* Brand Accent Lines */}
+      <div className="absolute top-20 left-0 w-32 h-[2px] bg-gradient-to-r from-arancione-brand to-transparent opacity-50" />
+      <div className="absolute bottom-20 right-0 w-32 h-[2px] bg-gradient-to-l from-viola-brand to-transparent opacity-50" />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
@@ -77,7 +80,7 @@ export default function Hero() {
           className="mb-3 sm:mb-4"
         >
           <span className="text-base sm:text-xl md:text-2xl lg:text-3xl text-grigio-acciaio font-mono tracking-wider uppercase">
-            Athletics Evolved
+            <span className="text-arancione-brand">ATHLETICS</span> <span className="text-viola-brand">EVOLVED</span>
           </span>
         </motion.div>
 

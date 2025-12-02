@@ -108,7 +108,6 @@ export default function Gallery() {
                   }`}
                   style={{
                     backgroundImage: `url(${images[currentIndex].url})`,
-                    filter: 'grayscale(100%) contrast(1.2)',
                   }}
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.8 }}

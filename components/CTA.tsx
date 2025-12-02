@@ -229,7 +229,7 @@ export default function CTA() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-16"
         >
-          <div className="border-2 border-grigio-acciaio border-opacity-30 overflow-hidden" style={{ filter: 'grayscale(100%) contrast(1.2)' }}>
+          <div className="border-2 border-grigio-acciaio border-opacity-30 overflow-hidden">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2819.8544784476826!2d11.616634376537856!3d44.83628117107043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477e4e4e4e4e4e4f%3A0x4e4e4e4e4e4e4e4e!2sVia%20Giorgio%20Caselli%2C%2013%2FE%2C%2044124%20Ferrara%20FE!5e0!3m2!1sen!2sit!4v1234567890"
               width="100%"

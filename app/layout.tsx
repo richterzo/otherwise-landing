@@ -25,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Otherwise Athletics Evolved | CrossFit Ferrara",
+  title: "Otherwise Athletics Evolved | Functional Fitness Ferrara",
   description: "Il box CrossFit di Ferrara. 300m² di spazio, coach certificati, risultati veri. Classes, personal training, open gym. Dal lunedì alla domenica.",
   keywords: "crossfit ferrara, palestra ferrara, otherwise, box crossfit, allenamento funzionale, fitness ferrara, wod ferrara, gym ferrara, personal trainer ferrara",
   authors: [{ name: "Otherwise Athletics Evolved" }],
