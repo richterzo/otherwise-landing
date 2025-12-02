@@ -46,11 +46,11 @@ export default function Hero() {
             animate={{ width: 48 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           />
-          <span className="text-viola-brand font-mono text-xs sm:text-sm tracking-[0.3em] uppercase">
+          <span className="text-arancione-brand font-mono text-xs sm:text-sm tracking-[0.3em] uppercase">
             Ferrara
           </span>
           <motion.div 
-            className="h-[1px] bg-viola-brand w-8 sm:w-12"
+            className="h-[1px] bg-arancione-brand w-8 sm:w-12"
             initial={{ width: 0 }}
             animate={{ width: 48 }}
             transition={{ duration: 0.8, delay: 0.4 }}
