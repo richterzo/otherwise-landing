@@ -33,7 +33,7 @@ export default function About() {
     <section id="about" className="relative py-32 bg-nero-tattico overflow-hidden" ref={ref}>
       {/* Background accent line with animation */}
       <motion.div 
-        className="absolute top-0 left-0 h-[1px] bg-gradient-to-r from-arancione-brand via-viola-brand to-transparent opacity-50"
+        className="absolute top-0 left-0 h-[1px] bg-viola-brand opacity-50"
         initial={{ width: 0 }}
         animate={isInView ? { width: '33%' } : {}}
         transition={{ duration: 1, delay: 0.3 }}

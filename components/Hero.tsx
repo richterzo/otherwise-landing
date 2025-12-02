@@ -20,6 +20,16 @@ export default function Hero() {
         }}
       />
 
+      {/* Large Logo Background */}
+      <div 
+        className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none"
+        style={{
+          backgroundImage: 'url(/Logo-Colore.webp)',
+          backgroundSize: 'contain',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+        }}
+      />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">

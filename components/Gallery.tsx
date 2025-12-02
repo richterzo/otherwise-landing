@@ -51,7 +51,7 @@ export default function Gallery() {
     <section id="gallery" className="relative py-32 bg-nero-tattico overflow-hidden" ref={ref}>
       {/* Background accent */}
       <motion.div 
-        className="absolute top-0 right-0 w-1/3 h-[1px] bg-gradient-to-l from-viola-brand to-transparent opacity-50"
+        className="absolute top-0 right-0 w-1/3 h-[1px] bg-arancione-brand opacity-50"
         initial={{ width: 0 }}
         animate={isInView ? { width: '33%' } : {}}
         transition={{ duration: 1, delay: 0.3 }}

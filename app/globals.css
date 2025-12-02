@@ -66,6 +66,22 @@
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(255, 107, 53, 0.8);
   }
+
+  /* Navbar animated gradient line */
+  .nav-gradient-line {
+    background: linear-gradient(90deg, #7C3AED, #FF6B35, #7C3AED);
+    background-size: 200% 100%;
+    animation: nav-gradient-shift 8s ease-in-out infinite;
+  }
+
+  @keyframes nav-gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
   
 }
 

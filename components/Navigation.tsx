@@ -171,15 +171,9 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Scan line effect on nav */}
+      {/* Animated gradient line on nav */}
       {isScrolled && (
-        <motion.div
-          className="absolute bottom-0 left-0 right-0 h-[1px] bg-viola-brand"
-          initial={{ scaleX: 0 }}
-          animate={{ scaleX: 1 }}
-          transition={{ duration: 0.6 }}
-          style={{ transformOrigin: "left" }}
-        />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] nav-gradient-line" />
       )}
     </motion.nav>
   );
