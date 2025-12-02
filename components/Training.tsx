@@ -2,7 +2,6 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { BicepsFlexed } from "lucide-react";
 
 export default function Training() {
   const ref = useRef(null);
@@ -85,23 +84,6 @@ export default function Training() {
                 />
               </div>
 
-              {/* Level Indicator - Biceps */}
-              <div className="flex items-center justify-end gap-1 mb-6">
-                {Array.from({ length: program.level_number }).map((_, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.3, delay: 0.6 + index * 0.1 + i * 0.1 }}
-                  >
-                    <BicepsFlexed 
-                      size={20} 
-                      strokeWidth={2} 
-                      className="text-arancione-brand opacity-80"
-                    />
-                  </motion.div>
-                ))}
-              </div>
 
               {/* Name */}
               <h3 className="text-2xl font-mono font-bold text-bianco-luce mb-4 transition-all">
