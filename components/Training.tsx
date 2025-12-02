@@ -43,12 +43,12 @@ export default function Training() {
           className="max-w-3xl mb-16"
         >
           <motion.span 
-            className="text-rosso-controllo font-mono text-sm tracking-[0.3em] uppercase inline-flex items-center gap-2"
+            className="text-viola-brand font-mono text-sm tracking-[0.3em] uppercase inline-flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
           >
             [ PROGRAMMI ]
             <motion.span
-              className="inline-block w-1.5 h-1.5 bg-rosso-controllo"
+              className="inline-block w-1.5 h-1.5 bg-viola-brand"
               animate={{ opacity: [1, 0, 1] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             />
@@ -74,12 +74,12 @@ export default function Training() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
               whileHover={{ y: -8 }}
-              className="group relative bg-nero-tattico p-8 border border-grigio-acciaio border-opacity-30 hover:border-rosso-controllo hover:border-opacity-70 transition-all duration-300 cursor-pointer"
+              className="group relative bg-nero-tattico p-8 border border-grigio-acciaio border-opacity-30 hover:border-viola-brand hover:border-opacity-70 transition-all duration-300 cursor-pointer"
             >
               {/* Intensity Bar */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-grigio-acciaio bg-opacity-20 overflow-hidden">
                 <motion.div
-                  className="h-full bg-rosso-controllo"
+                  className="h-full bg-gradient-to-r from-arancione-brand to-viola-brand"
                   initial={{ width: 0 }}
                   animate={isInView ? { width: `${program.intensity}%` } : {}}
                   transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
@@ -98,7 +98,7 @@ export default function Training() {
                     <BicepsFlexed 
                       size={20} 
                       strokeWidth={1.5} 
-                      className="text-rosso-controllo"
+                      className="text-viola-brand"
                     />
                   </motion.div>
                 ))}
@@ -126,7 +126,7 @@ export default function Training() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-grigio-acciaio">INTENSITÀ:</span>
-                  <span className="text-rosso-controllo font-mono font-bold">{program.intensity}%</span>
+                  <span className="text-arancione-brand font-mono font-bold">{program.intensity}%</span>
                 </div>
               </div>
 
@@ -134,7 +134,7 @@ export default function Training() {
               <div className="mt-6 pt-6 border-t border-grigio-acciaio border-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <a
                   href="#contact"
-                  className="text-sm font-mono font-bold text-rosso-controllo hover:text-bianco-luce transition-colors flex items-center gap-2 uppercase tracking-wider"
+                  className="text-sm font-mono font-bold text-viola-brand hover:text-bianco-luce transition-colors flex items-center gap-2 uppercase tracking-wider"
                 >
                   <span>Inizia Ora</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -142,8 +142,8 @@ export default function Training() {
               </div>
 
               {/* Corner brackets */}
-              <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-rosso-controllo opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-rosso-controllo opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-arancione-brand opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-viola-brand opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </motion.div>
           ))}
         </div>

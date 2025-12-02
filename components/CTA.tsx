@@ -45,7 +45,7 @@ export default function CTA() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-rosso-controllo font-mono text-sm tracking-[0.3em] uppercase">
+            <span className="text-viola-brand font-mono text-sm tracking-[0.3em] uppercase">
               [CONTATTI]
             </span>
             
@@ -65,7 +65,7 @@ export default function CTA() {
                 className="flex items-start gap-4"
                 whileHover={{ x: 5 }}
               >
-                <div className="w-12 h-12 border border-rosso-controllo flex items-center justify-center text-rosso-controllo flex-shrink-0">
+                <div className="w-12 h-12 border border-viola-brand flex items-center justify-center text-viola-brand flex-shrink-0">
                   <MapPin size={24} strokeWidth={1.5} />
                 </div>
                 <div>
@@ -78,12 +78,12 @@ export default function CTA() {
                 className="flex items-start gap-4"
                 whileHover={{ x: 5 }}
               >
-                <div className="w-12 h-12 border border-rosso-controllo flex items-center justify-center text-rosso-controllo flex-shrink-0">
+                <div className="w-12 h-12 border border-viola-brand flex items-center justify-center text-viola-brand flex-shrink-0">
                   <Mail size={24} strokeWidth={1.5} />
                 </div>
                 <div>
                   <div className="text-sm font-mono text-grigio-acciaio mb-1">EMAIL</div>
-                  <a href="mailto:info@otherwise.it" className="text-bianco-luce hover:text-rosso-controllo transition-colors">
+                  <a href="mailto:info@otherwise.it" className="text-bianco-luce hover:text-viola-brand transition-colors">
                     info@otherwise.it
                   </a>
                 </div>
@@ -93,12 +93,12 @@ export default function CTA() {
                 className="flex items-start gap-4"
                 whileHover={{ x: 5 }}
               >
-                <div className="w-12 h-12 border border-rosso-controllo flex items-center justify-center text-rosso-controllo flex-shrink-0">
+                <div className="w-12 h-12 border border-viola-brand flex items-center justify-center text-viola-brand flex-shrink-0">
                   <Phone size={24} strokeWidth={1.5} />
                 </div>
                 <div>
                   <div className="text-sm font-mono text-grigio-acciaio mb-1">TELEFONO</div>
-                  <a href="tel:+390532687123" className="text-bianco-luce hover:text-rosso-controllo transition-colors">
+                  <a href="tel:+390532687123" className="text-bianco-luce hover:text-viola-brand transition-colors">
                     0532 687123
                   </a>
                 </div>
@@ -106,7 +106,7 @@ export default function CTA() {
             </div>
 
             {/* Hours */}
-            <div className="p-6 bg-nero-tattico border-l-2 border-rosso-controllo">
+            <div className="p-6 bg-nero-tattico border-l-2 border-viola-brand">
               <div className="text-sm font-mono text-grigio-acciaio mb-3">ORARI</div>
               <div className="space-y-2 text-bianco-luce text-sm">
                 <div className="flex justify-between">
@@ -144,7 +144,7 @@ export default function CTA() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-nero-tattico border border-grigio-acciaio border-opacity-30 focus:border-rosso-controllo focus:border-opacity-100 text-bianco-luce outline-none transition-all font-mono"
+                  className="w-full px-4 py-3 bg-nero-tattico border border-grigio-acciaio border-opacity-30 focus:border-viola-brand focus:border-opacity-100 text-bianco-luce outline-none transition-all font-mono"
                   placeholder="Mario Rossi"
                 />
               </div>
@@ -161,7 +161,7 @@ export default function CTA() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-nero-tattico border border-grigio-acciaio border-opacity-30 focus:border-rosso-controllo focus:border-opacity-100 text-bianco-luce outline-none transition-all font-mono"
+                  className="w-full px-4 py-3 bg-nero-tattico border border-grigio-acciaio border-opacity-30 focus:border-viola-brand focus:border-opacity-100 text-bianco-luce outline-none transition-all font-mono"
                   placeholder="mario@email.com"
                 />
               </div>
@@ -177,7 +177,7 @@ export default function CTA() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-nero-tattico border border-grigio-acciaio border-opacity-30 focus:border-rosso-controllo focus:border-opacity-100 text-bianco-luce outline-none transition-all font-mono"
+                  className="w-full px-4 py-3 bg-nero-tattico border border-grigio-acciaio border-opacity-30 focus:border-viola-brand focus:border-opacity-100 text-bianco-luce outline-none transition-all font-mono"
                   placeholder="+39 333 1234567"
                 />
               </div>

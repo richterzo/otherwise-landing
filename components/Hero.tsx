@@ -31,16 +31,16 @@ export default function Hero() {
           className="mb-6 sm:mb-8 flex items-center justify-center gap-3 sm:gap-4"
         >
           <motion.div 
-            className="h-[1px] bg-rosso-controllo w-8 sm:w-12"
+            className="h-[1px] bg-arancione-brand w-8 sm:w-12"
             initial={{ width: 0 }}
             animate={{ width: 48 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           />
-          <span className="text-rosso-controllo font-mono text-xs sm:text-sm tracking-[0.3em] uppercase">
+          <span className="text-viola-brand font-mono text-xs sm:text-sm tracking-[0.3em] uppercase">
             Ferrara
           </span>
           <motion.div 
-            className="h-[1px] bg-rosso-controllo w-8 sm:w-12"
+            className="h-[1px] bg-viola-brand w-8 sm:w-12"
             initial={{ width: 0 }}
             animate={{ width: 48 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -74,9 +74,9 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* Red Line Separator */}
+        {/* Color Line Separator */}
         <motion.div
-          className="w-24 sm:w-32 h-[2px] bg-gradient-to-r from-transparent via-rosso-controllo to-transparent mx-auto mb-8 sm:mb-10"
+          className="w-24 sm:w-32 h-[2px] bg-gradient-to-r from-arancione-brand via-viola-brand to-arancione-brand mx-auto mb-8 sm:mb-10"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.7 }}
@@ -96,8 +96,8 @@ export default function Hero() {
           {/* Quote */}
           <blockquote className="relative px-4 sm:px-6 py-3 sm:py-4">
             <p className="text-sm sm:text-base md:text-lg text-grigio-acciaio font-mono italic leading-relaxed">
-              La <span className="text-rosso-controllo font-bold not-italic">motivazione</span> ti fa iniziare.<br />
-              La <span className="text-rosso-controllo font-bold not-italic">disciplina</span> ti fa restare.
+              La <span className="text-arancione-brand font-bold not-italic">motivazione</span> ti fa iniziare.<br />
+              La <span className="text-viola-brand font-bold not-italic">disciplina</span> ti fa restare.
             </p>
           </blockquote>
         </motion.div>

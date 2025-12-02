@@ -51,7 +51,7 @@ export default function Gallery() {
     <section id="gallery" className="relative py-32 bg-nero-tattico overflow-hidden" ref={ref}>
       {/* Background accent */}
       <motion.div 
-        className="absolute top-0 right-0 w-1/3 h-[1px] bg-gradient-to-l from-rosso-controllo to-transparent opacity-50"
+        className="absolute top-0 right-0 w-1/3 h-[1px] bg-gradient-to-l from-viola-brand to-transparent opacity-50"
         initial={{ width: 0 }}
         animate={isInView ? { width: '33%' } : {}}
         transition={{ duration: 1, delay: 0.3 }}
@@ -66,12 +66,12 @@ export default function Gallery() {
           className="text-center mb-16"
         >
           <motion.span 
-            className="text-rosso-controllo font-mono text-sm tracking-[0.3em] uppercase inline-flex items-center gap-2"
+            className="text-viola-brand font-mono text-sm tracking-[0.3em] uppercase inline-flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
           >
             [ GALLERY ]
             <motion.span
-              className="inline-block w-1.5 h-1.5 bg-rosso-controllo"
+              className="inline-block w-1.5 h-1.5 bg-viola-brand"
               animate={{ opacity: [1, 0, 1] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             />
@@ -116,12 +116,12 @@ export default function Gallery() {
 
 
                 {/* Border Frame */}
-                <div className="absolute inset-0 border-2 border-grigio-acciaio border-opacity-30 group-hover:border-rosso-controllo group-hover:border-opacity-60 transition-all duration-300">
+                <div className="absolute inset-0 border-2 border-grigio-acciaio border-opacity-30 group-hover:border-viola-brand group-hover:border-opacity-60 transition-all duration-300">
                   {/* Corner Brackets */}
-                  <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-rosso-controllo opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-rosso-controllo opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-rosso-controllo opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-rosso-controllo opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-arancione-brand opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-viola-brand opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-viola-brand opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-arancione-brand opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
 
                 {/* Content */}
@@ -131,7 +131,7 @@ export default function Gallery() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                   >
-                    <span className="text-rosso-controllo font-mono text-xs md:text-sm tracking-widest uppercase mb-2 block">
+                    <span className="text-viola-brand font-mono text-xs md:text-sm tracking-widest uppercase mb-2 block">
                       {images[currentIndex].category}
                     </span>
                     <h3 className="text-bianco-luce font-mono font-bold text-2xl md:text-4xl lg:text-5xl">
@@ -167,7 +167,7 @@ export default function Gallery() {
                 onClick={() => setCurrentIndex(index)}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? 'w-8 bg-rosso-controllo'
+                    ? 'w-8 bg-viola-brand'
                     : 'w-2 bg-grigio-acciaio hover:bg-grigio-acciaio/50'
                 }`}
                 aria-label={`Go to image ${index + 1}`}
@@ -183,7 +183,7 @@ export default function Gallery() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-16 text-center"
         >
-          <div className="inline-block p-8 border border-grigio-acciaio border-opacity-30 hover:border-rosso-controllo hover:border-opacity-50 transition-all duration-300">
+            <div className="inline-block p-8 border border-grigio-acciaio border-opacity-30 hover:border-viola-brand hover:border-opacity-50 transition-all duration-300">
             <p className="text-grigio-acciaio mb-4 font-mono">
               Vieni a vedere il box di persona
             </p>
