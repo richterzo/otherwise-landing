@@ -11,7 +11,7 @@ export default function Training() {
   const programs = [
     {
       code: "PROG_01",
-      name: "WODFIT",
+      name: "WOD-FIT",
       description: "Allenamento funzionale completo, ad alta intensità, basato su esercizi variati e stimolanti. Ideale per chi vuole allenarsi con metodo, senza routine noiose. Per chi cerca risultati concreti.",
       duration: "Variabile",
       level: "Tutti i livelli",
@@ -54,11 +54,11 @@ export default function Training() {
           </motion.span>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-mono font-bold text-bianco-luce mt-4 mb-6 tracking-tight">
-            WOD-FIT<br />
-            <span className="text-grigio-acciaio">PROGRAMMA DI ALLENAMENTO</span>
+            PROGRAMMA<br />
+            <span className="text-grigio-acciaio">DI ALLENAMENTO</span>
           </h2>
 
-          <p className="text-grigio-acciaio leading-relaxed">
+          <p className="text-grigio-acciaio leading-relaxed mb-12">
             Un programma pensato per farti evolvere, a modo tuo. 
             Allenamento funzionale completo, ad alta intensità, risultati concreti.
           </p>
@@ -123,17 +123,6 @@ export default function Training() {
                   <span className="text-grigio-acciaio">LIVELLO:</span>
                   <span className="text-bianco-luce">{program.level}</span>
                 </div>
-              </div>
-
-              {/* Hover CTA */}
-              <div className="mt-6 pt-6 border-t border-grigio-acciaio border-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <a
-                  href="#contact"
-                  className="text-sm font-mono font-bold text-viola-brand hover:text-bianco-luce transition-colors flex items-center gap-2 uppercase tracking-wider"
-                >
-                  <span>Inizia Ora</span>
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </a>
               </div>
 
               {/* Corner brackets */}
