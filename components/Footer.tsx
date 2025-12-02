@@ -31,10 +31,9 @@ export default function Footer() {
               {/* Logo */}
               <div className="mb-6">
                 <img 
-                  src="/logo-final.png" 
+                  src="/Logo-Colore.webp" 
                   alt="Otherwise CrossFit Logo" 
                   className="h-24 w-auto"
-                  style={{ filter: 'brightness(0) invert(1)' }}
                 />
               </div>
               <p className="text-sm text-grigio-acciaio leading-relaxed mb-4">
@@ -65,7 +64,7 @@ export default function Footer() {
                       href={link.href}
                       className="text-grigio-acciaio hover:text-bianco-luce transition-colors text-sm inline-flex items-center gap-2 group"
                     >
-                      <span className="text-rosso-controllo opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                      <span className="text-viola-brand opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                       {link.name}
                     </a>
                   </li>
@@ -90,7 +89,7 @@ export default function Footer() {
                   <motion.a
                     key={social.name}
                     href={social.href}
-                    className="w-12 h-12 border border-grigio-acciaio border-opacity-30 hover:border-rosso-controllo hover:border-opacity-100 flex items-center justify-center text-grigio-acciaio hover:text-bianco-luce transition-all text-xs font-mono"
+                    className="w-12 h-12 border border-grigio-acciaio border-opacity-30 hover:border-viola-brand hover:border-opacity-100 flex items-center justify-center text-grigio-acciaio hover:text-bianco-luce transition-all text-xs font-mono"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -134,7 +133,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <motion.div
-                className="w-3 h-3 bg-rosso-controllo rounded-full"
+                className="w-3 h-3 bg-viola-brand rounded-full"
                 animate={{
                   scale: [1, 1.5, 1],
                   opacity: [1, 0.5, 1],
@@ -151,7 +150,7 @@ export default function Footer() {
             </div>
             <a
               href="#"
-              className="text-sm font-mono text-rosso-controllo hover:text-bianco-luce transition-colors"
+                    className="text-sm font-mono text-viola-brand hover:text-bianco-luce transition-colors"
             >
               SCOPRI DI PIÙ →
             </a>
@@ -198,8 +197,8 @@ export default function Footer() {
         </motion.div>
       </div>
 
-      {/* Red accent line */}
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-rosso-controllo to-transparent opacity-50" />
+      {/* Purple accent line */}
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-viola-brand to-transparent opacity-50" />
     </footer>
   );
 }

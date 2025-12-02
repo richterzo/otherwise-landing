@@ -79,10 +79,9 @@ export default function Navigation() {
             whileHover={{ scale: 1.05 }}
           >
             <img 
-              src="/logo-final.png" 
+              src="/Logo-Colore.webp" 
               alt="Otherwise CrossFit" 
               className="h-12 w-auto"
-              style={{ filter: 'brightness(0) invert(1)' }}
             />
           </motion.a>
 
@@ -113,7 +112,7 @@ export default function Navigation() {
                 
                 {/* Active indicator */}
                 <motion.span
-                  className="absolute -bottom-1 left-0 h-[2px] bg-rosso-controllo"
+                  className="absolute -bottom-1 left-0 h-[2px] bg-viola-brand"
                   initial={{ width: 0 }}
                   animate={{ width: activeSection === item.id ? '100%' : 0 }}
                   transition={{ duration: 0.3 }}
@@ -175,7 +174,7 @@ export default function Navigation() {
       {/* Scan line effect on nav */}
       {isScrolled && (
         <motion.div
-          className="absolute bottom-0 left-0 right-0 h-[1px] bg-rosso-controllo"
+          className="absolute bottom-0 left-0 right-0 h-[1px] bg-viola-brand"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.6 }}

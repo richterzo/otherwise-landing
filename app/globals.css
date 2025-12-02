@@ -34,16 +34,6 @@
     background: #FF6B35;
   }
   
-  /* Custom Red Crosshair Cursor - Desktop only */
-  @media (min-width: 768px) {
-    * {
-      cursor: url('/crosshair.svg') 16 16, crosshair;
-    }
-    
-    a, button, input, textarea, select, [role="button"] {
-      cursor: url('/crosshair.svg') 16 16, pointer;
-    }
-  }
   
   /* Improved focus visibility for WCAG 2.1 AA compliance */
   *:focus-visible {
