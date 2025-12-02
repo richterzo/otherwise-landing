@@ -6,7 +6,7 @@ import { BicepsFlexed } from "lucide-react";
 
 export default function Training() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   const programs = [
     {
@@ -38,7 +38,7 @@ export default function Training() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="max-w-3xl mb-16"
         >
           <motion.span 
@@ -54,8 +54,8 @@ export default function Training() {
           </motion.span>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-mono font-bold text-bianco-luce mt-4 mb-6 tracking-tight">
-            PROGRAMMI<br />
-            <span className="text-grigio-acciaio">DI ALLENAMENTO</span>
+            WOD-FIT<br />
+            <span className="text-grigio-acciaio">PROGRAMMA DI ALLENAMENTO</span>
           </h2>
 
           <p className="text-grigio-acciaio leading-relaxed">
@@ -69,9 +69,9 @@ export default function Training() {
           {programs.map((program, index) => (
             <motion.div
               key={program.code}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+              transition={{ duration: 0.5, delay: 0.1 + index * 0.05, ease: "easeOut" }}
               whileHover={{ y: -8 }}
               className="group relative bg-nero-tattico p-8 border border-grigio-acciaio border-opacity-30 hover:border-arancione-brand hover:border-opacity-70 transition-all duration-300 cursor-pointer"
             >

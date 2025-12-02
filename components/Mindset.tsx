@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 export default function Mindset() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   const principles = [
     {
@@ -55,7 +55,7 @@ export default function Mindset() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
           <span className="text-arancione-brand font-mono text-sm tracking-[0.3em] uppercase">
@@ -79,9 +79,9 @@ export default function Mindset() {
           {principles.map((principle, index) => (
             <motion.div
               key={principle.title}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 + index * 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1 + index * 0.1, ease: "easeOut" }}
               className="relative"
             >
               <div className="grid md:grid-cols-2 gap-12 items-center">

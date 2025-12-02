@@ -6,7 +6,7 @@ import { ShieldCheck, Dumbbell, Users } from "lucide-react";
 
 export default function About() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   const features = [
     {
@@ -55,7 +55,7 @@ export default function About() {
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <motion.span 
                 className="text-arancione-brand font-mono text-sm tracking-[0.3em] uppercase inline-flex items-center gap-2"
@@ -73,7 +73,7 @@ export default function About() {
                 className="text-4xl md:text-5xl lg:text-6xl font-airborne text-bianco-luce mt-4 mb-6 tracking-tight"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
               >
                 DOVE L'ALLENAMENTO<br />
                 <span className="text-grigio-acciaio">È UN RITUALE</span>

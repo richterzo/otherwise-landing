@@ -82,6 +82,31 @@
       background-position: 100% 50%;
     }
   }
+
+  /* Mobile-optimized animations */
+  @media (max-width: 768px) {
+    /* Reduce motion for better performance on mobile */
+    * {
+      animation-duration: 0.3s !important;
+      transition-duration: 0.3s !important;
+    }
+    
+    /* Disable complex animations on mobile */
+    .nav-gradient-line {
+      animation-duration: 12s !important;
+    }
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
   
 }
 

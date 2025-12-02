@@ -6,7 +6,7 @@ import { MapPin, Mail, Phone } from "lucide-react";
 
 export default function CTA() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -43,7 +43,7 @@ export default function CTA() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <span className="text-arancione-brand font-mono text-sm tracking-[0.3em] uppercase">
               [CONTATTI]
@@ -129,7 +129,7 @@ export default function CTA() {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
           >
             <form onSubmit={handleSubmit} className="space-y-6" aria-label="Form di contatto">
               <div>
