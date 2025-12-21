@@ -26,11 +26,15 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Otherwise Athletics Evolved | Functional Fitness Ferrara",
-  description: "Il box CrossFit di Ferrara. 300m² di spazio, coach certificati, risultati veri. Classes, personal training, open gym. Dal lunedì alla domenica.",
+  description: "Functional Fitness nel cuore di Ferrara. Coach certificati, attrezzatura all'avanguardia, programmazione seria, risultati concreti.",
   keywords: "crossfit ferrara, palestra ferrara, otherwise, box crossfit, allenamento funzionale, fitness ferrara, wod ferrara, gym ferrara, personal trainer ferrara",
   authors: [{ name: "Otherwise Athletics Evolved" }],
   creator: "Otherwise Athletics Evolved",
   publisher: "Otherwise Athletics Evolved",
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-icon.png',
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -42,7 +46,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Otherwise Athletics Evolved | CrossFit Ferrara',
-    description: 'Il box CrossFit di Ferrara. Coach certificati, attrezzatura top, community forte.',
+    description: 'Functional Fitness Ferrara. Coach certificati, attrezzatura all\'avanguardia, risultati concreti.',
     url: 'https://otherwise-ferrara.it',
     siteName: 'Otherwise Athletics Evolved',
     images: [
@@ -59,7 +63,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Otherwise Athletics Evolved | CrossFit Ferrara',
-    description: 'Il box CrossFit di Ferrara. Coach certificati, attrezzatura top, community forte.',
+    description: 'Functional Fitness Ferrara. Coach certificati, attrezzatura all\'avanguardia, risultati concreti.',
     images: ['/twitter-image.jpg'],
   },
   robots: {
