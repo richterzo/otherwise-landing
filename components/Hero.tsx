@@ -48,8 +48,8 @@ export default function Hero() {
         <source src="/video/otherwise.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark overlay for better text contrast (WCAG compliant) */}
-      <div className="absolute inset-0 bg-nero-tattico/70" />
+      {/* Dark overlay with violet tint for better text contrast (WCAG compliant) */}
+      <div className="absolute inset-0" style={{ backgroundColor: 'rgba(76, 29, 149, 0.6)' }} />
 
       {/* Brand Accent Lines */}
       <div className="absolute top-20 left-0 w-32 h-[2px] bg-gradient-to-r from-arancione-brand to-transparent opacity-50" />
