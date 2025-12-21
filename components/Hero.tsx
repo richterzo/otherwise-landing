@@ -43,10 +43,13 @@ export default function Hero() {
         playsInline
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
-        style={{ opacity: 0.5 }}
+        style={{ opacity: 0.4 }}
       >
         <source src="/video/otherwise.mp4" type="video/mp4" />
       </video>
+
+      {/* Dark overlay for better text contrast (WCAG compliant) */}
+      <div className="absolute inset-0 bg-nero-tattico/70" />
 
       {/* Brand Accent Lines */}
       <div className="absolute top-20 left-0 w-32 h-[2px] bg-gradient-to-r from-arancione-brand to-transparent opacity-50" />
@@ -97,7 +100,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mb-3 sm:mb-4"
         >
-          <span className="text-base sm:text-xl md:text-2xl lg:text-3xl text-grigio-acciaio font-mono tracking-wider uppercase">
+          <span className="text-base sm:text-xl md:text-2xl lg:text-3xl text-bianco-luce/90 font-mono tracking-wider uppercase">
             <span className="text-arancione-brand">ATHLETICS</span> <span className="text-viola-brand">EVOLVED</span>
           </span>
         </motion.div>

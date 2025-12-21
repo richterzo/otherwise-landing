@@ -64,10 +64,10 @@ export default function Mindset() {
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-airborne text-bianco-luce mt-4 mb-6 tracking-tight">
             LA DISCIPLINA<br />
-            <span className="text-grigio-acciaio">BATTE TUTTO</span>
+            <span className="text-bianco-luce/80">BATTE TUTTO</span>
           </h2>
 
-          <p className="text-grigio-acciaio leading-relaxed text-lg">
+          <p className="text-bianco-luce/85 leading-relaxed text-lg">
             Nel mondo del Functional Fitness, ciò che fa davvero la differenza non è solo la voglia 
             di mettersi alla prova, ma la costanza con cui lo fai. La disciplina nell'allenamento 
             trasforma la fatica in risultati, l'abitudine in identità, il movimento in potenza.
@@ -110,7 +110,7 @@ export default function Mindset() {
                         transition={{ duration: 0.8, delay: 0.5 + index * 0.2 }}
                       />
 
-                      <p className="text-grigio-acciaio leading-relaxed mb-6">
+                      <p className="text-bianco-luce/85 leading-relaxed mb-6">
                         {principle.description}
                       </p>
 

@@ -78,10 +78,10 @@ export default function Training() {
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-mono font-bold text-bianco-luce mt-4 mb-6 tracking-tight">
             PROGRAMMA<br />
-            <span className="text-grigio-acciaio">DI ALLENAMENTO</span>
+            <span className="text-bianco-luce/80">DI ALLENAMENTO</span>
           </h2>
 
-          <p className="text-grigio-acciaio leading-relaxed mb-12">
+          <p className="text-bianco-luce/85 leading-relaxed mb-12">
             Un programma pensato per farti evolvere, a modo tuo. 
             Allenamento funzionale completo, ad alta intensità, risultati concreti.
           </p>
@@ -115,18 +115,18 @@ export default function Training() {
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-grigio-acciaio leading-relaxed mb-6 group-hover:text-bianco-luce transition-colors">
+              <p className="text-sm text-bianco-luce/85 leading-relaxed mb-6 group-hover:text-bianco-luce transition-colors">
                 {program.description}
               </p>
 
               {/* Meta Info */}
               <div className="space-y-2 text-xs font-mono">
                 <div className="flex justify-between">
-                  <span className="text-grigio-acciaio">DURATA:</span>
+                  <span className="text-bianco-luce/70">DURATA:</span>
                   <span className="text-bianco-luce">{program.duration}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-grigio-acciaio">LIVELLO:</span>
+                  <span className="text-bianco-luce/70">LIVELLO:</span>
                   <span className="text-bianco-luce">{program.level}</span>
                 </div>
               </div>
@@ -162,7 +162,7 @@ export default function Training() {
               COME FUNZIONA IL WOD
             </h3>
             
-            <p className="text-grigio-acciaio text-sm mb-8">
+            <p className="text-bianco-luce/85 text-sm mb-8">
               Ogni allenamento è strutturato in tre step progressivi che ti portano dalla preparazione alla concretizzazione.
             </p>
           </div>

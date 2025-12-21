@@ -71,10 +71,10 @@ export default function CTA() {
             
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-airborne text-bianco-luce mt-4 mb-6 tracking-tight">
               INIZIA<br />
-              <span className="text-grigio-acciaio">OGGI</span>
+              <span className="text-bianco-luce/80">OGGI</span>
             </h2>
 
-            <p className="text-grigio-acciaio leading-relaxed mb-8">
+            <p className="text-bianco-luce/85 leading-relaxed mb-8">
               Vieni a vedere il box, parla con i coach, prova i nostri corsi. 
               Poi scegli il programma che fa per te.
             </p>
@@ -89,7 +89,7 @@ export default function CTA() {
                   <MapPin size={24} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <div className="text-sm font-mono text-grigio-acciaio mb-1">LOCATION</div>
+                  <div className="text-sm font-mono text-bianco-luce/70 mb-1">LOCATION</div>
                   <div className="text-bianco-luce">Via Giorgio Caselli, 13/E<br />44124 Ferrara FE</div>
                 </div>
               </motion.div>
@@ -102,7 +102,7 @@ export default function CTA() {
                   <Mail size={24} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <div className="text-sm font-mono text-grigio-acciaio mb-1">EMAIL</div>
+                  <div className="text-sm font-mono text-bianco-luce/70 mb-1">EMAIL</div>
                   <a href="mailto:info@otherwise.it" className="text-bianco-luce hover:text-arancione-brand transition-colors">
                     info@otherwise.it
                   </a>
@@ -117,7 +117,7 @@ export default function CTA() {
                   <Phone size={24} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <div className="text-sm font-mono text-grigio-acciaio mb-1">TELEFONO</div>
+                  <div className="text-sm font-mono text-bianco-luce/70 mb-1">TELEFONO</div>
                   <a href="tel:+390532687123" className="text-bianco-luce hover:text-arancione-brand transition-colors">
                     0532 687123
                   </a>
@@ -127,7 +127,7 @@ export default function CTA() {
 
             {/* Hours */}
             <div className="p-6 bg-nero-tattico border-l-2 border-arancione-brand">
-              <div className="text-sm font-mono text-grigio-acciaio mb-3">ORARI</div>
+              <div className="text-sm font-mono text-bianco-luce/70 mb-3">ORARI</div>
               <div className="space-y-2 text-bianco-luce text-sm">
                 <div className="flex justify-between">
                   <span>Lunedì - Venerdì</span>
@@ -139,7 +139,7 @@ export default function CTA() {
                 </div>
                 <div className="flex justify-between">
                   <span>Domenica</span>
-                  <span className="font-mono text-grigio-acciaio">Chiuso</span>
+                  <span className="font-mono text-bianco-luce/70">Chiuso</span>
                 </div>
               </div>
             </div>
@@ -153,7 +153,7 @@ export default function CTA() {
           >
             <form onSubmit={handleSubmit} className="space-y-6" aria-label="Form di contatto">
               <div>
-                <label htmlFor="name" className="block text-sm font-mono text-grigio-acciaio mb-2 tracking-wider">
+                <label htmlFor="name" className="block text-sm font-mono text-bianco-luce/85 mb-2 tracking-wider">
                   NOME COMPLETO *
                 </label>
                 <motion.input
@@ -170,7 +170,7 @@ export default function CTA() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-mono text-grigio-acciaio mb-2 tracking-wider">
+                <label htmlFor="email" className="block text-sm font-mono text-bianco-luce/85 mb-2 tracking-wider">
                   EMAIL *
                 </label>
                 <motion.input
@@ -187,7 +187,7 @@ export default function CTA() {
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-mono text-grigio-acciaio mb-2 tracking-wider">
+                <label htmlFor="phone" className="block text-sm font-mono text-bianco-luce/85 mb-2 tracking-wider">
                   TELEFONO
                 </label>
                 <motion.input
@@ -203,7 +203,7 @@ export default function CTA() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-mono text-grigio-acciaio mb-2 tracking-wider">
+                <label htmlFor="message" className="block text-sm font-mono text-bianco-luce/85 mb-2 tracking-wider">
                   MESSAGGIO
                 </label>
                 <motion.textarea
@@ -235,7 +235,7 @@ export default function CTA() {
                 />
               </motion.button>
 
-              <p className="text-xs text-grigio-acciaio font-mono text-center">
+              <p className="text-xs text-bianco-luce/75 font-mono text-center">
                 Ti risponderemo entro 24 ore operative
               </p>
             </form>

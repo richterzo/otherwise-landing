@@ -75,7 +75,7 @@ export default function Gallery() {
             IL BOX
           </h2>
 
-          <p className="text-grigio-acciaio text-lg max-w-2xl mx-auto">
+          <p className="text-bianco-luce/85 text-lg max-w-2xl mx-auto">
             300m² di spazio dedicato. Attrezzatura professionale. 
             L'ambiente perfetto per superare i tuoi limiti.
           </p>
@@ -177,7 +177,7 @@ export default function Gallery() {
           className="mt-16 text-center"
         >
             <div className="inline-block p-8 border border-grigio-acciaio border-opacity-30 hover:border-arancione-brand hover:border-opacity-50 transition-all duration-300">
-            <p className="text-grigio-acciaio mb-4 font-mono">
+            <p className="text-bianco-luce/85 mb-4 font-mono">
               Vieni a vedere il box di persona
             </p>
             <motion.a
