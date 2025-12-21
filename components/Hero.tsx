@@ -45,7 +45,7 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover"
         style={{ opacity: 0.5 }}
       >
-        <source src="/otherwise.mp4" type="video/mp4" />
+        <source src="/video/otherwise.mp4" type="video/mp4" />
       </video>
 
       {/* Brand Accent Lines */}
