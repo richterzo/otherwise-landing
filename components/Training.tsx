@@ -169,38 +169,73 @@ export default function Training() {
 
           {/* WOD Steps */}
           <div className="space-y-6">
-            {wodSteps.map((step, index) => (
-              <motion.div
-                key={step.id}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                className={`bg-nero-tattico border-2 ${step.borderColor} border-opacity-30 p-8 hover:border-opacity-60 transition-all duration-300 group relative`}
-              >
-                <div className="flex items-start gap-6">
-                  {/* Step Number */}
-                  <div className={`flex-shrink-0 w-16 h-16 border-2 ${step.borderColor} border-opacity-50 flex items-center justify-center group-hover:border-opacity-100 transition-all duration-300`}>
-                    <span className={`${step.textColor} font-mono font-bold text-2xl`}>
-                      {step.id}
-                    </span>
+            {wodSteps.map((step, index) => {
+              const isWOD = step.id === 3;
+              return (
+                <motion.div
+                  key={step.id}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+                  className={`bg-nero-tattico border-2 ${step.borderColor} border-opacity-30 p-8 hover:border-opacity-60 transition-all duration-300 group relative`}
+                >
+                  <div className="flex items-start gap-6">
+                    {/* Step Number */}
+                    {isWOD ? (
+                      <div 
+                        className="flex-shrink-0 w-16 h-16 flex items-center justify-center group-hover:opacity-100 transition-all duration-300 relative p-[2px]"
+                        style={{
+                          background: 'linear-gradient(135deg, #FF6B35, #7C3AED)',
+                          borderRadius: '0',
+                        }}
+                      >
+                        <div className="w-full h-full bg-nero-tattico flex items-center justify-center">
+                          <span 
+                            className="font-mono font-bold text-2xl bg-clip-text text-transparent"
+                            style={{
+                              backgroundImage: 'linear-gradient(135deg, #FF6B35, #7C3AED)',
+                            }}
+                          >
+                            {step.id}
+                          </span>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className={`flex-shrink-0 w-16 h-16 border-2 ${step.borderColor} border-opacity-50 flex items-center justify-center group-hover:border-opacity-100 transition-all duration-300`}>
+                        <span className={`${step.textColor} font-mono font-bold text-2xl`}>
+                          {step.id}
+                        </span>
+                      </div>
+                    )}
+                    
+                    {/* Step Content */}
+                    <div className="flex-1">
+                      {isWOD ? (
+                        <h4 
+                          className="font-mono text-lg tracking-widest uppercase mb-3 font-bold bg-clip-text text-transparent"
+                          style={{
+                            backgroundImage: 'linear-gradient(135deg, #FF6B35, #7C3AED)',
+                          }}
+                        >
+                          {step.name}
+                        </h4>
+                      ) : (
+                        <h4 className={`${step.textColor} font-mono text-lg tracking-widest uppercase mb-3 font-bold`}>
+                          {step.name}
+                        </h4>
+                      )}
+                      <p className="text-bianco-luce font-mono text-sm leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
                   
-                  {/* Step Content */}
-                  <div className="flex-1">
-                    <h4 className={`${step.textColor} font-mono text-lg tracking-widest uppercase mb-3 font-bold`}>
-                      {step.name}
-                    </h4>
-                    <p className="text-bianco-luce font-mono text-sm leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-                
-                {/* Corner brackets */}
-                <div className={`absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 ${step.borderColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                <div className={`absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 ${step.borderColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-              </motion.div>
-            ))}
+                  {/* Corner brackets */}
+                  <div className={`absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 ${step.borderColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                  <div className={`absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 ${step.borderColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
 

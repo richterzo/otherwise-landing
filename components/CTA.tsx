@@ -38,7 +38,7 @@ export default function CTA() {
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start lg:items-center">
           {/* Left: Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -150,6 +150,7 @@ export default function CTA() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            className="lg:pt-8"
           >
             <form onSubmit={handleSubmit} className="space-y-6" aria-label="Form di contatto">
               <div>
