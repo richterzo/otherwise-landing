@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef1 = useRef<HTMLVideoElement>(null);
+  const videoRef2 = useRef<HTMLVideoElement>(null);
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   
   const videos = [
@@ -12,42 +13,111 @@ export default function Hero() {
     "/video-02-hero.mp4"
   ];
 
+  // Initialize videos on mount
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    const video1 = videoRef1.current;
+    const video2 = videoRef2.current;
+    
+    if (!video1 || !video2) return;
 
-    const handleVideoEnd = () => {
-      setCurrentVideoIndex((prev) => (prev + 1) % videos.length);
+    const handleVideo1End = () => {
+      setCurrentVideoIndex(1);
     };
 
-    video.addEventListener('ended', handleVideoEnd);
+    const handleVideo2End = () => {
+      setCurrentVideoIndex(0);
+    };
+
+    // Setup video 1
+    video1.addEventListener('ended', handleVideo1End);
+    video1.load();
     
-    // Carica il video corrente
-    video.load();
-    video.play().catch(() => {
-      // Ignora errori di autoplay
-    });
+    // Setup video 2 - preload for mobile
+    video2.addEventListener('ended', handleVideo2End);
+    video2.load();
+
+    // Start first video
+    const playVideo1 = () => {
+      video1.play().catch((err) => {
+        console.log('Video 1 play error:', err);
+      });
+    };
+    
+    // Try to play immediately, then retry after load
+    playVideo1();
+    video1.addEventListener('loadeddata', playVideo1, { once: true });
 
     return () => {
-      video.removeEventListener('ended', handleVideoEnd);
+      video1.removeEventListener('ended', handleVideo1End);
+      video2.removeEventListener('ended', handleVideo2End);
+      video1.removeEventListener('loadeddata', playVideo1);
     };
-  }, [currentVideoIndex, videos.length]);
+  }, []);
+
+  // Handle video switch
+  useEffect(() => {
+    const currentVideo = currentVideoIndex === 0 ? videoRef1.current : videoRef2.current;
+    const previousVideo = currentVideoIndex === 0 ? videoRef2.current : videoRef1.current;
+    
+    if (previousVideo) {
+      previousVideo.pause();
+      previousVideo.currentTime = 0;
+    }
+    
+    if (currentVideo) {
+      // Reset and play current video
+      currentVideo.currentTime = 0;
+      
+      const playCurrent = () => {
+        currentVideo.play().catch((err) => {
+          console.log('Video play error:', err);
+        });
+      };
+      
+      // Try to play immediately
+      playCurrent();
+      
+      // Also try after video is ready (important for mobile)
+      if (currentVideo.readyState >= 2) {
+        playCurrent();
+      } else {
+        currentVideo.addEventListener('loadeddata', playCurrent, { once: true });
+        currentVideo.addEventListener('canplay', playCurrent, { once: true });
+      }
+    }
+  }, [currentVideoIndex]);
 
   return (
     <section
       aria-label="Hero section - Otherwise Athletics Evolved"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Video */}
+      {/* Background Videos - Alternating for better mobile support */}
       <video
-        ref={videoRef}
+        ref={videoRef1}
         autoPlay
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ opacity: 0.5 }}
+        loop={false}
+        preload="auto"
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+          currentVideoIndex === 0 ? 'opacity-50 z-0' : 'opacity-0 z-[-1]'
+        }`}
       >
-        <source src={videos[currentVideoIndex]} type="video/mp4" />
+        <source src={videos[0]} type="video/mp4" />
+      </video>
+      
+      <video
+        ref={videoRef2}
+        muted
+        playsInline
+        loop={false}
+        preload="auto"
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+          currentVideoIndex === 1 ? 'opacity-50 z-0' : 'opacity-0 z-[-1] pointer-events-none'
+        }`}
+      >
+        <source src={videos[1]} type="video/mp4" />
       </video>
 
       {/* Brand Accent Lines */}
