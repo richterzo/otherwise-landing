@@ -182,7 +182,7 @@ export default function Mindset() {
           <div className="inline-block max-w-2xl p-12 border-2 border-grigio-acciaio border-opacity-30">
             <p className="text-2xl md:text-3xl font-mono text-bianco-luce leading-relaxed">
               Oggi più forte<br />
-              <span className="text-viola-brand">di ieri</span>
+              <span className="text-bianco-luce">di ieri</span>
             </p>
           </div>
         </motion.div>
