@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Gallery() {
@@ -32,6 +32,14 @@ export default function Gallery() {
       category: "TRAINING"
     }
   ];
+
+  // Preload all gallery images to prevent flickering
+  useEffect(() => {
+    images.forEach(img => {
+      const image = new Image();
+      image.src = img.url;
+    });
+  }, []);
 
   const nextImage = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -102,6 +110,9 @@ export default function Gallery() {
                   }`}
                   style={{
                     backgroundImage: `url(${images[currentIndex].url})`,
+                    willChange: 'transform',
+                    backfaceVisibility: 'hidden',
+                    WebkitBackfaceVisibility: 'hidden',
                   }}
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.8 }}

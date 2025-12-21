@@ -1,13 +1,31 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 export default function Mindset() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
+  // Preload images to prevent flickering
+  useEffect(() => {
+    const images = [
+      '/images/mindset-community.webp',
+      '/images/hero-bg.webp',
+      '/images/mindset-2.webp'
+    ];
+    images.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   const principles = [
+    {
+      title: "SUPERVISIONE",
+      description: "Ogni movimento è seguito, ogni tecnica corretta. I coach sono sempre presenti per guidarti, correggerti e spingerti oltre. La sicurezza prima di tutto, la precisione sempre.",
+      quote: "\"Ogni ripetizione conta. Ogni movimento è importante.\""
+    },
     {
       title: "CONSISTENZA",
       description: "Presentarsi ogni giorno. Non aspettare la motivazione, costruisci l'abitudine. Ogni ripetizione, ogni secondo nel box è un passo avanti verso il tuo obiettivo.",
@@ -17,11 +35,6 @@ export default function Mindset() {
       title: "PROGRESSIONE",
       description: "Traccia i tuoi risultati, misura i progressi, supera te stesso. Ogni settimana un peso in più, un secondo in meno, un movimento più pulito.",
       quote: "\"Migliorare è una scelta. Costante.\""
-    },
-    {
-      title: "COMMUNITY",
-      description: "Quando sei in un gruppo che suda quanto te, è più facile non mollare. Qui ti alleni con persone che hanno i tuoi stessi obiettivi e la tua stessa voglia di crescere.",
-      quote: "\"La community giusta rende tutto più forte.\""
     }
   ];
 
@@ -127,6 +140,7 @@ export default function Mindset() {
                     className="relative aspect-square group"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
+                    style={{ willChange: 'transform' }}
                   >
                     {/* Background Image */}
                     <div className="absolute inset-0 overflow-hidden">
@@ -134,10 +148,14 @@ export default function Mindset() {
                         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                         style={{
                           backgroundImage: index === 0 
-                            ? 'url(/images/hero-bg.webp)'
+                            ? 'url(/images/mindset-community.webp)'
                             : index === 1
-                            ? 'url(/images/training-2.webp)'
-                            : 'url(/images/Box3.webp)',
+                            ? 'url(/images/hero-bg.webp)'
+                            : 'url(/images/mindset-2.webp)',
+                          willChange: 'transform',
+                          backfaceVisibility: 'hidden',
+                          WebkitBackfaceVisibility: 'hidden',
+                          transform: 'translateZ(0)',
                         }}
                       />
                     </div>
