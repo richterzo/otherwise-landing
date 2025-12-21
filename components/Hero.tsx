@@ -48,8 +48,8 @@ export default function Hero() {
         <source src="/video/otherwise.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark overlay with violet tint for better text contrast (WCAG compliant) */}
-      <div className="absolute inset-0" style={{ backgroundColor: 'rgba(76, 29, 149, 0.6)' }} />
+      {/* Dark overlay for better text contrast (WCAG compliant) */}
+      <div className="absolute inset-0 bg-nero-tattico/70" />
 
       {/* Brand Accent Lines */}
       <div className="absolute top-20 left-0 w-32 h-[2px] bg-gradient-to-r from-arancione-brand to-transparent opacity-50" />
@@ -153,7 +153,7 @@ export default function Hero() {
           <motion.a
             href="#training"
             aria-label="Scopri i nostri programmi di allenamento"
-            className="group w-full sm:flex-1 px-8 sm:px-10 py-4 sm:py-5 border-2 border-viola-brand text-viola-brand font-mono font-bold text-sm sm:text-base tracking-wider uppercase hover:bg-viola-brand hover:text-bianco-luce transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-viola-brand focus:ring-offset-2 focus:ring-offset-nero-tattico"
+            className="group w-full sm:flex-1 px-8 sm:px-10 py-4 sm:py-5 bg-viola-brand text-bianco-luce font-mono font-bold text-sm sm:text-base tracking-wider uppercase hover:bg-viola-brand/90 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-viola-brand focus:ring-offset-2 focus:ring-offset-nero-tattico"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
