@@ -157,12 +157,27 @@ export default function Mindset() {
           ))}
         </div>
 
+        {/* Quote */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-24 text-center"
+        >
+          <div className="inline-block max-w-2xl p-12 border-2 border-grigio-acciaio border-opacity-30">
+            <blockquote className="text-2xl md:text-3xl font-mono text-bianco-luce leading-relaxed italic">
+              La <span className="text-arancione-brand font-bold not-italic">motivazione</span> ti fa iniziare.<br />
+              La <span className="text-viola-brand font-bold not-italic">disciplina</span> ti fa restare.
+            </blockquote>
+          </div>
+        </motion.div>
+
         {/* Bottom Statement */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1 }}
-          className="mt-24 text-center"
+          className="mt-12 text-center"
         >
           <div className="inline-block max-w-2xl p-12 border-2 border-grigio-acciaio border-opacity-30">
             <p className="text-2xl md:text-3xl font-mono text-bianco-luce leading-relaxed">

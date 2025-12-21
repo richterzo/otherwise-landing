@@ -19,6 +19,30 @@ export default function Training() {
     }
   ];
 
+  const wodSteps = [
+    {
+      id: 1,
+      name: "WARM UP",
+      description: "Preparazione del corpo e attivazione muscolare. Fase fondamentale per prevenire infortuni e preparare il sistema nervoso all'allenamento.",
+      borderColor: "border-arancione-brand",
+      textColor: "text-arancione-brand"
+    },
+    {
+      id: 2,
+      name: "PERFORMANCE & SPEED",
+      description: "Allenamento specifico mirato a sviluppare performance e velocità. Questa fase punta a un obiettivo tecnico preciso, migliorando forza, potenza e coordinazione.",
+      borderColor: "border-viola-brand",
+      textColor: "text-viola-brand"
+    },
+    {
+      id: 3,
+      name: "WOD",
+      description: "Workout of the Day. La concretizzazione dell'allenamento: alta intensità, varietà di movimenti, sfida completa che mette insieme tutto ciò che hai preparato.",
+      borderColor: "border-rosso-controllo",
+      textColor: "text-rosso-controllo"
+    }
+  ];
+
   return (
     <section id="training" className="relative py-32 bg-grigio-cemento overflow-hidden" ref={ref}>
       {/* Background Image - Training */}
@@ -113,6 +137,72 @@ export default function Training() {
             </motion.div>
           ))}
         </div>
+
+        {/* WOD Structure Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-20 max-w-4xl mx-auto"
+        >
+          <div className="text-center mb-12">
+            <motion.span 
+              className="text-arancione-brand font-mono text-sm tracking-[0.3em] uppercase inline-flex items-center gap-2"
+              whileHover={{ scale: 1.05 }}
+            >
+              [ STRUTTURA WOD ]
+              <motion.span
+                className="inline-block w-1.5 h-1.5 bg-arancione-brand"
+                animate={{ opacity: [1, 0, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              />
+            </motion.span>
+            
+            <h3 className="text-3xl md:text-4xl font-mono font-bold text-bianco-luce mt-4 mb-4">
+              COME FUNZIONA IL WOD
+            </h3>
+            
+            <p className="text-grigio-acciaio text-sm mb-8">
+              Ogni allenamento è strutturato in tre step progressivi che ti portano dalla preparazione alla concretizzazione.
+            </p>
+          </div>
+
+          {/* WOD Steps */}
+          <div className="space-y-6">
+            {wodSteps.map((step, index) => (
+              <motion.div
+                key={step.id}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+                className={`bg-nero-tattico border-2 ${step.borderColor} border-opacity-30 p-8 hover:border-opacity-60 transition-all duration-300 group relative`}
+              >
+                <div className="flex items-start gap-6">
+                  {/* Step Number */}
+                  <div className={`flex-shrink-0 w-16 h-16 border-2 ${step.borderColor} border-opacity-50 flex items-center justify-center group-hover:border-opacity-100 transition-all duration-300`}>
+                    <span className={`${step.textColor} font-mono font-bold text-2xl`}>
+                      {step.id}
+                    </span>
+                  </div>
+                  
+                  {/* Step Content */}
+                  <div className="flex-1">
+                    <h4 className={`${step.textColor} font-mono text-lg tracking-widest uppercase mb-3 font-bold`}>
+                      {step.name}
+                    </h4>
+                    <p className="text-bianco-luce font-mono text-sm leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Corner brackets */}
+                <div className={`absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 ${step.borderColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                <div className={`absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 ${step.borderColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Bottom CTA */}
         <motion.div

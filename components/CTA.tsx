@@ -45,6 +45,26 @@ export default function CTA() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
+            {/* Small Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-8"
+            >
+              <div className="relative w-96 h-96 md:w-[28rem] md:h-[28rem] mx-auto border-2 border-grigio-acciaio border-opacity-30 overflow-hidden group">
+                <img
+                  src="/images/contact-small.webp"
+                  alt="Otherwise Athletics"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                {/* Corner brackets */}
+                <div className="absolute top-2 left-2 w-6 h-6 border-t-2 border-l-2 border-arancione-brand opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-arancione-brand opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-2 left-2 w-6 h-6 border-b-2 border-l-2 border-arancione-brand opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-2 right-2 w-6 h-6 border-b-2 border-r-2 border-arancione-brand opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            </motion.div>
             <span className="text-arancione-brand font-mono text-sm tracking-[0.3em] uppercase">
               [CONTATTI]
             </span>

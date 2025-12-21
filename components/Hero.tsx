@@ -1,34 +1,54 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  
+  const videos = [
+    "/video-01.mp4",
+    "/video-02-hero.mp4"
+  ];
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleVideoEnd = () => {
+      setCurrentVideoIndex((prev) => (prev + 1) % videos.length);
+    };
+
+    video.addEventListener('ended', handleVideoEnd);
+    
+    // Carica il video corrente
+    video.load();
+    video.play().catch(() => {
+      // Ignora errori di autoplay
+    });
+
+    return () => {
+      video.removeEventListener('ended', handleVideoEnd);
+    };
+  }, [currentVideoIndex, videos.length]);
+
   return (
     <section
       aria-label="Hero section - Otherwise Athletics Evolved"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Image - Color */}
-      <div 
-        role="img"
-        aria-label="CrossFit training background"
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: 'url(/images/hero.webp)',
-          opacity: 0.5
-        }}
-      />
-
-      {/* Large Logo Background */}
-      <div 
-        className="absolute inset-0 flex items-center justify-center opacity-15 pointer-events-none"
-        style={{
-          backgroundImage: 'url(/Logo-Colore.webp)',
-          backgroundSize: 'contain',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-        }}
-      />
+      {/* Background Video */}
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ opacity: 0.5 }}
+      >
+        <source src={videos[currentVideoIndex]} type="video/mp4" />
+      </video>
 
       {/* Brand Accent Lines */}
       <div className="absolute top-20 left-0 w-32 h-[2px] bg-gradient-to-r from-arancione-brand to-transparent opacity-50" />
@@ -97,19 +117,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mb-10 sm:mb-14 max-w-3xl mx-auto space-y-5 sm:space-y-6"
+          className="mb-10 sm:mb-14 max-w-3xl mx-auto"
         >
           <p className="text-sm sm:text-base lg:text-lg text-bianco-luce font-mono leading-relaxed px-4">
             Functional Fitness nel cuore di Ferrara. Coach certificati, programmazione seria, risultati concreti.
           </p>
-          
-          {/* Quote */}
-          <blockquote className="relative px-4 sm:px-6 py-4 sm:py-6 bg-nero-tattico/60 border-l-4 border-arancione-brand">
-            <p className="text-base sm:text-lg md:text-xl text-bianco-luce font-mono italic leading-relaxed">
-              La <span className="text-arancione-brand font-bold not-italic">motivazione</span> ti fa iniziare.<br />
-              La <span className="text-viola-brand font-bold not-italic">disciplina</span> ti fa restare.
-            </p>
-          </blockquote>
         </motion.div>
 
         {/* CTA Buttons */}
