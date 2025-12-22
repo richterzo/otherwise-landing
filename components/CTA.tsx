@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { MapPin, Mail, Phone, ChevronDown, ChevronUp } from 'lucide-react'
 
@@ -124,323 +124,330 @@ export default function CTA() {
                 </button>
               </div>
 
-              {/* Simplified Schedule */}
-              {!showFullSchedule && (
-                <div className="bg-nero-tattico border border-grigio-acciaio border-opacity-30 p-4 sm:p-6">
-                  <div className="space-y-4 font-mono text-sm sm:text-base">
-                    <div>
-                      <div className="text-bianco-luce/70 mb-2 text-xs sm:text-sm uppercase tracking-wider">
-                        Giorni feriali (lun–ven)
-                      </div>
-                      <div className="text-bianco-luce/85 space-y-1">
-                        <div>
-                          Mattina:{' '}
-                          <span className="text-arancione-brand">
-                            06:30 – 14:00
-                          </span>
+              {/* Schedule Content */}
+              <AnimatePresence mode="wait">
+                {!showFullSchedule ? (
+                  <motion.div
+                    key="simplified"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="bg-nero-tattico border border-grigio-acciaio border-opacity-30 p-4 sm:p-6"
+                  >
+                    <div className="space-y-4 font-mono text-sm sm:text-base">
+                      <div>
+                        <div className="text-bianco-luce/70 mb-2 text-xs sm:text-sm uppercase tracking-wider">
+                          Giorni feriali (lun–ven)
                         </div>
-                        <div>
-                          Pomeriggio / sera:{' '}
-                          <span className="text-arancione-brand">
-                            17:00 – 20:00
-                          </span>
+                        <div className="text-bianco-luce/85 space-y-1">
+                          <div>
+                            Mattina:{' '}
+                            <span className="text-arancione-brand">
+                              06:30 – 14:00
+                            </span>
+                          </div>
+                          <div>
+                            Pomeriggio / sera:{' '}
+                            <span className="text-arancione-brand">
+                              17:00 – 20:00
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="pt-3 border-t border-grigio-acciaio border-opacity-30">
+                        <div className="text-bianco-luce/70 mb-2 text-xs sm:text-sm uppercase tracking-wider">
+                          Weekend
+                        </div>
+                        <div className="text-bianco-luce/85 space-y-1">
+                          <div>
+                            Sabato:{' '}
+                            <span className="text-arancione-brand">
+                              09:00 – 10:00
+                            </span>
+                          </div>
+                          <div>
+                            Domenica:{' '}
+                            <span className="text-arancione-brand">
+                              10:00 – 11:00
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="pt-3 border-t border-grigio-acciaio border-opacity-30">
-                      <div className="text-bianco-luce/70 mb-2 text-xs sm:text-sm uppercase tracking-wider">
-                        Weekend
-                      </div>
-                      <div className="text-bianco-luce/85 space-y-1">
-                        <div>
-                          Sabato:{' '}
-                          <span className="text-arancione-brand">
-                            09:00 – 10:00
-                          </span>
-                        </div>
-                        <div>
-                          Domenica:{' '}
-                          <span className="text-arancione-brand">
-                            10:00 – 11:00
-                          </span>
-                        </div>
-                      </div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="full"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="mt-3 overflow-x-auto"
+                  >
+                    <div className="inline-block min-w-full">
+                      <table className="w-full border-collapse bg-nero-tattico border border-grigio-acciaio border-opacity-30 text-[10px] sm:text-xs">
+                        <thead>
+                          <tr className="bg-grigio-cemento">
+                            <th className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-left font-mono text-bianco-luce/70 uppercase tracking-wider">
+                              Ora
+                            </th>
+                            <th className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center font-mono text-bianco-luce/70 uppercase tracking-wider">
+                              Lun
+                            </th>
+                            <th className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center font-mono text-bianco-luce/70 uppercase tracking-wider">
+                              Mar
+                            </th>
+                            <th className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center font-mono text-bianco-luce/70 uppercase tracking-wider">
+                              Mer
+                            </th>
+                            <th className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center font-mono text-bianco-luce/70 uppercase tracking-wider">
+                              Gio
+                            </th>
+                            <th className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center font-mono text-bianco-luce/70 uppercase tracking-wider">
+                              Ven
+                            </th>
+                            <th className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center font-mono text-bianco-luce/70 uppercase tracking-wider">
+                              Sab
+                            </th>
+                            <th className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center font-mono text-bianco-luce/70 uppercase tracking-wider">
+                              Dom
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody className="font-mono">
+                          <tr>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
+                              06:30
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                          </tr>
+                          <tr>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
+                              09:00
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                          </tr>
+                          <tr>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
+                              10:00
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
+                              11:00
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                          </tr>
+                          <tr>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
+                              12:00
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                          </tr>
+                          <tr>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
+                              13:00
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                          </tr>
+                          <tr>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
+                              14:00
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                          </tr>
+                          <tr>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
+                              15:00
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                          </tr>
+                          <tr>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
+                              16:00
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                          </tr>
+                          <tr>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
+                              17:00
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                          </tr>
+                          <tr>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
+                              18:00
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                          </tr>
+                          <tr>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
+                              19:00
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                          </tr>
+                          <tr>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
+                              20:00
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
+                              WOD-FIT
+                            </td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                            <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Full Schedule Table - Expanded */}
-              {showFullSchedule && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="mt-3 overflow-x-auto"
-                >
-                  <div className="inline-block min-w-full">
-                    <table className="w-full border-collapse bg-nero-tattico border border-grigio-acciaio border-opacity-30 text-[10px] sm:text-xs">
-                      <thead>
-                        <tr className="bg-grigio-cemento">
-                          <th className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-left font-mono text-bianco-luce/70 uppercase tracking-wider">
-                            Ora
-                          </th>
-                          <th className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center font-mono text-bianco-luce/70 uppercase tracking-wider">
-                            Lun
-                          </th>
-                          <th className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center font-mono text-bianco-luce/70 uppercase tracking-wider">
-                            Mar
-                          </th>
-                          <th className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center font-mono text-bianco-luce/70 uppercase tracking-wider">
-                            Mer
-                          </th>
-                          <th className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center font-mono text-bianco-luce/70 uppercase tracking-wider">
-                            Gio
-                          </th>
-                          <th className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center font-mono text-bianco-luce/70 uppercase tracking-wider">
-                            Ven
-                          </th>
-                          <th className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center font-mono text-bianco-luce/70 uppercase tracking-wider">
-                            Sab
-                          </th>
-                          <th className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center font-mono text-bianco-luce/70 uppercase tracking-wider">
-                            Dom
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody className="font-mono">
-                        <tr>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
-                            06:30
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                        </tr>
-                        <tr>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
-                            09:00
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                        </tr>
-                        <tr>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
-                            10:00
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                        </tr>
-                        <tr>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
-                            11:00
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                        </tr>
-                        <tr>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
-                            12:00
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                        </tr>
-                        <tr>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
-                            13:00
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                        </tr>
-                        <tr>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
-                            14:00
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                        </tr>
-                        <tr>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
-                            15:00
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                        </tr>
-                        <tr>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
-                            16:00
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                        </tr>
-                        <tr>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
-                            17:00
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                        </tr>
-                        <tr>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
-                            18:00
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                        </tr>
-                        <tr>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
-                            19:00
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                        </tr>
-                        <tr>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-2 py-1.5 text-bianco-luce/80">
-                            20:00
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center text-arancione-brand">
-                            WOD-FIT
-                          </td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                          <td className="border border-grigio-acciaio border-opacity-30 px-1 py-1.5 text-center"></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </motion.div>
-              )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </motion.div>
