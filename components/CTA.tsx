@@ -90,7 +90,7 @@ export default function CTA() {
                 <img
                   src="/images/contact-small.webp"
                   alt="Otherwise Athletics"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 transform -rotate-90 md:rotate-0 scale-125 md:scale-100"
                 />
                 {/* Corner brackets */}
                 <div className="absolute top-2 left-2 w-4 h-4 sm:w-6 sm:h-6 border-t-2 border-l-2 border-arancione-brand opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
