@@ -179,28 +179,6 @@ export default function Gallery() {
             ))}
           </div>
         </div>
-
-        {/* Bottom Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 text-center"
-        >
-            <div className="inline-block p-8 border border-grigio-acciaio border-opacity-30 hover:border-arancione-brand hover:border-opacity-50 transition-all duration-300">
-            <p className="text-bianco-luce/85 mb-4 font-mono">
-              Vieni a vedere il box di persona
-            </p>
-            <motion.a
-              href="#contact"
-              className="inline-block px-8 py-3 bg-rosso-controllo text-bianco-luce font-mono font-bold text-sm hover:bg-rosso-battito transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              PRENOTA VISITA
-            </motion.a>
-          </div>
-        </motion.div>
       </div>
 
       {/* Lightbox Modal (optional enhancement) */}

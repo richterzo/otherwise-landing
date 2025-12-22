@@ -175,7 +175,7 @@ export default function Mindset() {
           ))}
         </div>
 
-        {/* Quote */}
+        {/* Quote - Oggi più forte di ieri */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -183,25 +183,47 @@ export default function Mindset() {
           className="mt-24 text-center"
         >
           <div className="inline-block max-w-2xl p-12 border-2 border-grigio-acciaio border-opacity-30">
-            <blockquote className="text-2xl md:text-3xl font-mono text-bianco-luce leading-relaxed italic">
-              La <span className="text-arancione-brand font-bold not-italic">motivazione</span> ti fa iniziare.<br />
-              La <span className="text-viola-brand font-bold not-italic">disciplina</span> ti fa restare.
-            </blockquote>
+            <p className="text-2xl md:text-3xl font-mono text-bianco-luce leading-relaxed">
+              Oggi più forte<br />
+              <span className="text-bianco-luce">di ieri</span>
+            </p>
           </div>
         </motion.div>
 
-        {/* Bottom Statement */}
+        {/* PRENOTA VISITA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1 }}
           className="mt-12 text-center"
         >
-          <div className="inline-block max-w-2xl p-12 border-2 border-grigio-acciaio border-opacity-30">
-            <p className="text-2xl md:text-3xl font-mono text-bianco-luce leading-relaxed">
-              Oggi più forte<br />
-              <span className="text-bianco-luce">di ieri</span>
+          <div className="inline-block p-8 border border-grigio-acciaio border-opacity-30 hover:border-arancione-brand hover:border-opacity-50 transition-all duration-300">
+            <p className="text-bianco-luce/85 mb-4 font-mono">
+              Vieni a vedere il box di persona
             </p>
+            <motion.a
+              href="#contact"
+              className="inline-block px-8 py-3 bg-rosso-controllo text-bianco-luce font-mono font-bold text-sm hover:bg-rosso-battito transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              PRENOTA VISITA
+            </motion.a>
+          </div>
+        </motion.div>
+
+        {/* Quote - Motivazione e Disciplina */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="mt-12 text-center"
+        >
+          <div className="inline-block max-w-2xl p-12 border-2 border-grigio-acciaio border-opacity-30">
+            <blockquote className="text-2xl md:text-3xl font-mono text-bianco-luce leading-relaxed italic">
+              La <span className="text-arancione-brand font-bold not-italic">motivazione</span> ti fa iniziare.<br />
+              La <span className="text-viola-brand font-bold not-italic">disciplina</span> ti fa restare.
+            </blockquote>
           </div>
         </motion.div>
       </div>
