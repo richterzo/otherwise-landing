@@ -1,58 +1,63 @@
-"use client";
+'use client'
 
-import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { useRef, useState, useEffect } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 export default function Gallery() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-50px' })
+  const [selectedImage, setSelectedImage] = useState<number | null>(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   // Gallery images - Real Otherwise gym photos
   const images = [
     {
       id: 1,
-      url: "/images/Box0.webp",
-      title: "Main Box",
-      category: "BOX"
+      url: '/images/Box0.webp',
+      title: 'Main Box',
+      category: 'BOX',
     },
     {
       id: 2,
-      url: "/images/Box1.webp",
-      title: "Equipment",
-      category: "EQUIPMENT",
-      alignBottom: true // Show bottom part of image to see equipment
+      url: '/images/Box1.webp',
+      title: 'Equipment',
+      category: 'EQUIPMENT',
+      alignBottom: true, // Show bottom part of image to see equipment
     },
     {
       id: 3,
-      url: "/images/Box2.webp",
-      title: "Training Zone",
-      category: "TRAINING"
-    }
-  ];
+      url: '/images/Box2.webp',
+      title: 'Training Zone',
+      category: 'TRAINING',
+      rotateMobile: true, // Fix rotation on mobile
+    },
+  ]
 
   // Preload all gallery images to prevent flickering
   useEffect(() => {
-    images.forEach(img => {
-      const image = new Image();
-      image.src = img.url;
-    });
-  }, []);
+    images.forEach((img) => {
+      const image = new Image()
+      image.src = img.url
+    })
+  }, [])
 
   const nextImage = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
-  };
+    setCurrentIndex((prev) => (prev + 1) % images.length)
+  }
 
   const prevImage = () => {
-    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
-  };
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+  }
 
   return (
-    <section id="gallery" className="relative py-32 bg-nero-tattico overflow-hidden" ref={ref}>
+    <section
+      id="gallery"
+      className="relative py-32 bg-nero-tattico overflow-hidden"
+      ref={ref}
+    >
       {/* Background accent */}
-      <motion.div 
+      <motion.div
         className="absolute top-0 right-0 w-1/3 h-[1px] bg-arancione-brand opacity-50"
         initial={{ width: 0 }}
         animate={isInView ? { width: '33%' } : {}}
@@ -64,10 +69,10 @@ export default function Gallery() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-center mb-16"
         >
-          <motion.span 
+          <motion.span
             className="text-arancione-brand font-mono text-sm tracking-[0.3em] uppercase inline-flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
           >
@@ -78,14 +83,14 @@ export default function Gallery() {
               transition={{ duration: 1.5, repeat: Infinity }}
             />
           </motion.span>
-          
+
           <h2 className="font-airborne text-5xl md:text-7xl text-bianco-luce mt-6 mb-6">
             IL BOX
           </h2>
 
           <p className="text-bianco-luce/85 text-lg max-w-2xl mx-auto">
-            300m² di spazio dedicato. Attrezzatura professionale. 
-            L'ambiente perfetto per superare i tuoi limiti.
+            300m² di spazio dedicato. Attrezzatura professionale. L'ambiente
+            perfetto per superare i tuoi limiti.
           </p>
         </motion.div>
 
@@ -99,7 +104,7 @@ export default function Gallery() {
                 initial={{ opacity: 0, x: 300 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -300 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
+                transition={{ duration: 0.5, ease: 'easeInOut' }}
                 className="relative aspect-[16/10] md:aspect-[21/9] lg:aspect-[3/1] overflow-hidden cursor-pointer group"
                 onClick={() => setSelectedImage(images[currentIndex].id)}
               >
@@ -107,6 +112,10 @@ export default function Gallery() {
                 <motion.div
                   className={`absolute inset-0 bg-cover ${
                     images[currentIndex].alignBottom ? 'bg-bottom' : 'bg-center'
+                  } ${
+                    images[currentIndex].rotateMobile
+                      ? 'transform -rotate-90 md:rotate-0 scale-125 md:scale-100'
+                      : ''
                   }`}
                   style={{
                     backgroundImage: `url(${images[currentIndex].url})`,
@@ -117,7 +126,6 @@ export default function Gallery() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.8 }}
                 />
-
 
                 {/* Border Frame */}
                 <div className="absolute inset-0 border-2 border-grigio-acciaio border-opacity-30 group-hover:border-arancione-brand group-hover:border-opacity-60 transition-all duration-300">
@@ -179,6 +187,28 @@ export default function Gallery() {
             ))}
           </div>
         </div>
+
+        {/* PRENOTA VISITA Box */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="mt-16 text-center"
+        >
+          <div className="inline-block p-8 border border-grigio-acciaio border-opacity-30 hover:border-arancione-brand hover:border-opacity-50 transition-all duration-300">
+            <p className="text-bianco-luce/85 mb-4 font-mono">
+              Vieni a vedere il box di persona
+            </p>
+            <motion.a
+              href="#contact"
+              className="inline-block px-8 py-3 bg-rosso-controllo text-bianco-luce font-mono font-bold text-sm hover:bg-rosso-battito transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              PRENOTA VISITA
+            </motion.a>
+          </div>
+        </motion.div>
       </div>
 
       {/* Lightbox Modal (optional enhancement) */}
@@ -202,14 +232,27 @@ export default function Gallery() {
               onClick={() => setSelectedImage(null)}
               className="absolute -top-12 right-0 text-bianco-luce hover:text-rosso-controllo transition-colors"
             >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
 
             <img
-              src={images.find(img => img.id === selectedImage)?.url}
-              alt={images.find(img => img.id === selectedImage)?.title || "Gallery"}
+              src={images.find((img) => img.id === selectedImage)?.url}
+              alt={
+                images.find((img) => img.id === selectedImage)?.title ||
+                'Gallery'
+              }
               className="w-full h-auto max-h-[90vh] object-contain"
               style={{ filter: 'grayscale(100%) contrast(1.2)' }}
             />
@@ -217,6 +260,5 @@ export default function Gallery() {
         </motion.div>
       )}
     </section>
-  );
+  )
 }
-

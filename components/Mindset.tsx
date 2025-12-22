@@ -1,54 +1,64 @@
-"use client";
+'use client'
 
-import { motion, useInView } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { motion, useInView } from 'framer-motion'
+import { useRef, useEffect } from 'react'
 
 export default function Mindset() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-50px' })
 
   // Preload images to prevent flickering
   useEffect(() => {
     const images = [
       '/images/mindset-community.webp',
       '/images/hero-bg.webp',
-      '/images/mindset-2.webp'
-    ];
-    images.forEach(src => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, []);
+      '/images/mindset-2.webp',
+    ]
+    images.forEach((src) => {
+      const img = new Image()
+      img.src = src
+    })
+  }, [])
 
   const principles = [
     {
-      title: "SUPERVISIONE",
-      description: "Ogni movimento è seguito, ogni tecnica corretta. I coach sono sempre presenti per guidarti, correggerti e spingerti oltre. La sicurezza prima di tutto, la precisione sempre.",
-      quote: "\"Ogni ripetizione conta. Ogni movimento è importante.\""
+      title: 'SUPERVISIONE',
+      description:
+        'Ogni movimento è seguito, ogni tecnica corretta. I coach sono sempre presenti per guidarti, correggerti e spingerti oltre. La sicurezza prima di tutto, la precisione sempre.',
+      quote: '"Ogni ripetizione conta. Ogni movimento è importante."',
     },
     {
-      title: "CONSISTENZA",
-      description: "Presentarsi ogni giorno. Non aspettare la motivazione, costruisci l'abitudine. Ogni ripetizione, ogni secondo nel box è un passo avanti verso il tuo obiettivo.",
-      quote: "\"Non si tratta di un giorno. Si tratta di ogni giorno.\""
+      title: 'CONSISTENZA',
+      description:
+        "Presentarsi ogni giorno. Non aspettare la motivazione, costruisci l'abitudine. Ogni ripetizione, ogni secondo nel box è un passo avanti verso il tuo obiettivo.",
+      quote: '"Non si tratta di un giorno. Si tratta di ogni giorno."',
     },
     {
-      title: "PROGRESSIONE",
-      description: "Traccia i tuoi risultati, misura i progressi, supera te stesso. Ogni settimana un peso in più, un secondo in meno, un movimento più pulito.",
-      quote: "\"Migliorare è una scelta. Costante.\""
-    }
-  ];
+      title: 'PROGRESSIONE',
+      description:
+        'Traccia i tuoi risultati, misura i progressi, supera te stesso. Ogni settimana un peso in più, un secondo in meno, un movimento più pulito.',
+      quote: '"Migliorare è una scelta. Costante."',
+    },
+  ]
 
   return (
-    <section id="mindset" className="relative py-32 bg-nero-tattico overflow-hidden" ref={ref}>
+    <section
+      id="mindset"
+      className="relative py-32 bg-nero-tattico overflow-hidden"
+      ref={ref}
+    >
       {/* Decorative Grid */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
             linear-gradient(rgba(255, 107, 53, 0.3) 1px, transparent 1px),
             linear-gradient(90deg, rgba(255, 107, 53, 0.3) 1px, transparent 1px)
           `,
-          backgroundSize: '100px 100px'
-        }} />
+            backgroundSize: '100px 100px',
+          }}
+        />
       </div>
 
       {/* Large Background Text */}
@@ -68,22 +78,24 @@ export default function Mindset() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
           <span className="text-arancione-brand font-mono text-sm tracking-[0.3em] uppercase">
             [MINDSET]
           </span>
-          
+
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-airborne text-bianco-luce mt-4 mb-6 tracking-tight">
-            LA DISCIPLINA<br />
+            LA DISCIPLINA
+            <br />
             <span className="text-bianco-luce/80">BATTE TUTTO</span>
           </h2>
 
           <p className="text-bianco-luce/85 leading-relaxed text-lg">
-            Nel mondo del Functional Fitness, ciò che fa davvero la differenza non è solo la voglia 
-            di mettersi alla prova, ma la costanza con cui lo fai. La disciplina nell'allenamento 
-            trasforma la fatica in risultati, l'abitudine in identità, il movimento in potenza.
+            Nel mondo del Functional Fitness, ciò che fa davvero la differenza
+            non è solo la voglia di mettersi alla prova, ma la costanza con cui
+            lo fai. La disciplina nell'allenamento trasforma la fatica in
+            risultati, l'abitudine in identità, il movimento in potenza.
           </p>
         </motion.div>
 
@@ -94,12 +106,18 @@ export default function Mindset() {
               key={principle.title}
               initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 + index * 0.1, ease: "easeOut" }}
+              transition={{
+                duration: 0.5,
+                delay: 0.1 + index * 0.1,
+                ease: 'easeOut',
+              }}
               className="relative"
             >
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 {/* Left: Title and Number (alternates) */}
-                <div className={`${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
+                <div
+                  className={`${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}
+                >
                   <div className="relative">
                     {/* Large Number Background */}
                     <motion.div
@@ -115,7 +133,7 @@ export default function Mindset() {
                       <h3 className="text-4xl md:text-5xl font-mono font-bold text-bianco-luce mb-6">
                         {principle.title}
                       </h3>
-                      
+
                       <motion.div
                         className="w-20 h-1 bg-gradient-to-r from-arancione-brand to-viola-brand mb-6"
                         initial={{ width: 0 }}
@@ -135,7 +153,9 @@ export default function Mindset() {
                 </div>
 
                 {/* Right: Visual Element */}
-                <div className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
+                <div
+                  className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}
+                >
                   <motion.div
                     className="relative aspect-square group"
                     whileHover={{ scale: 1.05 }}
@@ -144,14 +164,15 @@ export default function Mindset() {
                   >
                     {/* Background Image */}
                     <div className="absolute inset-0 overflow-hidden">
-                      <div 
+                      <div
                         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                         style={{
-                          backgroundImage: index === 0 
-                            ? 'url(/images/mindset-community.webp)'
-                            : index === 1
-                            ? 'url(/images/hero-bg.webp)'
-                            : 'url(/images/mindset-2.webp)',
+                          backgroundImage:
+                            index === 0
+                              ? 'url(/images/mindset-community.webp)'
+                              : index === 1
+                              ? 'url(/images/hero-bg.webp)'
+                              : 'url(/images/mindset-2.webp)',
                           willChange: 'transform',
                           backfaceVisibility: 'hidden',
                           WebkitBackfaceVisibility: 'hidden',
@@ -159,7 +180,7 @@ export default function Mindset() {
                         }}
                       />
                     </div>
-                    
+
                     {/* Crosshair Box */}
                     <div className="absolute inset-0 border-2 border-grigio-acciaio border-opacity-30 p-8 hover:border-arancione-brand hover:border-opacity-50 transition-all duration-300 group">
                       {/* Corner Brackets */}
@@ -184,31 +205,10 @@ export default function Mindset() {
         >
           <div className="inline-block max-w-2xl p-12 border-2 border-grigio-acciaio border-opacity-30">
             <p className="text-2xl md:text-3xl font-mono text-bianco-luce leading-relaxed">
-              Oggi più forte<br />
+              Oggi più forte
+              <br />
               <span className="text-bianco-luce">di ieri</span>
             </p>
-          </div>
-        </motion.div>
-
-        {/* PRENOTA VISITA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="mt-12 text-center"
-        >
-          <div className="inline-block p-8 border border-grigio-acciaio border-opacity-30 hover:border-arancione-brand hover:border-opacity-50 transition-all duration-300">
-            <p className="text-bianco-luce/85 mb-4 font-mono">
-              Vieni a vedere il box di persona
-            </p>
-            <motion.a
-              href="#contact"
-              className="inline-block px-8 py-3 bg-rosso-controllo text-bianco-luce font-mono font-bold text-sm hover:bg-rosso-battito transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              PRENOTA VISITA
-            </motion.a>
           </div>
         </motion.div>
 
@@ -221,13 +221,21 @@ export default function Mindset() {
         >
           <div className="inline-block max-w-2xl p-12 border-2 border-grigio-acciaio border-opacity-30">
             <blockquote className="text-2xl md:text-3xl font-mono text-bianco-luce leading-relaxed italic">
-              La <span className="text-arancione-brand font-bold not-italic">motivazione</span> ti fa iniziare.<br />
-              La <span className="text-viola-brand font-bold not-italic">disciplina</span> ti fa restare.
+              La{' '}
+              <span className="text-arancione-brand font-bold not-italic">
+                motivazione
+              </span>{' '}
+              ti fa iniziare.
+              <br />
+              La{' '}
+              <span className="text-viola-brand font-bold not-italic">
+                disciplina
+              </span>{' '}
+              ti fa restare.
             </blockquote>
           </div>
         </motion.div>
       </div>
     </section>
-  );
+  )
 }
-
