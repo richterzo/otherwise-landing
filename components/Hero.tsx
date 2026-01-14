@@ -152,7 +152,7 @@ export default function Hero() {
           {/* Secondary CTA */}
           <motion.a
             href="#training"
-            aria-label="Scopri i nostri programmi di allenamento"
+            aria-label="Scopri WOD-FIT"
             className="group w-full sm:flex-1 px-8 sm:px-10 py-4 sm:py-5 bg-viola-brand text-bianco-luce font-mono font-bold text-sm sm:text-base tracking-wider uppercase hover:bg-viola-brand/90 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-viola-brand focus:ring-offset-2 focus:ring-offset-nero-tattico"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
