@@ -121,7 +121,7 @@ export default function Hero() {
           className="mb-10 sm:mb-14 max-w-3xl mx-auto"
         >
           <p className="text-sm sm:text-base lg:text-lg text-bianco-luce font-mono leading-relaxed px-4">
-            Functional Fitness nel cuore di Ferrara. Coach certificati, programmazione seria, risultati concreti.
+            Functional Fitness nel cuore di Ferrara. Coach certificati, programmazione mirata, risultati tangibili.
           </p>
         </motion.div>
 
@@ -157,7 +157,7 @@ export default function Hero() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            Programmi
+            WOD-FIT
           </motion.a>
         </motion.div>
 

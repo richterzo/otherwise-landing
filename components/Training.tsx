@@ -11,7 +11,7 @@ export default function Training() {
     {
       code: "PROG_01",
       name: "WOD-FIT",
-      description: "Allenamento funzionale completo, ad alta intensità, basato su esercizi variati e stimolanti. Ideale per chi vuole allenarsi con metodo, senza routine noiose. Per chi cerca risultati concreti.",
+      description: "WOD‑FIT: l'allenamento che trasforma davvero, è il programma di allenamento pensato per chi vuole migliorare forza, resistenza e forma fisica attraverso sessioni dinamiche, intense e sempre diverse. Ispirato alla metodologia dei WOD (Workout of the Day), unisce esercizi funzionali, lavoro cardiovascolare e potenziamento muscolare in un percorso completo e adatto a ogni livello.",
       duration: "Variabile",
       level: "Tutti i livelli",
       level_number: 2,
@@ -29,8 +29,8 @@ export default function Training() {
     },
     {
       id: 2,
-      name: "PERFORMANCE & SPEED",
-      description: "Allenamento specifico mirato a sviluppare performance e velocità. Questa fase punta a un obiettivo tecnico preciso, migliorando forza, potenza e coordinazione.",
+      name: "DAILY TOPIC",
+      description: "È l'argomento del giorno, la parte centrale di WOD-FIT, ogni giorno un argomento diverso, alternato tra Forza, Ginnastica, Weightlifting, Potenza e Aerobic Consistency.",
       borderColor: "border-viola-brand",
       textColor: "text-viola-brand"
     },
@@ -68,7 +68,7 @@ export default function Training() {
             className="text-arancione-brand font-mono text-sm tracking-[0.3em] uppercase inline-flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
           >
-            [ PROGRAMMI ]
+            [ WOD-FIT ]
             <motion.span
               className="inline-block w-1.5 h-1.5 bg-arancione-brand"
               animate={{ opacity: [1, 0, 1] }}
@@ -83,7 +83,7 @@ export default function Training() {
 
           <p className="text-bianco-luce/85 leading-relaxed mb-12">
             Un programma pensato per farti evolvere, a modo tuo. 
-            Allenamento funzionale completo, ad alta intensità, risultati concreti.
+            Allenamento funzionale completo, ad alta intensità, risultati tangibili.
           </p>
         </motion.div>
 
@@ -159,7 +159,7 @@ export default function Training() {
             </motion.span>
             
             <h3 className="text-3xl md:text-4xl font-mono font-bold text-bianco-luce mt-4 mb-4">
-              COME FUNZIONA IL WOD
+              COME FUNZIONA WOD-FIT
             </h3>
             
             <p className="text-bianco-luce/85 text-sm mb-8">

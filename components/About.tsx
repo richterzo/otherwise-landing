@@ -13,14 +13,14 @@ export default function About() {
       number: '1',
       title: 'COACH CERTIFICATI',
       description:
-        'Oltre 15 trainer qualificati CrossFit L1/L2. Tecnica prima di tutto, sicurezza sempre.',
+        'Coach certificati CrossFit L2 e Fipe Sthenathlon. Tecnica prima di tutto, sicurezza sempre.',
       icon: ShieldCheck,
     },
     {
       number: '2',
-      title: "ATTREZZATURA ALL'AVANGUARDIA",
+      title: "BOX",
       description:
-        'Rogue, Eleiko, Concept2. 300m² di spazio, tutto quello che serve per allenarti al meglio.',
+        '300m² per allenarti al meglio.',
       icon: Dumbbell,
     },
     {

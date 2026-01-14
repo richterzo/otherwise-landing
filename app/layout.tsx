@@ -26,7 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Otherwise Athletics Evolved | Functional Fitness Ferrara",
-  description: "Functional Fitness nel cuore di Ferrara. Coach certificati, attrezzatura all'avanguardia, programmazione seria, risultati concreti.",
+  description: "Functional Fitness nel cuore di Ferrara. Coach certificati, BOX 300m², programmazione mirata, risultati tangibili.",
   keywords: "functional fitness ferrara, crossfit ferrara, palestra ferrara, otherwise, box crossfit, allenamento funzionale, fitness ferrara, wod ferrara, gym ferrara, personal trainer ferrara, functional training ferrara",
   authors: [{ name: "Otherwise Athletics Evolved" }],
   creator: "Otherwise Athletics Evolved",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Otherwise Athletics Evolved | Functional Fitness Ferrara',
-    description: 'Functional Fitness Ferrara. Coach certificati, attrezzatura all\'avanguardia, risultati concreti.',
+    description: 'Functional Fitness Ferrara. Coach certificati, BOX 300m², risultati tangibili.',
     url: 'https://otherwise-ferrara.it',
     siteName: 'Otherwise Athletics Evolved',
     images: [
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Otherwise Athletics Evolved | Functional Fitness Ferrara',
-    description: 'Functional Fitness Ferrara. Coach certificati, attrezzatura all\'avanguardia, risultati concreti.',
+    description: 'Functional Fitness Ferrara. Coach certificati, BOX 300m², risultati tangibili.',
     images: ['/twitter-image.jpg'],
   },
   robots: {
