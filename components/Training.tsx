@@ -30,7 +30,7 @@ export default function Training() {
     {
       id: 2,
       name: "PERFORMANCE E SPEED",
-      description: "",
+      description: "Allenamento specifico mirato a sviluppare performance e velocità. Questa fase punta a un obiettivo tecnico preciso, migliorando forza, potenza e coordinazione.",
       borderColor: "border-viola-brand",
       textColor: "text-viola-brand"
     },
