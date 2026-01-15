@@ -85,9 +85,16 @@ export default function Training() {
         <motion.div
           initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: isMobile ? 0 : 30 }}
           animate={reducedMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: isMobile ? 0 : 30 }}
-          transition={reducedMotion ? { duration: 0 } : { duration: isMobile ? 0.3 : 0.6, ease: "easeOut" }}
+          transition={reducedMotion ? { duration: 0 } : { 
+            duration: isMobile ? 0.4 : 0.6, 
+            ease: isMobile ? "easeOut" : [0.16, 1, 0.3, 1]
+          }}
           className="max-w-3xl mb-16"
-          style={isMobile ? {} : { willChange: 'opacity, transform' }}
+          style={isMobile ? { 
+            transform: 'translateZ(0)',
+            backfaceVisibility: 'hidden',
+            WebkitBackfaceVisibility: 'hidden'
+          } : { willChange: 'opacity, transform' }}
         >
           <motion.span 
             className="text-arancione-brand font-mono text-sm tracking-[0.3em] uppercase inline-flex items-center gap-2"
@@ -96,8 +103,8 @@ export default function Training() {
             [ WOD-FIT ]
             <motion.span
               className="inline-block w-1.5 h-1.5 bg-arancione-brand"
-              animate={{ opacity: [1, 0, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
+              animate={isMobile ? { opacity: 1 } : { opacity: [1, 0, 1] }}
+              transition={isMobile ? {} : { duration: 1.5, repeat: Infinity }}
             />
           </motion.span>
           
@@ -119,10 +126,18 @@ export default function Training() {
               key={program.code}
               initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: isMobile ? 0 : 20 }}
               animate={reducedMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: isMobile ? 0 : 20 }}
-              transition={reducedMotion ? { duration: 0 } : { duration: isMobile ? 0.2 : 0.5, delay: isMobile ? 0 : 0.1 + index * 0.05, ease: "easeOut" }}
+              transition={reducedMotion ? { duration: 0 } : { 
+                duration: isMobile ? 0.3 : 0.5, 
+                delay: isMobile ? 0 : 0.1 + index * 0.05, 
+                ease: isMobile ? "easeOut" : [0.16, 1, 0.3, 1]
+              }}
               whileHover={isMobile ? {} : { y: -8 }}
               className="group relative bg-nero-tattico p-8 border border-grigio-acciaio border-opacity-30 hover:border-arancione-brand hover:border-opacity-70 cursor-pointer"
-              style={isMobile ? {} : { willChange: 'opacity, transform' }}
+              style={isMobile ? {
+                transform: 'translateZ(0)',
+                backfaceVisibility: 'hidden',
+                WebkitBackfaceVisibility: 'hidden'
+              } : { willChange: 'opacity, transform' }}
             >
               {/* Intensity Bar */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-grigio-acciaio bg-opacity-20 overflow-hidden">
@@ -130,14 +145,21 @@ export default function Training() {
                   className="h-full bg-arancione-brand"
                   initial={{ width: 0 }}
                   animate={reducedMotion || isInView ? { width: `${program.intensity}%` } : { width: 0 }}
-                  transition={reducedMotion ? { duration: 0 } : { duration: isMobile ? 0.4 : 1, delay: isMobile ? 0 : 0.5 + index * 0.1 }}
-                  style={isMobile ? {} : { willChange: 'width' }}
+                  transition={reducedMotion ? { duration: 0 } : { 
+                    duration: isMobile ? 0.5 : 1, 
+                    delay: isMobile ? 0 : 0.5 + index * 0.1,
+                    ease: isMobile ? "easeOut" : [0.16, 1, 0.3, 1]
+                  }}
+                  style={isMobile ? {
+                    transform: 'translateZ(0)',
+                    willChange: 'width'
+                  } : { willChange: 'width' }}
                 />
               </div>
 
 
               {/* Name */}
-              <h3 className="text-2xl font-mono font-bold text-bianco-luce mb-4 transition-all">
+              <h3 className="text-2xl font-mono font-bold text-bianco-luce mb-4">
                 {program.name}
               </h3>
 
@@ -169,9 +191,17 @@ export default function Training() {
         <motion.div
           initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: isMobile ? 0 : 30 }}
           animate={reducedMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: isMobile ? 0 : 30 }}
-          transition={reducedMotion ? { duration: 0 } : { duration: isMobile ? 0.3 : 0.8, delay: isMobile ? 0 : 0.6 }}
+          transition={reducedMotion ? { duration: 0 } : { 
+            duration: isMobile ? 0.4 : 0.8, 
+            delay: isMobile ? 0 : 0.6,
+            ease: isMobile ? "easeOut" : [0.16, 1, 0.3, 1]
+          }}
           className="mt-20 max-w-4xl mx-auto"
-          style={isMobile ? {} : { willChange: 'opacity, transform' }}
+          style={isMobile ? {
+            transform: 'translateZ(0)',
+            backfaceVisibility: 'hidden',
+            WebkitBackfaceVisibility: 'hidden'
+          } : { willChange: 'opacity, transform' }}
         >
           <div className="text-center mb-12">
             <motion.span 
@@ -181,8 +211,8 @@ export default function Training() {
               [ STRUTTURA WOD ]
               <motion.span
                 className="inline-block w-1.5 h-1.5 bg-arancione-brand"
-                animate={{ opacity: [1, 0, 1] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
+                animate={isMobile ? { opacity: 1 } : { opacity: [1, 0, 1] }}
+                transition={isMobile ? {} : { duration: 1.5, repeat: Infinity }}
               />
             </motion.span>
             
@@ -204,13 +234,25 @@ export default function Training() {
                   key={step.id}
                   initial={reducedMotion ? { opacity: 1 } : { opacity: 0, x: isMobile ? 0 : (index % 2 === 0 ? -30 : 30) }}
                   animate={reducedMotion || isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isMobile ? 0 : (index % 2 === 0 ? -30 : 30) }}
-                  transition={reducedMotion ? { duration: 0 } : { duration: isMobile ? 0.2 : 0.5, delay: isMobile ? 0 : 0.7 + index * 0.1 }}
+                  transition={reducedMotion ? { duration: 0 } : { 
+                    duration: isMobile ? 0.3 : 0.5, 
+                    delay: isMobile ? 0 : 0.7 + index * 0.1,
+                    ease: isMobile ? "easeOut" : [0.16, 1, 0.3, 1]
+                  }}
                   className={`bg-nero-tattico border-2 ${isGradient ? '' : step.borderColor} border-opacity-30 p-8 hover:border-opacity-60 group relative`}
                   style={isGradient ? {
                     borderImage: 'linear-gradient(135deg, #FF6B35, #7C3AED) 1',
                     borderImageSlice: 1,
-                    ...(isMobile ? {} : { willChange: 'opacity, transform' }),
-                  } : (isMobile ? {} : { willChange: 'opacity, transform' })}
+                    ...(isMobile ? {
+                      transform: 'translateZ(0)',
+                      backfaceVisibility: 'hidden',
+                      WebkitBackfaceVisibility: 'hidden'
+                    } : { willChange: 'opacity, transform' }),
+                  } : (isMobile ? {
+                    transform: 'translateZ(0)',
+                    backfaceVisibility: 'hidden',
+                    WebkitBackfaceVisibility: 'hidden'
+                  } : { willChange: 'opacity, transform' })}
                 >
                   <div className="flex items-start gap-6">
                     {/* Step Number */}
@@ -292,9 +334,17 @@ export default function Training() {
         <motion.div
           initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: isMobile ? 0 : 30 }}
           animate={reducedMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: isMobile ? 0 : 30 }}
-          transition={reducedMotion ? { duration: 0 } : { duration: isMobile ? 0.3 : 0.8, delay: isMobile ? 0 : 0.8 }}
+          transition={reducedMotion ? { duration: 0 } : { 
+            duration: isMobile ? 0.4 : 0.8, 
+            delay: isMobile ? 0 : 0.8,
+            ease: isMobile ? "easeOut" : [0.16, 1, 0.3, 1]
+          }}
           className="mt-16 text-center"
-          style={isMobile ? {} : { willChange: 'opacity, transform' }}
+          style={isMobile ? {
+            transform: 'translateZ(0)',
+            backfaceVisibility: 'hidden',
+            WebkitBackfaceVisibility: 'hidden'
+          } : { willChange: 'opacity, transform' }}
         >
           <motion.a
             href="#contact"

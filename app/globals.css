@@ -85,15 +85,33 @@
 
   /* Mobile-optimized animations */
   @media (max-width: 768px) {
-    /* Reduce motion for better performance on mobile */
-    * {
-      animation-duration: 0.3s !important;
-      transition-duration: 0.3s !important;
+    /* Optimize rendering for mobile - GPU acceleration */
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     
-    /* Disable complex animations on mobile */
+    /* Reduce complex animations on mobile */
     .nav-gradient-line {
       animation-duration: 12s !important;
+    }
+    
+    /* Optimize transitions for mobile - only for CSS transitions, not Framer Motion */
+    [class*="transition"]:not([data-framer-motion]) {
+      transition-duration: 0.2s !important;
+    }
+    
+    /* Disable expensive effects on mobile */
+    * {
+      filter: none !important;
+      backdrop-filter: none !important;
+    }
+    
+    /* Prevent layout shifts */
+    img, video {
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
     }
   }
 
