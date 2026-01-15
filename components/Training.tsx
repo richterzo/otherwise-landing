@@ -35,7 +35,7 @@ export default function Training() {
     {
       code: "PROG_01",
       name: "WOD-FIT",
-      description: "WOD‑FIT: l'allenamento che trasforma davvero, è il programma di allenamento pensato per chi vuole migliorare forza, resistenza e forma fisica attraverso sessioni dinamiche, intense e sempre diverse. Ispirato alla metodologia dei WOD (Workout of the Day), unisce esercizi funzionali, lavoro cardiovascolare e potenziamento muscolare in un percorso completo e adatto a ogni livello.",
+      description: "L'allenamento che trasforma davvero, è il programma di allenamento pensato per chi vuole migliorare forza, resistenza e forma fisica attraverso sessioni dinamiche, intense e sempre diverse. Ispirato alla metodologia dei WOD (Workout of the Day), unisce esercizi funzionali, lavoro cardiovascolare e potenziamento muscolare in un percorso completo e adatto a ogni livello.",
       duration: "Variabile",
       level: "Tutti i livelli",
       level_number: 2,
