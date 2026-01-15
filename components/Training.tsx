@@ -53,17 +53,17 @@ export default function Training() {
     },
     {
       id: 2,
-      name: "PERFORMANCE E SPEED",
-      description: "Allenamento specifico mirato a sviluppare performance e velocità. Questa fase punta a un obiettivo tecnico preciso, migliorando forza, potenza e coordinazione.",
+      name: "PERFORMANCE & SPEED + DAILY TOPIC",
+      description: "Allenamento specifico mirato a sviluppare performance e velocità. Questa fase punta a un obiettivo tecnico preciso, migliorando forza, potenza e coordinazione. È l'argomento del giorno, la parte centrale di WOD-FIT, ogni giorno un argomento diverso, alternato tra Forza, Ginnastica, Weightlifting, Potenza e Aerobic Consistency.",
       borderColor: "border-viola-brand",
       textColor: "text-viola-brand"
     },
     {
       id: 3,
-      name: "DAILY TOPIC",
-      description: "È l'argomento del giorno, la parte centrale di WOD-FIT, ogni giorno un argomento diverso, alternato tra Forza, Ginnastica, Weightlifting, Potenza e Aerobic Consistency.",
-      borderColor: "border-viola-brand",
-      textColor: "text-viola-brand"
+      name: "WOD",
+      description: "Workout of the Day. La concretizzazione dell'allenamento: alta intensità, varietà di movimenti, sfida completa che mette insieme tutto ciò che hai preparato.",
+      borderColor: "border-rosso-controllo",
+      textColor: "text-rosso-controllo"
     }
   ];
 
