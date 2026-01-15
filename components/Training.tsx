@@ -1,11 +1,35 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 export default function Training() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [isMobile, setIsMobile] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  
+  // Detect mobile and reduced motion preference
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReducedMotion(mediaQuery.matches);
+    const handleChange = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      mediaQuery.removeEventListener('change', handleChange);
+    };
+  }, []);
+  
+  // Adjust margin based on device
+  const viewMargin = isMobile ? "0px" : "-50px";
+  const isInView = useInView(ref, { once: true, margin: viewMargin });
 
   const programs = [
     {
@@ -59,11 +83,11 @@ export default function Training() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: isMobile ? 0 : 30 }}
+          animate={reducedMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: isMobile ? 0 : 30 }}
+          transition={reducedMotion ? { duration: 0 } : { duration: isMobile ? 0.3 : 0.6, ease: "easeOut" }}
           className="max-w-3xl mb-16"
-          style={{ willChange: 'opacity, transform' }}
+          style={isMobile ? {} : { willChange: 'opacity, transform' }}
         >
           <motion.span 
             className="text-arancione-brand font-mono text-sm tracking-[0.3em] uppercase inline-flex items-center gap-2"
@@ -93,21 +117,21 @@ export default function Training() {
           {programs.map((program, index) => (
             <motion.div
               key={program.code}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.1 + index * 0.05, ease: "easeOut" }}
-              whileHover={{ y: -8 }}
+              initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: isMobile ? 0 : 20 }}
+              animate={reducedMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: isMobile ? 0 : 20 }}
+              transition={reducedMotion ? { duration: 0 } : { duration: isMobile ? 0.2 : 0.5, delay: isMobile ? 0 : 0.1 + index * 0.05, ease: "easeOut" }}
+              whileHover={isMobile ? {} : { y: -8 }}
               className="group relative bg-nero-tattico p-8 border border-grigio-acciaio border-opacity-30 hover:border-arancione-brand hover:border-opacity-70 cursor-pointer"
-              style={{ willChange: 'opacity, transform' }}
+              style={isMobile ? {} : { willChange: 'opacity, transform' }}
             >
               {/* Intensity Bar */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-grigio-acciaio bg-opacity-20 overflow-hidden">
                 <motion.div
                   className="h-full bg-arancione-brand"
                   initial={{ width: 0 }}
-                  animate={isInView ? { width: `${program.intensity}%` } : { width: 0 }}
-                  transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
-                  style={{ willChange: 'width' }}
+                  animate={reducedMotion || isInView ? { width: `${program.intensity}%` } : { width: 0 }}
+                  transition={reducedMotion ? { duration: 0 } : { duration: isMobile ? 0.4 : 1, delay: isMobile ? 0 : 0.5 + index * 0.1 }}
+                  style={isMobile ? {} : { willChange: 'width' }}
                 />
               </div>
 
@@ -135,24 +159,24 @@ export default function Training() {
               </div>
 
               {/* Corner brackets */}
-              <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-arancione-brand opacity-0 group-hover:opacity-100" style={{ willChange: 'opacity', transition: 'opacity 0.3s ease' }} />
-              <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-arancione-brand opacity-0 group-hover:opacity-100" style={{ willChange: 'opacity', transition: 'opacity 0.3s ease' }} />
+              <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-arancione-brand opacity-0 group-hover:opacity-100" style={isMobile ? { transition: 'opacity 0.3s ease' } : { willChange: 'opacity', transition: 'opacity 0.3s ease' }} />
+              <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-arancione-brand opacity-0 group-hover:opacity-100" style={isMobile ? { transition: 'opacity 0.3s ease' } : { willChange: 'opacity', transition: 'opacity 0.3s ease' }} />
             </motion.div>
           ))}
         </div>
 
         {/* WOD Structure Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: isMobile ? 0 : 30 }}
+          animate={reducedMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: isMobile ? 0 : 30 }}
+          transition={reducedMotion ? { duration: 0 } : { duration: isMobile ? 0.3 : 0.8, delay: isMobile ? 0 : 0.6 }}
           className="mt-20 max-w-4xl mx-auto"
-          style={{ willChange: 'opacity, transform' }}
+          style={isMobile ? {} : { willChange: 'opacity, transform' }}
         >
           <div className="text-center mb-12">
             <motion.span 
               className="text-arancione-brand font-mono text-sm tracking-[0.3em] uppercase inline-flex items-center gap-2"
-              whileHover={{ scale: 1.05 }}
+              whileHover={isMobile ? {} : { scale: 1.05 }}
             >
               [ STRUTTURA WOD ]
               <motion.span
@@ -178,15 +202,15 @@ export default function Training() {
               return (
                 <motion.div
                   key={step.id}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+                  initial={reducedMotion ? { opacity: 1 } : { opacity: 0, x: isMobile ? 0 : (index % 2 === 0 ? -30 : 30) }}
+                  animate={reducedMotion || isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isMobile ? 0 : (index % 2 === 0 ? -30 : 30) }}
+                  transition={reducedMotion ? { duration: 0 } : { duration: isMobile ? 0.2 : 0.5, delay: isMobile ? 0 : 0.7 + index * 0.1 }}
                   className={`bg-nero-tattico border-2 ${isGradient ? '' : step.borderColor} border-opacity-30 p-8 hover:border-opacity-60 group relative`}
                   style={isGradient ? {
                     borderImage: 'linear-gradient(135deg, #FF6B35, #7C3AED) 1',
                     borderImageSlice: 1,
-                    willChange: 'opacity, transform',
-                  } : { willChange: 'opacity, transform' }}
+                    ...(isMobile ? {} : { willChange: 'opacity, transform' }),
+                  } : (isMobile ? {} : { willChange: 'opacity, transform' })}
                 >
                   <div className="flex items-start gap-6">
                     {/* Step Number */}
@@ -196,7 +220,7 @@ export default function Training() {
                         style={{
                           background: 'linear-gradient(135deg, #FF6B35, #7C3AED)',
                           borderRadius: '0',
-                          willChange: 'opacity',
+                          ...(isMobile ? {} : { willChange: 'opacity' }),
                         }}
                       >
                         <div className="w-full h-full bg-nero-tattico flex items-center justify-center">
@@ -211,7 +235,7 @@ export default function Training() {
                         </div>
                       </div>
                     ) : (
-                      <div className={`flex-shrink-0 w-16 h-16 border-2 ${step.borderColor} border-opacity-50 flex items-center justify-center group-hover:border-opacity-100`} style={{ willChange: 'border-opacity' }}>
+                      <div className={`flex-shrink-0 w-16 h-16 border-2 ${step.borderColor} border-opacity-50 flex items-center justify-center group-hover:border-opacity-100`} style={isMobile ? {} : { willChange: 'border-opacity' }}>
                         <span className={`${step.textColor} font-mono font-bold text-2xl`}>
                           {step.id}
                         </span>
@@ -243,19 +267,19 @@ export default function Training() {
                   {/* Corner brackets */}
                   {isGradient ? (
                     <>
-                      <div className="absolute top-2 left-2 w-4 h-4 opacity-0 group-hover:opacity-100" style={{ willChange: 'opacity', transition: 'opacity 0.3s ease' }}>
+                      <div className="absolute top-2 left-2 w-4 h-4 opacity-0 group-hover:opacity-100" style={isMobile ? { transition: 'opacity 0.3s ease' } : { willChange: 'opacity', transition: 'opacity 0.3s ease' }}>
                         <div className="absolute top-0 left-0 w-4 h-[2px]" style={{ background: 'linear-gradient(90deg, #FF6B35, #7C3AED)' }} />
                         <div className="absolute top-0 left-0 w-[2px] h-4" style={{ background: 'linear-gradient(180deg, #FF6B35, #7C3AED)' }} />
                       </div>
-                      <div className="absolute bottom-2 right-2 w-4 h-4 opacity-0 group-hover:opacity-100" style={{ willChange: 'opacity', transition: 'opacity 0.3s ease' }}>
+                      <div className="absolute bottom-2 right-2 w-4 h-4 opacity-0 group-hover:opacity-100" style={isMobile ? { transition: 'opacity 0.3s ease' } : { willChange: 'opacity', transition: 'opacity 0.3s ease' }}>
                         <div className="absolute bottom-0 right-0 w-4 h-[2px]" style={{ background: 'linear-gradient(90deg, #7C3AED, #FF6B35)' }} />
                         <div className="absolute bottom-0 right-0 w-[2px] h-4" style={{ background: 'linear-gradient(180deg, #7C3AED, #FF6B35)' }} />
                       </div>
                     </>
                   ) : (
                     <>
-                      <div className={`absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 ${step.borderColor} opacity-0 group-hover:opacity-100`} style={{ willChange: 'opacity', transition: 'opacity 0.3s ease' }} />
-                      <div className={`absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 ${step.borderColor} opacity-0 group-hover:opacity-100`} style={{ willChange: 'opacity', transition: 'opacity 0.3s ease' }} />
+                      <div className={`absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 ${step.borderColor} opacity-0 group-hover:opacity-100`} style={isMobile ? { transition: 'opacity 0.3s ease' } : { willChange: 'opacity', transition: 'opacity 0.3s ease' }} />
+                      <div className={`absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 ${step.borderColor} opacity-0 group-hover:opacity-100`} style={isMobile ? { transition: 'opacity 0.3s ease' } : { willChange: 'opacity', transition: 'opacity 0.3s ease' }} />
                     </>
                   )}
                 </motion.div>
@@ -266,16 +290,16 @@ export default function Training() {
 
         {/* Bottom CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: isMobile ? 0 : 30 }}
+          animate={reducedMotion || isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: isMobile ? 0 : 30 }}
+          transition={reducedMotion ? { duration: 0 } : { duration: isMobile ? 0.3 : 0.8, delay: isMobile ? 0 : 0.8 }}
           className="mt-16 text-center"
-          style={{ willChange: 'opacity, transform' }}
+          style={isMobile ? {} : { willChange: 'opacity, transform' }}
         >
           <motion.a
             href="#contact"
             className="inline-block px-8 py-4 bg-rosso-controllo text-bianco-luce font-mono text-sm font-bold hover:bg-rosso-battito transition-colors relative overflow-hidden"
-            whileHover={{ scale: 1.05 }}
+            whileHover={isMobile ? {} : { scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <span className="relative z-10">INIZIA OGGI</span>
