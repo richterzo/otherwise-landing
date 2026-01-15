@@ -60,9 +60,10 @@ export default function Training() {
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="max-w-3xl mb-16"
+          style={{ willChange: 'opacity, transform' }}
         >
           <motion.span 
             className="text-arancione-brand font-mono text-sm tracking-[0.3em] uppercase inline-flex items-center gap-2"
@@ -93,18 +94,20 @@ export default function Training() {
             <motion.div
               key={program.code}
               initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.05, ease: "easeOut" }}
               whileHover={{ y: -8 }}
-              className="group relative bg-nero-tattico p-8 border border-grigio-acciaio border-opacity-30 hover:border-arancione-brand hover:border-opacity-70 transition-all duration-300 cursor-pointer"
+              className="group relative bg-nero-tattico p-8 border border-grigio-acciaio border-opacity-30 hover:border-arancione-brand hover:border-opacity-70 cursor-pointer"
+              style={{ willChange: 'opacity, transform' }}
             >
               {/* Intensity Bar */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-grigio-acciaio bg-opacity-20 overflow-hidden">
                 <motion.div
                   className="h-full bg-arancione-brand"
                   initial={{ width: 0 }}
-                  animate={isInView ? { width: `${program.intensity}%` } : {}}
+                  animate={isInView ? { width: `${program.intensity}%` } : { width: 0 }}
                   transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
+                  style={{ willChange: 'width' }}
                 />
               </div>
 
@@ -132,8 +135,8 @@ export default function Training() {
               </div>
 
               {/* Corner brackets */}
-              <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-arancione-brand opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-arancione-brand opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-arancione-brand opacity-0 group-hover:opacity-100" style={{ willChange: 'opacity', transition: 'opacity 0.3s ease' }} />
+              <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-arancione-brand opacity-0 group-hover:opacity-100" style={{ willChange: 'opacity', transition: 'opacity 0.3s ease' }} />
             </motion.div>
           ))}
         </div>
@@ -141,9 +144,10 @@ export default function Training() {
         {/* WOD Structure Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-20 max-w-4xl mx-auto"
+          style={{ willChange: 'opacity, transform' }}
         >
           <div className="text-center mb-12">
             <motion.span 
@@ -175,22 +179,24 @@ export default function Training() {
                 <motion.div
                   key={step.id}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                   transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                  className={`bg-nero-tattico border-2 ${isGradient ? '' : step.borderColor} border-opacity-30 p-8 hover:border-opacity-60 transition-all duration-300 group relative`}
+                  className={`bg-nero-tattico border-2 ${isGradient ? '' : step.borderColor} border-opacity-30 p-8 hover:border-opacity-60 group relative`}
                   style={isGradient ? {
                     borderImage: 'linear-gradient(135deg, #FF6B35, #7C3AED) 1',
                     borderImageSlice: 1,
-                  } : {}}
+                    willChange: 'opacity, transform',
+                  } : { willChange: 'opacity, transform' }}
                 >
                   <div className="flex items-start gap-6">
                     {/* Step Number */}
                     {isGradient ? (
                       <div 
-                        className="flex-shrink-0 w-16 h-16 flex items-center justify-center group-hover:opacity-100 transition-all duration-300 relative p-[2px]"
+                        className="flex-shrink-0 w-16 h-16 flex items-center justify-center group-hover:opacity-100 relative p-[2px]"
                         style={{
                           background: 'linear-gradient(135deg, #FF6B35, #7C3AED)',
                           borderRadius: '0',
+                          willChange: 'opacity',
                         }}
                       >
                         <div className="w-full h-full bg-nero-tattico flex items-center justify-center">
@@ -205,7 +211,7 @@ export default function Training() {
                         </div>
                       </div>
                     ) : (
-                      <div className={`flex-shrink-0 w-16 h-16 border-2 ${step.borderColor} border-opacity-50 flex items-center justify-center group-hover:border-opacity-100 transition-all duration-300`}>
+                      <div className={`flex-shrink-0 w-16 h-16 border-2 ${step.borderColor} border-opacity-50 flex items-center justify-center group-hover:border-opacity-100`} style={{ willChange: 'border-opacity' }}>
                         <span className={`${step.textColor} font-mono font-bold text-2xl`}>
                           {step.id}
                         </span>
@@ -237,19 +243,19 @@ export default function Training() {
                   {/* Corner brackets */}
                   {isGradient ? (
                     <>
-                      <div className="absolute top-2 left-2 w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute top-2 left-2 w-4 h-4 opacity-0 group-hover:opacity-100" style={{ willChange: 'opacity', transition: 'opacity 0.3s ease' }}>
                         <div className="absolute top-0 left-0 w-4 h-[2px]" style={{ background: 'linear-gradient(90deg, #FF6B35, #7C3AED)' }} />
                         <div className="absolute top-0 left-0 w-[2px] h-4" style={{ background: 'linear-gradient(180deg, #FF6B35, #7C3AED)' }} />
                       </div>
-                      <div className="absolute bottom-2 right-2 w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-2 right-2 w-4 h-4 opacity-0 group-hover:opacity-100" style={{ willChange: 'opacity', transition: 'opacity 0.3s ease' }}>
                         <div className="absolute bottom-0 right-0 w-4 h-[2px]" style={{ background: 'linear-gradient(90deg, #7C3AED, #FF6B35)' }} />
                         <div className="absolute bottom-0 right-0 w-[2px] h-4" style={{ background: 'linear-gradient(180deg, #7C3AED, #FF6B35)' }} />
                       </div>
                     </>
                   ) : (
                     <>
-                      <div className={`absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 ${step.borderColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                      <div className={`absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 ${step.borderColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                      <div className={`absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 ${step.borderColor} opacity-0 group-hover:opacity-100`} style={{ willChange: 'opacity', transition: 'opacity 0.3s ease' }} />
+                      <div className={`absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 ${step.borderColor} opacity-0 group-hover:opacity-100`} style={{ willChange: 'opacity', transition: 'opacity 0.3s ease' }} />
                     </>
                   )}
                 </motion.div>
@@ -261,9 +267,10 @@ export default function Training() {
         {/* Bottom CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-16 text-center"
+          style={{ willChange: 'opacity, transform' }}
         >
           <motion.a
             href="#contact"
