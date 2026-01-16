@@ -103,9 +103,7 @@ export default function About() {
                   progettato per spingerti oltre i tuoi limiti.
                 </p>
                 <p>
-                  Bilancieri, corde, box jump, trazioni. Non importa il livello
-                  da cui parti: importa la costanza, l'impegno e il desiderio di
-                  migliorare. Coach certificati, programmazione strutturata,
+                  Coach certificati, programmazione strutturata,
                   community vera.
                 </p>
                 <motion.p
@@ -113,8 +111,8 @@ export default function About() {
                   whileHover={{ x: 5, color: '#FF6B35' }}
                   transition={{ duration: 0.2 }}
                 >
-                  Obiettivi reali. Risultati misurabili. Trasformazioni
-                  concrete.
+                  Obiettivi concreti. Risultati misurabili. Trasformazioni
+                  reali.
                 </motion.p>
               </motion.div>
             </motion.div>

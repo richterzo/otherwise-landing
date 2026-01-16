@@ -121,7 +121,7 @@ export default function Hero() {
           className="mb-10 sm:mb-14 max-w-3xl mx-auto"
         >
           <p className="text-sm sm:text-base lg:text-lg text-bianco-luce font-mono leading-relaxed px-4">
-            Functional Fitness nel cuore di Ferrara. Coach certificati, programmazione mirata, risultati tangibili.
+            Functional Fitness nel cuore di Ferrara. Coach certificati, programmazione mirata, zero scuse, solo progressi.
           </p>
         </motion.div>
 

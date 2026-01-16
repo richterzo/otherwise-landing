@@ -114,8 +114,7 @@ export default function Training() {
           </h2>
 
           <p className="text-bianco-luce/85 leading-relaxed mb-12">
-            Un programma pensato per farti evolvere, a modo tuo. 
-            Allenamento funzionale completo, ad alta intensità, risultati tangibili.
+            Un programma pensato per farti evolvere. Completo, ad alta intensità, costruito per portarti ai tuoi risultati.
           </p>
         </motion.div>
 
